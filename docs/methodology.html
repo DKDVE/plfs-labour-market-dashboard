@@ -88,20 +88,15 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface antialiased">
-<!-- TopNavBar (Shared Component) -->
-<header class="fixed top-0 w-full z-40 flex justify-between items-center px-8 py-3 bg-[#f1f4f6] font-['Inter'] tracking-[-0.02em] antialiased border-b border-outline-variant/20">
-<div class="flex items-center gap-8 flex-wrap">
-<span class="text-lg font-black tracking-tight text-[#002045]">PLFS Analytics</span>
-<nav aria-label="Main Navigation" class="hidden md:flex gap-6">
-<a class="text-[#181c1e]/70 hover:text-[#002045] transition-colors" href="index.html">Dashboard</a>
-<a class="text-[#181c1e]/70 hover:text-[#002045] transition-colors" href="demographics.html">Demographics</a>
-<a class="text-[#181c1e]/70 hover:text-[#002045] transition-colors" href="rural-urban.html">Rural vs Urban</a>
-<a aria-current="page" class="text-[#0061a5] border-b-2 border-[#0061a5] font-semibold pb-0.5" href="methodology.html">Methodology</a>
-<a class="text-[#181c1e]/70 hover:text-[#002045] transition-colors" href="board-report.html">Board Report</a>
-</nav>
+<!-- Top bar: branding + status only (nav is in sidebar; spans main column) -->
+<header class="fixed top-0 left-64 right-0 z-40 h-14 flex items-center justify-between border-b border-slate-200/80 bg-[#f1f4f6] px-6 lg:px-8">
+<span class="text-sm font-black tracking-tight text-[#002045] uppercase">PLFS Analytics · Methodology</span>
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-green-800 border border-green-200/80 shrink-0">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Data quality checks passed</span>
 </div>
 </header>
-<!-- SideNavBar (matches top nav) -->
+<!-- SideNavBar -->
 <aside aria-label="Sidebar Navigation" class="fixed left-0 top-0 h-full w-64 z-50 flex flex-col py-6 px-3 bg-[#002045] font-['Inter'] text-sm font-medium shadow-xl">
 <div class="mb-8 px-3">
 <div class="flex items-center gap-3">
@@ -138,9 +133,10 @@
 </nav>
 </aside>
 <!-- Main Content -->
-<main class="ml-64 mt-16 p-8 min-h-screen flex flex-col gap-8">
-<!-- Header & Breadcrumbs & Actions -->
-<section class="flex flex-col gap-6">
+<main class="ml-64 min-h-screen bg-[#f7fafc] pt-14 pb-12">
+<div class="max-w-7xl mx-auto w-full px-6 lg:px-8 flex flex-col gap-8">
+<!-- Header & Breadcrumbs -->
+<section class="flex flex-col gap-6 pt-6">
 <div class="flex flex-col gap-2">
 <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-medium text-outline uppercase tracking-widest">
 <a href="index.html" class="hover:text-primary">Home</a>
@@ -149,17 +145,11 @@
 </nav>
 <div>
 <h2 class="text-3xl font-black tracking-tighter text-primary">Technical Documentation</h2>
-<div class="mt-2 flex items-center gap-3 flex-wrap">
-<span class="px-2 py-1 bg-on-tertiary-container/10 text-on-tertiary-container text-[10px] font-bold rounded uppercase tracking-tighter flex items-center gap-1">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                            Data quality checks passed
-                        </span>
-<span class="text-[10px] text-on-surface-variant/60 font-mono">Pipeline JSON · <span data-bind="meta-generated">—</span></span>
-</div>
+<p class="mt-2 text-[10px] text-on-surface-variant/60 font-mono">Pipeline JSON · <span data-bind="meta-generated">—</span></p>
 </div>
 </div>
 <!-- Methodology Ribbon -->
-<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-4 flex flex-wrap items-center justify-between gap-4 shadow-sm">
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg py-3 px-4 sm:px-5 flex flex-wrap items-center justify-between gap-4 shadow-sm w-full">
 <div class="flex flex-wrap items-center gap-2">
 <span class="text-[10px] font-black uppercase text-on-surface-variant/60 mr-2 tracking-widest">Controls:</span>
 <span class="px-2.5 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded-full border border-primary/20">UPS</span>
@@ -174,9 +164,9 @@
 </div>
 </section>
 <!-- Metric Definitions & Methodology Summary -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
 <!-- Metric Definitions Table -->
-<section class="lg:col-span-2 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-outline-variant/10">
+<section class="lg:col-span-2 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-outline-variant/10 flex flex-col h-full min-h-0">
 <div class="px-6 py-4 border-b border-outline-variant/10 bg-surface-container-low flex justify-between items-center">
 <h3 class="font-bold text-primary flex items-center gap-2">
 <span class="material-symbols-outlined text-secondary">database</span>
@@ -190,34 +180,34 @@
 <th class="px-6 py-4">Metric</th>
 <th class="px-6 py-4">Formula</th>
 <th class="px-6 py-4">Description</th>
-<th class="px-6 py-4">Unit</th>
+<th class="px-6 py-4 w-14">Unit</th>
 </tr>
 </thead>
 <tbody class="text-sm divide-y divide-outline-variant/10">
 <tr class="hover:bg-surface-container-highest transition-colors">
-<td class="px-6 py-5 font-bold text-secondary">Unemployment Rate (UR)</td>
-<td class="px-6 py-5 font-mono text-xs bg-surface-container/30">unemployed / labour force * 100</td>
-<td class="px-6 py-5 text-on-surface-variant">The percentage of the labour force that is without work and actively seeking it. Example benchmark: 4.10%.</td>
-<td class="px-6 py-5 font-bold text-primary">%</td>
+<td class="px-6 py-5 align-middle font-bold text-secondary">Unemployment Rate (UR)</td>
+<td class="px-6 py-5 align-middle font-mono text-xs bg-surface-container/30">unemployed / labour force * 100</td>
+<td class="px-6 py-5 align-middle text-on-surface-variant">The percentage of the labour force that is without work and actively seeking it. Example benchmark: 4.10%.</td>
+<td class="px-6 py-5 align-middle font-bold text-primary w-14 whitespace-nowrap">%</td>
 </tr>
 <tr class="hover:bg-surface-container-highest transition-colors">
-<td class="px-6 py-5 font-bold text-secondary">Labour Force Participation Rate (LFPR)</td>
-<td class="px-6 py-5 font-mono text-xs bg-surface-container/30">labour force / population (15+) * 100</td>
-<td class="px-6 py-5 text-on-surface-variant">The proportion of the population aged 15 and above that is either working or seeking work. Example benchmark: 40.20%.</td>
-<td class="px-6 py-5 font-bold text-primary">%</td>
+<td class="px-6 py-5 align-middle font-bold text-secondary">Labour Force Participation Rate (LFPR)</td>
+<td class="px-6 py-5 align-middle font-mono text-xs bg-surface-container/30">labour force / population (15+) * 100</td>
+<td class="px-6 py-5 align-middle text-on-surface-variant">The proportion of the population aged 15 and above that is either working or seeking work. Example benchmark: 40.20%.</td>
+<td class="px-6 py-5 align-middle font-bold text-primary w-14 whitespace-nowrap">%</td>
 </tr>
 <tr class="hover:bg-surface-container-highest transition-colors">
-<td class="px-6 py-5 font-bold text-secondary">Worker Population Ratio (WPR)</td>
-<td class="px-6 py-5 font-mono text-xs bg-surface-container/30">employed / population (15+) * 100</td>
-<td class="px-6 py-5 text-on-surface-variant">The percentage of the population aged 15 and above that is currently employed. Example benchmark: 38.50%.</td>
-<td class="px-6 py-5 font-bold text-primary">%</td>
+<td class="px-6 py-5 align-middle font-bold text-secondary">Worker Population Ratio (WPR)</td>
+<td class="px-6 py-5 align-middle font-mono text-xs bg-surface-container/30">employed / population (15+) * 100</td>
+<td class="px-6 py-5 align-middle text-on-surface-variant">The percentage of the population aged 15 and above that is currently employed. Example benchmark: 38.50%.</td>
+<td class="px-6 py-5 align-middle font-bold text-primary w-14 whitespace-nowrap">%</td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
 <!-- Weighting & Scope Card -->
-<section class="bg-primary text-white rounded-xl p-6 flex flex-col gap-6 shadow-xl shadow-primary/20">
+<section class="bg-primary text-white rounded-xl p-6 flex flex-col gap-6 shadow-xl shadow-primary/20 h-full min-h-0">
 <h3 class="font-bold text-secondary-container flex items-center gap-2 uppercase tracking-widest text-xs">
 <span class="material-symbols-outlined text-sm">settings_input_component</span>
                 Weighting &amp; Scope
@@ -248,9 +238,9 @@
 </section>
 </div>
 <!-- Status Mapping & Lineage -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
 <!-- Status Code Mapping -->
-<section class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/10">
+<section class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/10 flex flex-col h-full min-h-0">
 <h3 class="font-bold text-primary mb-6 flex items-center gap-2">
 <span class="material-symbols-outlined text-secondary">label</span>
                 Status Code Mapping (UPS Focus)
@@ -288,7 +278,7 @@
 </div>
 </section>
 <!-- Data Lineage Panel -->
-<section class="bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden border border-outline-variant/10">
+<section class="bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden border border-outline-variant/10 flex flex-col h-full min-h-0">
 <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
 <span class="material-symbols-outlined text-[128px] text-secondary">account_tree</span>
 </div>
@@ -385,19 +375,31 @@
 </div>
 </section>
 </div>
-<!-- Footer (Shared Component) -->
-<footer class="w-full mt-auto py-12 flex flex-col items-center gap-6 px-8 bg-[#f1f4f6] dark:bg-[#111416] border-t border-[#c4c6cf]/20">
-<nav aria-label="Footer Navigation" class="flex flex-wrap justify-center gap-8 font-['Inter'] text-xs uppercase tracking-widest text-[#181c1e]/40 dark:text-[#ffffff]/40">
-<a class="hover:text-[#002045] dark:hover:text-[#ffffff] underline-offset-4 hover:underline transition-all focus-ring" href="#">Privacy Policy</a>
-<a class="hover:text-[#002045] dark:hover:text-[#ffffff] underline-offset-4 hover:underline transition-all focus-ring" href="#">Terms of Service</a>
-<a class="hover:text-[#002045] dark:hover:text-[#ffffff] underline-offset-4 hover:underline transition-all focus-ring" href="#">Citation Guide</a>
-<a class="hover:text-[#002045] dark:hover:text-[#ffffff] underline-offset-4 hover:underline transition-all font-bold text-[#0061a5] focus-ring" href="#">Technical Appendix</a>
-</nav>
-<p class="text-center font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-[#181c1e]/60 dark:text-[#e2e2e6]/60">
-            © 2024 Periodic Labour Force Survey. Executive Data Journalism Division. <br/>
-<span class="mt-2 block opacity-50">Prepared from PLFS pipeline outputs; no dummy data used.</span>
-</p>
-</footer>
+</div>
 </main>
+<!-- Footer (aligned with main column) -->
+<footer class="ml-64 border-t border-slate-200 bg-slate-100">
+<div class="max-w-7xl mx-auto w-full px-6 lg:px-8 py-12">
+<div class="flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="max-w-md">
+<p class="text-slate-600 dark:text-slate-400 font-inter text-xs leading-relaxed mb-4">
+                © 2024 Ministry of Statistics. All data sourced from Periodic Labour Force Survey Annual Reports. Metadata and runtime bindings are strictly for analytical reporting.
+            </p>
+<div class="flex gap-4">
+<a class="text-slate-500 hover:text-blue-600 text-xs transition-colors focus:ring-2 focus:ring-primary outline-none px-1 rounded" href="methodology.html">Methodology Notes</a>
+<a class="text-slate-500 hover:text-blue-600 text-xs transition-colors focus:ring-2 focus:ring-primary outline-none px-1 rounded" href="#">Caveats &amp; Limitations</a>
+<a class="text-slate-500 hover:text-blue-600 text-xs transition-colors focus:ring-2 focus:ring-primary outline-none px-1 rounded" href="#">Privacy Policy</a>
+</div>
+</div>
+<div class="text-right">
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-1">Data Provenance</p>
+<p class="text-xs text-slate-600 font-medium">Source: National Sample Survey Office (NSSO), MoSPI.</p>
+<p class="text-[10px] text-slate-400 mt-2 max-w-[300px] leading-tight">
+                Values shown from processed PLFS outputs; placeholders marked as 'runtime-bound' require active binding to the analytical pipeline.
+            </p>
+</div>
+</div>
+</div>
+</footer>
 <script src="assets/js/plfs-dashboard.js" defer></script>
 </body></html>

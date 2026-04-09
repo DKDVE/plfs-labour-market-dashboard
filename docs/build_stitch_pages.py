@@ -4,6 +4,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 
+CHART_UMD_SCRIPT = '<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" crossorigin="anonymous"></script>\n'
+
 CHART_REPLACEMENT = """<!-- Live Chart.js (data from data/dashboard_data.json) -->
 <div class="relative h-64 w-full">
 <canvas id="plfs-trend-chart" aria-label="UR, LFPR, and WPR over time"></canvas>
@@ -27,8 +29,8 @@ def patch_overview(html: str) -> str:
 
     # Error banner (after opening dashboard canvas div)
     html = html.replace(
-        '<!-- Dashboard Canvas -->\n<div class="p-8 space-y-8 max-w-7xl">',
-        '<!-- Dashboard Canvas -->\n<div class="p-8 space-y-8 max-w-7xl">\n<div id="plfs-data-error" class="rounded-lg border border-error/30 bg-error-container/20 px-4 py-3 text-sm text-on-error-container" role="alert" hidden></div>',
+        '<!-- Dashboard Canvas -->\n<div class="p-8 space-y-8 max-w-7xl mx-auto w-full min-w-0">',
+        '<!-- Dashboard Canvas -->\n<div class="p-8 space-y-8 max-w-7xl mx-auto w-full min-w-0">\n<div id="plfs-data-error" class="rounded-lg border border-error/30 bg-error-container/20 px-4 py-3 text-sm text-on-error-container" role="alert" hidden></div>',
     )
 
     # KPI ids + deltas + bars
@@ -103,8 +105,8 @@ def patch_overview(html: str) -> str:
 
     # Coverage table
     html = html.replace(
-        '<table class="w-full text-left">',
-        '<table class="w-full text-left" id="plfs-coverage-table">',
+        '<table class="w-full table-fixed text-left border-collapse">',
+        '<table class="w-full table-fixed text-left border-collapse" id="plfs-coverage-table">',
         1,
     )
     # Remove old static coverage tbody rows
@@ -245,7 +247,11 @@ def main():
 
     r = (ROOT / "stitch_rural_urban.html").read_text(encoding="utf-8")
     r = patch_rural_urban(r)
-    r = r.replace("</body>", '<script src="assets/js/plfs-dashboard.js" defer></script>\n</body>', 1)
+    r = r.replace(
+        "</body>",
+        CHART_UMD_SCRIPT + '<script src="assets/js/plfs-dashboard.js" defer></script>\n</body>',
+        1,
+    )
     (ROOT / "rural-urban.html").write_text(r, encoding="utf-8")
 
     m = (ROOT / "stitch_methodology.html").read_text(encoding="utf-8")

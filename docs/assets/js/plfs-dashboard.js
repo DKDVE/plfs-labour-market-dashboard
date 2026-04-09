@@ -2,6 +2,8 @@
  * Binds docs/data/dashboard_data.json to Stitch-based pages (GitHub Pages).
  */
 (function () {
+  let ruChart = null;
+
   const scriptSrc =
     document.currentScript?.src ||
     document.querySelector('script[src$="plfs-dashboard.js"]')?.getAttribute("src");
@@ -146,6 +148,7 @@
     bindDemographics(data.demographics_latest_round);
     bindAgeGroups(data.age_groups_latest_round);
     bindBoardReport(nat, rows, deltas, meta, data.demographics_latest_round);
+    bindRuralUrban(data);
   }
 
   function fyLabel(roundId) {
@@ -249,10 +252,10 @@
       const tr = document.createElement("tr");
       tr.className = "hover:bg-surface-container-highest transition-colors";
       tr.innerHTML = `
-        <td class="px-6 py-4 text-sm font-bold">${labelRound(r.round)}</td>
-        <td class="px-6 py-4 text-sm font-medium">${fmtNum(hh)}</td>
-        <td class="px-6 py-4 text-sm font-medium">${fmtNum(pr)}</td>
-        <td class="px-6 py-4 text-sm text-secondary font-bold">${avg}</td>`;
+        <td class="px-2 sm:px-4 py-3 text-xs sm:text-sm font-bold tabular-nums align-top">${labelRound(r.round)}</td>
+        <td class="px-2 sm:px-4 py-3 text-xs sm:text-sm font-medium tabular-nums break-words">${fmtNum(hh)}</td>
+        <td class="px-2 sm:px-4 py-3 text-xs sm:text-sm font-medium tabular-nums break-words">${fmtNum(pr)}</td>
+        <td class="px-2 sm:px-4 py-3 text-xs sm:text-sm text-secondary font-bold tabular-nums">${avg}</td>`;
       tb.appendChild(tr);
     });
   }
@@ -321,6 +324,216 @@
   function setText(id, t) {
     const el = document.getElementById(id);
     if (el) el.textContent = t;
+  }
+
+  function bindRuralUrban(data) {
+    const canvas = document.getElementById("ru-trend-chart");
+    const nat = data.national_indicators_latest_round || {};
+    const allRows = sortTrend(data.multiyear_trend || []);
+    const demo = data.demographics_latest_round;
+
+    if (demo?.by_sector) {
+      const r = demo.by_sector.rural || {};
+      const u = demo.by_sector.urban || {};
+      setText("ru-rural-ur", fmtPct(r.unemployment));
+      setText("ru-urban-ur", fmtPct(u.unemployment));
+      setText("ru-rural-lfpr", fmtPct(r.lfpr));
+      setText("ru-urban-lfpr", fmtPct(u.lfpr));
+      setText("ru-rural-wpr", fmtPct(r.wpr));
+      setText("ru-urban-wpr", fmtPct(u.wpr));
+      const urGap = Number(u.unemployment) - Number(r.unemployment);
+      setText("ru-gap-ur", `${urGap >= 0 ? "+" : ""}${urGap.toFixed(2)} pp`);
+      const lfGap = Number(u.lfpr) - Number(r.lfpr);
+      setText("ru-gap-lfpr", `${lfGap >= 0 ? "+" : ""}${lfGap.toFixed(2)} pp`);
+    }
+    if (nat.unemployment_rate != null) {
+      const el = document.getElementById("ru-runtime-ur");
+      if (el) el.textContent = fmtPct(nat.unemployment_rate);
+    }
+
+    if (!canvas || typeof Chart === "undefined") return;
+
+    function fieldForMetric(m) {
+      if (m === "ur") return "unemployment_rate";
+      if (m === "lfpr") return "lfpr";
+      return "wpr";
+    }
+
+    function colorForMetric(m) {
+      if (m === "ur") return "#ba1a1a";
+      if (m === "lfpr") return "#0061a5";
+      return "#319795";
+    }
+
+    function sliceRows(yearMode) {
+      let rows = [...allRows].sort((a, b) => roundYear(a) - roundYear(b));
+      if (yearMode === "3") rows = rows.slice(-3);
+      else if (yearMode === "5") rows = rows.slice(-5);
+      return rows;
+    }
+
+    let metric = "ur";
+
+    function styleMetricButtons() {
+      document.querySelectorAll(".ru-metric-btn").forEach((b) => {
+        const m = b.getAttribute("data-metric");
+        const on = m === metric;
+        b.classList.toggle("bg-white", on);
+        b.classList.toggle("shadow-sm", on);
+        b.classList.toggle("text-primary", on);
+        b.classList.toggle("text-slate-500", !on);
+      });
+    }
+
+    function styleSexButtons(activeSex) {
+      document.querySelectorAll(".ru-sex-btn").forEach((b) => {
+        const s = b.getAttribute("data-sex");
+        const on = s === activeSex;
+        b.classList.toggle("border-2", on);
+        b.classList.toggle("border-primary", on);
+        b.classList.toggle("text-primary", on);
+        b.classList.toggle("bg-primary-fixed", on);
+        b.classList.toggle("border", !on);
+        b.classList.toggle("border-slate-300", !on);
+      });
+    }
+
+    function updateScopeNote(sexSel) {
+      const note = document.getElementById("ru-filter-scope-note");
+      if (!note) return;
+      const st = document.getElementById("state-filter")?.value ?? "IN";
+      const ag = document.getElementById("age-band")?.value ?? "15p";
+      const nonDefault = sexSel !== "all" || st !== "IN" || ag !== "15p";
+      note.hidden = !nonDefault;
+    }
+
+    const chartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: "index", intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.parsed.y).toFixed(2)}%`,
+          },
+        },
+      },
+      scales: {
+        y: {
+          min: 0,
+          max: 100,
+          ticks: { callback: (v) => `${v}%` },
+        },
+        x: { ticks: { maxRotation: 45, minRotation: 0, font: { size: 9 } } },
+      },
+    };
+
+    function bgForMetric(m) {
+      if (m === "ur") return "rgba(186,26,26,0.08)";
+      if (m === "lfpr") return "rgba(0,97,165,0.06)";
+      return "rgba(49,151,149,0.06)";
+    }
+
+    function apply() {
+      const yearMode = document.getElementById("year-range")?.value || "all";
+      const rows = sliceRows(yearMode);
+      const key = fieldForMetric(metric);
+      const color = colorForMetric(metric);
+      const labels = rows.map((r) => labelRound(r.round));
+      const values = rows.map((r) => {
+        const v = r[key];
+        return v == null || Number.isNaN(Number(v)) ? 0 : Number(v);
+      });
+
+      const ds = {
+        label: metric.toUpperCase(),
+        data: values,
+        borderColor: color,
+        backgroundColor: bgForMetric(metric),
+        tension: 0.25,
+        fill: true,
+      };
+
+      if (ruChart) {
+        ruChart.data.labels = labels;
+        const d0 = ruChart.data.datasets[0];
+        d0.label = ds.label;
+        d0.data = ds.data;
+        d0.borderColor = ds.borderColor;
+        d0.backgroundColor = ds.backgroundColor;
+        ruChart.update();
+      } else {
+        const stale = typeof Chart !== "undefined" && Chart.getChart ? Chart.getChart(canvas) : null;
+        if (stale) stale.destroy();
+        ruChart = new Chart(canvas, {
+          type: "line",
+          data: { labels, datasets: [ds] },
+          options: chartOptions,
+        });
+      }
+
+      const legend = document.getElementById("ru-year-cells");
+      if (legend) {
+        legend.className =
+          "grid gap-4 pt-4 border-t border-slate-100 " +
+          (rows.length <= 3
+            ? "grid-cols-3"
+            : rows.length <= 5
+              ? "grid-cols-5"
+              : "grid-cols-2 sm:grid-cols-4 lg:grid-cols-7");
+        legend.innerHTML = rows
+          .map((r) => {
+            const y = labelRound(r.round);
+            const v = r[key];
+            return `<div class="text-center"><p class="text-[10px] text-slate-400 font-bold uppercase">${y}</p><p class="text-sm font-black text-primary">${Number(v).toFixed(2)}%</p></div>`;
+          })
+          .join("");
+      }
+    }
+
+    const metricGroup = document.getElementById("ru-metric-toggles");
+    if (metricGroup) {
+      metricGroup.addEventListener("click", (e) => {
+        const btn = e.target.closest(".ru-metric-btn");
+        if (!btn) return;
+        e.preventDefault();
+        e.stopPropagation();
+        metric = btn.getAttribute("data-metric") || "ur";
+        styleMetricButtons();
+        apply();
+      });
+    }
+
+    let sexSel = "all";
+    document.querySelectorAll(".ru-sex-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        sexSel = btn.getAttribute("data-sex") || "all";
+        styleSexButtons(sexSel);
+        updateScopeNote(sexSel);
+      });
+    });
+
+    ["state-filter", "age-band"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el)
+        el.addEventListener("change", () => {
+          updateScopeNote(sexSel);
+        });
+    });
+
+    const form = document.getElementById("ru-filter-form");
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        apply();
+      });
+    }
+
+    styleMetricButtons();
+    styleSexButtons("all");
+    updateScopeNote("all");
+    apply();
   }
 
   if (document.readyState === "loading") {

@@ -127,7 +127,7 @@
 </div>
 </aside>
 <!-- Main Content Area -->
-<main class="ml-64 flex-1 flex flex-col min-h-screen">
+<main class="ml-64 flex-1 flex flex-col min-h-screen min-w-0">
 <!-- TopNavBar -->
 <header class="w-full sticky top-0 z-30 flex justify-between items-center px-8 py-4 bg-[#f1f4f6] dark:bg-[#1a1c1e] font-['Inter'] font-medium text-sm border-b border-outline-variant/10">
 <div class="flex items-center gap-8">
@@ -159,7 +159,7 @@
 </div>
 </section>
 <!-- Dashboard Canvas -->
-<div class="p-8 space-y-8 max-w-7xl">
+<div class="p-8 space-y-8 max-w-7xl mx-auto w-full min-w-0">
 <div id="plfs-data-error" class="rounded-lg border border-error/30 bg-error-container/20 px-4 py-3 text-sm text-on-error-container" role="alert" hidden></div>
 <!-- Header Section -->
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
@@ -306,14 +306,20 @@
 <p class="text-xs text-on-surface-variant">Annual enumeration of households and persons surveyed</p>
 </div>
 </div>
-<div class="overflow-x-auto">
-<table class="w-full text-left" id="plfs-coverage-table">
+<div class="w-full min-w-0 rounded-lg border border-outline-variant/10 overflow-hidden">
+<table class="w-full table-fixed text-left border-collapse" id="plfs-coverage-table">
+<colgroup>
+<col class="w-[19%]"/>
+<col class="w-[27%]"/>
+<col class="w-[27%]"/>
+<col class="w-[27%]"/>
+</colgroup>
 <thead class="bg-surface-container-high">
 <tr>
-<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Survey Period</th>
-<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Households Covered</th>
-<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Persons Surveyed</th>
-<th class="px-6 py-4 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Avg. Household Size</th>
+<th class="px-2 sm:px-4 py-3 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-on-surface-variant leading-tight">Survey period</th>
+<th class="px-2 sm:px-4 py-3 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-on-surface-variant leading-tight">Households</th>
+<th class="px-2 sm:px-4 py-3 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-on-surface-variant leading-tight">Persons</th>
+<th class="px-2 sm:px-4 py-3 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-on-surface-variant leading-tight">Avg. hh size</th>
 </tr>
 </thead>
 <tbody class="divide-y divide-outline-variant/10"></tbody>
