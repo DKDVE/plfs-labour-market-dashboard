@@ -2,13 +2,15 @@
 
 Production-style pipeline and a **static dashboard** for Periodic Labour Force Survey (PLFS) indicators. The public site reads `docs/data/dashboard_data.json` (same schema as `PLFS_Analysis_Notebook.ipynb` exports).
 
+**Repository:** [github.com/DKDVE/plfs-labour-market-dashboard](https://github.com/DKDVE/plfs-labour-market-dashboard)
+
 ## Website (GitHub Pages)
 
-After deployment, enable Pages once: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+After the first push, enable Pages once: **Settings → Pages → Build and deployment → Source: GitHub Actions** (not “Deploy from branch”).
 
 The workflow **Deploy GitHub Pages** publishes the `docs/` folder. Your site URL will be:
 
-`https://<user>.github.io/<repo>/`
+**https://DKDVE.github.io/plfs-labour-market-dashboard/**
 
 ## Repository contents
 
