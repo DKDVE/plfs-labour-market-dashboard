@@ -5,7 +5,27 @@
     "total_rounds": 7,
     "latest_round": "213_july2023_june2024",
     "total_records_latest_round": 418159,
-    "total_households_latest_round": 101920
+    "total_households_latest_round": 101920,
+    "source_parquet": "data/processed/plfs_processed_data.parquet",
+    "methodology_chips": [
+      "UPS",
+      "Age 15+",
+      "Annual pooled",
+      "Weighted (MLTS/400)"
+    ],
+    "sector_scale_note": "Rural and urban lines on the trend chart use national pooled values scaled by the latest round’s rural/urban ratio for each indicator. They illustrate divergence vs the national path; they are not independent official rural/urban time series unless multiyear_trend_by_sector is published from the pipeline.",
+    "sector_scale_factors": {
+      "rural": {
+        "unemployment_rate": 0.8397129186602871,
+        "lfpr": 1.0276794611551947,
+        "wpr": 1.034661081263238
+      },
+      "urban": {
+        "unemployment_rate": 1.368421052631579,
+        "lfpr": 0.9191732792028049,
+        "wpr": 0.9042932794145965
+      }
+    }
   },
   "national_indicators_latest_round": {
     "unemployment_rate": 4.18,
@@ -13,30 +33,206 @@
     "wpr": 51.93
   },
   "multiyear_trend": [
-    {"round": "204_july2017_june2018", "records": 433339, "households": 96092, "unemployment_rate": 7.80, "lfpr": 47.08, "wpr": 43.40},
-    {"round": "206_july2020_june2021", "records": 413405, "households": 100130, "unemployment_rate": 5.01, "lfpr": 51.61, "wpr": 49.02},
-    {"round": "210_july2022_june2023", "records": 419512, "households": 101655, "unemployment_rate": 3.94, "lfpr": 52.61, "wpr": 50.53},
-    {"round": "213_july2023_june2024", "records": 418159, "households": 101920, "unemployment_rate": 4.18, "lfpr": 54.19, "wpr": 51.93},
-    {"round": "214_july2021_june2022", "records": 428525, "households": 101782, "unemployment_rate": 4.85, "lfpr": 51.64, "wpr": 49.14},
-    {"round": "216_july2018_june2019", "records": 420757, "households": 99361, "unemployment_rate": 7.41, "lfpr": 46.68, "wpr": 43.22},
-    {"round": "217_july2019_june2020", "records": 418297, "households": 99773, "unemployment_rate": 6.32, "lfpr": 49.04, "wpr": 45.94}
+    {
+      "round": "204_july2017_june2018",
+      "records": 433339,
+      "households": 96092,
+      "unemployment_rate": 7.8,
+      "lfpr": 47.08,
+      "wpr": 43.4
+    },
+    {
+      "round": "206_july2020_june2021",
+      "records": 413405,
+      "households": 100130,
+      "unemployment_rate": 5.01,
+      "lfpr": 51.61,
+      "wpr": 49.02
+    },
+    {
+      "round": "210_july2022_june2023",
+      "records": 419512,
+      "households": 101655,
+      "unemployment_rate": 3.94,
+      "lfpr": 52.61,
+      "wpr": 50.53
+    },
+    {
+      "round": "213_july2023_june2024",
+      "records": 418159,
+      "households": 101920,
+      "unemployment_rate": 4.18,
+      "lfpr": 54.19,
+      "wpr": 51.93
+    },
+    {
+      "round": "214_july2021_june2022",
+      "records": 428525,
+      "households": 101782,
+      "unemployment_rate": 4.85,
+      "lfpr": 51.64,
+      "wpr": 49.14
+    },
+    {
+      "round": "216_july2018_june2019",
+      "records": 420757,
+      "households": 99361,
+      "unemployment_rate": 7.41,
+      "lfpr": 46.68,
+      "wpr": 43.22
+    },
+    {
+      "round": "217_july2019_june2020",
+      "records": 418297,
+      "households": 99773,
+      "unemployment_rate": 6.32,
+      "lfpr": 49.04,
+      "wpr": 45.94
+    }
   ],
   "demographics_latest_round": {
     "by_gender": {
-      "male": {"unemployment": 3.83, "lfpr": 77.17},
-      "female": {"unemployment": 4.88, "lfpr": 30.83}
+      "male": {
+        "unemployment": 3.83,
+        "lfpr": 77.17
+      },
+      "female": {
+        "unemployment": 4.88,
+        "lfpr": 30.83
+      }
     },
     "by_sector": {
-      "rural": {"unemployment": 3.51, "lfpr": 55.68, "wpr": 53.73},
-      "urban": {"unemployment": 5.72, "lfpr": 49.81, "wpr": 46.96}
+      "rural": {
+        "unemployment": 3.51,
+        "lfpr": 55.68,
+        "wpr": 53.73
+      },
+      "urban": {
+        "unemployment": 5.72,
+        "lfpr": 49.81,
+        "wpr": 46.96
+      }
     }
   },
   "age_groups_latest_round": [
-    {"group": "15-24", "unemployment_rate": 17.80},
-    {"group": "25-34", "unemployment_rate": 5.89},
-    {"group": "35-44", "unemployment_rate": 0.74},
-    {"group": "45-54", "unemployment_rate": 0.37},
-    {"group": "55-64", "unemployment_rate": 0.28},
-    {"group": "65+", "unemployment_rate": 0.31}
-  ]
+    {
+      "group": "15-24",
+      "unemployment_rate": 17.8
+    },
+    {
+      "group": "25-34",
+      "unemployment_rate": 5.89
+    },
+    {
+      "group": "35-44",
+      "unemployment_rate": 0.74
+    },
+    {
+      "group": "45-54",
+      "unemployment_rate": 0.37
+    },
+    {
+      "group": "55-64",
+      "unemployment_rate": 0.28
+    },
+    {
+      "group": "65+",
+      "unemployment_rate": 0.31
+    }
+  ],
+  "rural_urban_page": {
+    "sector_composition_note": "Illustrative male/female shares within each sector row (UPS, employed persons in sector). Replace with pipeline exports when industry cross-tabs are wired.",
+    "sector_rows": [
+      {
+        "id": "agriculture",
+        "title": "Agriculture",
+        "context": "Rural employed",
+        "male_pct": 58,
+        "female_pct": 42
+      },
+      {
+        "id": "manufacturing",
+        "title": "Manufacturing",
+        "context": "Urban employed",
+        "male_pct": 72,
+        "female_pct": 28
+      },
+      {
+        "id": "services",
+        "title": "Services",
+        "context": "Urban employed",
+        "male_pct": 62,
+        "female_pct": 38
+      }
+    ],
+    "employment_type_pct": {
+      "self_employed": 58.0,
+      "regular_wage": 21.5,
+      "casual_labor": 20.5
+    },
+    "executive_lfpr_gap_pp": "-5.87"
+  },
+  "trend_statistics": {
+    "version": 1,
+    "n_rounds": 7,
+    "caveat": "Descriptive only: OLS linear trend vs survey reference year (July start), and Pearson correlation between national pooled headline series across the same rounds. Based on 7 annual pooled estimates — not a forecast, not causal, and not a substitute for official NSO uncertainty statements. Correlation ≠ causation.",
+    "rounds_ordered": [
+      {
+        "round": "204_july2017_june2018",
+        "year_july": 2017
+      },
+      {
+        "round": "216_july2018_june2019",
+        "year_july": 2018
+      },
+      {
+        "round": "217_july2019_june2020",
+        "year_july": 2019
+      },
+      {
+        "round": "206_july2020_june2021",
+        "year_july": 2020
+      },
+      {
+        "round": "214_july2021_june2022",
+        "year_july": 2021
+      },
+      {
+        "round": "210_july2022_june2023",
+        "year_july": 2022
+      },
+      {
+        "round": "213_july2023_june2024",
+        "year_july": 2023
+      }
+    ],
+    "metrics": {
+      "unemployment_rate": {
+        "label": "UR (%)",
+        "slope_pp_per_year": -0.6882,
+        "intercept": 1395.8371,
+        "r_squared": 0.9272,
+        "mean": 5.6443
+      },
+      "lfpr": {
+        "label": "LFPR (%)",
+        "slope_pp_per_year": 1.2782,
+        "intercept": -2531.5857,
+        "r_squared": 0.9344,
+        "mean": 50.4071
+      },
+      "wpr": {
+        "label": "WPR (%)",
+        "slope_pp_per_year": 1.5504,
+        "intercept": -3084.1243,
+        "r_squared": 0.9439,
+        "mean": 47.5971
+      }
+    },
+    "pearson_across_rounds": {
+      "unemployment_rate__lfpr": -0.9717,
+      "unemployment_rate__wpr": -0.9822,
+      "lfpr__wpr": 0.9987
+    }
+  }
 }

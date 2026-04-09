@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "docs/**"
+      - "scripts/**"
       - ".github/workflows/deploy-pages.yml"
   workflow_dispatch:
 
@@ -28,6 +29,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Validate dashboard_data.json
+        run: python3 scripts/validate_dashboard_json.py docs/data/dashboard_data.json
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs

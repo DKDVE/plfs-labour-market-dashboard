@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://plfs-project.local/dashboard_data.schema.json",
+  "title": "PLFS static dashboard bundle",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "metadata",
+    "national_indicators_latest_round",
+    "multiyear_trend",
+    "demographics_latest_round",
+    "age_groups_latest_round"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["generated_at", "latest_round"],
+      "properties": {
+        "generated_at": { "type": "string" },
+        "data_source": { "type": "string" },
+        "total_rounds": { "type": "integer" },
+        "latest_round": { "type": "string" },
+        "total_records_latest_round": { "type": "integer" },
+        "total_households_latest_round": { "type": "integer" },
+        "source_parquet": { "type": "string" },
+        "sector_scale_note": { "type": "string" },
+        "sector_scale_factors": {
+          "type": "object",
+          "properties": {
+            "rural": {
+              "type": "object",
+              "properties": {
+                "unemployment_rate": { "type": "number" },
+                "lfpr": { "type": "number" },
+                "wpr": { "type": "number" }
+              }
+            },
+            "urban": {
+              "type": "object",
+              "properties": {
+                "unemployment_rate": { "type": "number" },
+                "lfpr": { "type": "number" },
+                "wpr": { "type": "number" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "national_indicators_latest_round": {
+      "type": "object",
+      "required": ["unemployment_rate", "lfpr", "wpr"],
+      "properties": {
+        "unemployment_rate": { "type": "number" },
+        "lfpr": { "type": "number" },
+        "wpr": { "type": "number" }
+      }
+    },
+    "multiyear_trend": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["round", "unemployment_rate", "lfpr", "wpr"],
+        "properties": {
+          "round": { "type": "string" },
+          "records": { "type": "integer" },
+          "households": { "type": "integer" },
+          "unemployment_rate": { "type": "number" },
+          "lfpr": { "type": "number" },
+          "wpr": { "type": "number" }
+        }
+      }
+    },
+    "demographics_latest_round": { "type": "object" },
+    "age_groups_latest_round": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["group", "unemployment_rate"],
+        "properties": {
+          "group": { "type": "string" },
+          "unemployment_rate": { "type": "number" }
+        }
+      }
+    },
+    "rural_urban_page": {
+      "type": "object",
+      "description": "Copy and layout helpers for the Rural vs Urban HTML page",
+      "additionalProperties": true
+    },
+    "multiyear_trend_by_sector": {
+      "type": "array",
+      "description": "Optional official per-round rural/urban series from the pipeline"
+    },
+    "trend_statistics": {
+      "type": "object",
+      "description": "Descriptive OLS slopes and Pearson correlations from multiyear_trend (scripts/compute_dashboard_analytics.py)",
+      "properties": {
+        "version": { "type": "integer" },
+        "n_rounds": { "type": "integer" },
+        "caveat": { "type": "string" },
+        "error": { "type": "string" },
+        "metrics": { "type": "object" },
+        "pearson_across_rounds": { "type": "object" }
+      }
+    }
+  }
+}

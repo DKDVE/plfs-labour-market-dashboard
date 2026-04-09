@@ -7,6 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/dashboard-extras.css"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -87,8 +88,9 @@
     </style>
 </head>
 <body class="flex min-h-screen">
+<div id="plfs-nav-backdrop" class="plfs-nav-backdrop lg:hidden" aria-hidden="true"></div>
 <!-- SideNavBar -->
-<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-[#002045] text-white w-64 z-50 shadow-xl">
+<aside id="plfs-sidebar" class="plfs-sidebar fixed left-0 top-0 h-full flex flex-col py-6 bg-[#002045] text-white w-64 z-50 shadow-xl">
 <div class="px-6 mb-8">
 <div class="flex items-center gap-3">
 <div class="w-10 h-10 bg-[#66affe] rounded flex items-center justify-center">
@@ -124,44 +126,32 @@
 </nav>
 </aside>
 <!-- Main Content -->
-<main class="ml-64 flex-1 flex flex-col min-w-0" id="ru-page-root">
-<!-- TopNavBar -->
-<header class="flex flex-wrap justify-between items-center gap-4 px-8 py-4 w-full bg-[#f1f4f6] sticky top-0 z-40 border-b border-slate-200/80">
-<div class="flex items-center gap-6 flex-wrap">
-<span class="text-lg font-black text-[#002045]">PLFS Analytics</span>
-<nav class="hidden md:flex gap-6">
-<a class="text-[#181c1e]/80 hover:text-[#002045] font-medium" href="index.html">Dashboard</a>
-<a class="text-[#181c1e]/80 hover:text-[#002045] font-medium" href="demographics.html">Demographics</a>
-<a class="text-[#0061a5] font-bold border-b-2 border-[#0061a5] pb-0.5" href="rural-urban.html">Rural vs Urban</a>
-<a class="text-[#181c1e]/80 hover:text-[#002045] font-medium" href="methodology.html">Methodology</a>
-<a class="text-[#181c1e]/80 hover:text-[#002045] font-medium" href="board-report.html">Board Report</a>
-</nav>
+<main class="plfs-main ml-64 flex-1 flex flex-col min-w-0 bg-[#f7fafc]" id="ru-page-root">
+<header class="fixed top-0 left-64 right-0 z-40 h-14 flex items-center justify-between border-b border-slate-200/80 bg-[#f1f4f6] px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-2 min-w-0">
+<button type="button" class="plfs-nav-toggle lg:hidden shrink-0 p-2 rounded-md border border-slate-200 bg-white text-[#002045]" id="plfs-nav-toggle" aria-expanded="false" aria-controls="plfs-sidebar">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<span class="text-sm font-black tracking-tight text-[#002045] uppercase truncate">PLFS Analytics · Rural vs Urban</span>
 </div>
-<div class="hidden lg:flex items-center px-3 py-1 bg-green-50 rounded-full border border-green-200">
-<span class="material-symbols-outlined text-green-700 text-sm mr-1.5">check_circle</span>
-<span class="text-[10px] font-bold text-green-800 uppercase tracking-tight">Data quality checks passed</span>
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-green-800 border border-green-200/80 shrink-0">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="text-[10px] font-bold uppercase tracking-tight">Data quality checks passed</span>
 </div>
 </header>
-<!-- Methodology Ribbon -->
-<div class="bg-white px-8 py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4">
-<div class="flex items-center gap-3">
-<span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mr-2">Framework:</span>
-<div class="flex gap-2">
-<span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold text-slate-600">UPS</span>
-<span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold text-slate-600">Age 15+</span>
-<span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold text-slate-600">Annual pooled</span>
-<span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold text-slate-600">Weighted (MLTS/400)</span>
+<div class="border-b border-slate-200 bg-white px-4 sm:px-6 lg:px-8 py-2.5 flex flex-wrap items-center gap-2 text-[10px]">
+<span class="font-black uppercase tracking-widest text-slate-400">Methodology:</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded font-bold text-slate-600">UPS</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded font-bold text-slate-600">Age 15+</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded font-bold text-slate-600">Annual pooled</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded font-bold text-slate-600">Weighted (MLTS/400)</span>
+<span class="ml-auto font-mono text-slate-400 truncate max-w-[min(100%,28rem)]">Source: <span data-bind="meta-source-parquet">data/processed/plfs_processed_data.parquet</span></span>
 </div>
-</div>
-<div class="text-[10px] font-medium text-slate-400 font-mono">
-            Source: <span class="text-slate-500">data/processed/plfs_processed_data.parquet</span>
-</div>
-</div>
-<div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+<div class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 space-y-8 pt-20">
 <!-- Breadcrumbs & Header -->
 <div class="flex flex-col gap-2">
 <nav class="flex text-xs font-medium text-slate-500 uppercase tracking-widest gap-2">
-<a class="hover:text-primary" href="#">Home</a>
+<a class="hover:text-primary" href="index.html">Home</a>
 <span class="material-symbols-outlined text-[10px] self-center">chevron_right</span>
 <span class="text-[#0061a5]">Rural vs Urban Comparison</span>
 </nav>
@@ -263,6 +253,7 @@
 <div aria-label="Labor Trend Line Chart" class="relative z-0 h-80 w-full min-h-[16rem] chart-grid border-l border-b border-slate-200">
 <canvas id="ru-trend-chart" class="block h-full w-full max-h-full p-2"></canvas>
 </div>
+<p class="text-[10px] text-slate-500 px-1 leading-snug" id="ru-trend-note"></p>
 <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 pt-4 border-t border-slate-100" id="ru-year-cells"></div>
 </section>
 <!-- Distribution Section -->
@@ -272,35 +263,36 @@
 <span class="material-symbols-outlined text-secondary">pie_chart</span>
                             Sectoral Composition by Sex
                         </h4>
+<p class="text-[9px] text-slate-400 mb-3 leading-snug" id="ru-sector-composition-note"></p>
 <div class="space-y-4">
 <div class="space-y-1">
 <div class="flex justify-between text-[10px] font-bold text-slate-500">
-<span>Agriculture</span>
-<span>{{rural_agri_sex_dist}}</span>
+<span id="ru-sector-title-0">Agriculture</span>
+<span id="ru-sector-cap-0">—</span>
 </div>
 <div class="w-full h-4 bg-slate-100 flex rounded overflow-hidden">
-<div class="h-full bg-primary" style="width: 40%"></div>
-<div class="h-full bg-secondary" style="width: 60%"></div>
+<div id="ru-sector-bar-m-0" class="h-full bg-primary" style="width:50%"></div>
+<div id="ru-sector-bar-f-0" class="h-full bg-secondary" style="width:50%"></div>
 </div>
 </div>
 <div class="space-y-1">
 <div class="flex justify-between text-[10px] font-bold text-slate-500">
-<span>Manufacturing</span>
-<span>{{urban_mfg_sex_dist}}</span>
+<span id="ru-sector-title-1">Manufacturing</span>
+<span id="ru-sector-cap-1">—</span>
 </div>
 <div class="w-full h-4 bg-slate-100 flex rounded overflow-hidden">
-<div class="h-full bg-primary" style="width: 70%"></div>
-<div class="h-full bg-secondary" style="width: 30%"></div>
+<div id="ru-sector-bar-m-1" class="h-full bg-primary" style="width:50%"></div>
+<div id="ru-sector-bar-f-1" class="h-full bg-secondary" style="width:50%"></div>
 </div>
 </div>
 <div class="space-y-1">
 <div class="flex justify-between text-[10px] font-bold text-slate-500">
-<span>Services</span>
-<span>{{urban_svc_sex_dist}}</span>
+<span id="ru-sector-title-2">Services</span>
+<span id="ru-sector-cap-2">—</span>
 </div>
 <div class="w-full h-4 bg-slate-100 flex rounded overflow-hidden">
-<div class="h-full bg-primary" style="width: 55%"></div>
-<div class="h-full bg-secondary" style="width: 45%"></div>
+<div id="ru-sector-bar-m-2" class="h-full bg-primary" style="width:50%"></div>
+<div id="ru-sector-bar-f-2" class="h-full bg-secondary" style="width:50%"></div>
 </div>
 </div>
 </div>
@@ -314,23 +306,23 @@
 <div class="flex items-center gap-4">
 <div class="w-24 text-[10px] font-bold text-slate-400 uppercase">Self-Employed</div>
 <div class="flex-1 h-3 bg-surface-container-low rounded-full overflow-hidden">
-<div class="h-full bg-primary" style="width: 58%"></div>
+<div id="ru-emp-bar-self" class="h-full bg-primary" style="width:0%"></div>
 </div>
-<div class="w-12 text-[10px] font-black text-primary text-right">{{self_emp_pct}}</div>
+<div class="w-12 text-[10px] font-black text-primary text-right" id="ru-emp-pct-self">—</div>
 </div>
 <div class="flex items-center gap-4">
 <div class="w-24 text-[10px] font-bold text-slate-400 uppercase">Regular Wage</div>
 <div class="flex-1 h-3 bg-surface-container-low rounded-full overflow-hidden">
-<div class="h-full bg-secondary" style="width: 21%"></div>
+<div id="ru-emp-bar-wage" class="h-full bg-secondary" style="width:0%"></div>
 </div>
-<div class="w-12 text-[10px] font-black text-primary text-right">{{wage_emp_pct}}</div>
+<div class="w-12 text-[10px] font-black text-primary text-right" id="ru-emp-pct-wage">—</div>
 </div>
 <div class="flex items-center gap-4">
 <div class="w-24 text-[10px] font-bold text-slate-400 uppercase">Casual Labor</div>
 <div class="flex-1 h-3 bg-surface-container-low rounded-full overflow-hidden">
-<div class="h-full bg-tertiary-container" style="width: 21%"></div>
+<div id="ru-emp-bar-casual" class="h-full bg-tertiary-container" style="width:0%"></div>
 </div>
-<div class="w-12 text-[10px] font-black text-primary text-right">{{casual_emp_pct}}</div>
+<div class="w-12 text-[10px] font-black text-primary text-right" id="ru-emp-pct-casual">—</div>
 </div>
 </div>
 </section>

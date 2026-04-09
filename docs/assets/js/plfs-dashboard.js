@@ -3,6 +3,8 @@
  */
 (function () {
   let ruChart = null;
+  let ruChartIsDual = false;
+  let overviewChart = null;
 
   const scriptSrc =
     document.currentScript?.src ||
@@ -36,6 +38,73 @@
     return `${m[2].slice(2)}-${m[3].slice(2)}`;
   }
 
+  function initMobileNav() {
+    const toggle = document.getElementById("plfs-nav-toggle");
+    const sidebar = document.getElementById("plfs-sidebar");
+    const backdrop = document.getElementById("plfs-nav-backdrop");
+    if (!toggle || !sidebar) return;
+    const close = () => {
+      sidebar.classList.remove("plfs-sidebar-open");
+      backdrop?.classList.remove("plfs-backdrop-visible");
+      toggle.setAttribute("aria-expanded", "false");
+    };
+    const open = () => {
+      sidebar.classList.add("plfs-sidebar-open");
+      backdrop?.classList.add("plfs-backdrop-visible");
+      toggle.setAttribute("aria-expanded", "true");
+    };
+    toggle.addEventListener("click", () => {
+      if (sidebar.classList.contains("plfs-sidebar-open")) close();
+      else open();
+    });
+    backdrop?.addEventListener("click", close);
+    try {
+      window.matchMedia("(min-width: 1024px)").addEventListener("change", close);
+    } catch (_) {
+      /* ignore */
+    }
+  }
+
+  function drawSparklines(rows) {
+    if (typeof Chart === "undefined" || !rows.length) return;
+    const spec = [
+      { id: "spark-ur", key: "unemployment_rate", color: "#ba1a1a" },
+      { id: "spark-lfpr", key: "lfpr", color: "#0061a5" },
+      { id: "spark-wpr", key: "wpr", color: "#319795" },
+    ];
+    spec.forEach(({ id, key, color }) => {
+      const c = document.getElementById(id);
+      if (!c) return;
+      const values = rows.map((r) => r[key]).filter((v) => v != null && !Number.isNaN(Number(v)));
+      if (!values.length) return;
+      const stale = Chart.getChart ? Chart.getChart(c) : null;
+      if (stale) stale.destroy();
+      new Chart(c.getContext("2d"), {
+        type: "line",
+        data: {
+          labels: values.map((_, i) => i),
+          datasets: [
+            {
+              data: values,
+              borderColor: color,
+              borderWidth: 1.5,
+              fill: false,
+              tension: 0.25,
+              pointRadius: 0,
+            },
+          ],
+        },
+        options: {
+          responsive: false,
+          maintainAspectRatio: false,
+          animation: false,
+          plugins: { legend: { display: false }, tooltip: { enabled: false } },
+          scales: { x: { display: false }, y: { display: false } },
+        },
+      });
+    });
+  }
+
   async function load() {
     let data;
     try {
@@ -64,6 +133,24 @@
     document.querySelectorAll("[data-bind='meta-rounds-count']").forEach((el) => {
       el.textContent = meta.total_rounds != null ? String(meta.total_rounds) : "—";
     });
+    document.querySelectorAll("[data-bind='meta-source-parquet']").forEach((el) => {
+      el.textContent = meta.source_parquet || meta.data_source || "—";
+    });
+
+    const chipRoot = document.getElementById("plfs-methodology-chips");
+    if (chipRoot && Array.isArray(meta.methodology_chips) && meta.methodology_chips.length) {
+      const label = chipRoot.firstElementChild;
+      chipRoot.replaceChildren(label);
+      meta.methodology_chips.forEach((text) => {
+        const s = document.createElement("span");
+        s.className =
+          "bg-surface-container-high text-on-surface text-[10px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap uppercase tracking-wider";
+        s.textContent = text;
+        chipRoot.appendChild(s);
+      });
+    }
+
+    initMobileNav();
 
     const nat = data.national_indicators_latest_round || {};
     const ur = document.getElementById("kpi-ur");
@@ -87,63 +174,131 @@
     const chartEl = document.getElementById("plfs-trend-chart");
     if (chartEl && typeof Chart !== "undefined") {
       const labels = rows.map((r) => labelRound(r.round));
-      new Chart(chartEl, {
-        type: "line",
-        data: {
-          labels,
-          datasets: [
-            {
-              label: "UR",
-              data: rows.map((r) => r.unemployment_rate),
-              borderColor: "#ba1a1a",
-              backgroundColor: "rgba(186,26,26,0.08)",
-              tension: 0.25,
-              fill: true,
+      const national = {
+        ur: rows.map((r) => r.unemployment_rate),
+        lfpr: rows.map((r) => r.lfpr),
+        wpr: rows.map((r) => r.wpr),
+      };
+
+      function indexedSeries(arr) {
+        const base = arr.find((v) => v != null && !Number.isNaN(Number(v)) && Number(v) !== 0);
+        if (base == null) return arr.map(() => null);
+        const b = Number(base);
+        return arr.map((v) =>
+          v == null || Number.isNaN(Number(v)) ? null : (Number(v) / b) * 100
+        );
+      }
+
+      function datasetsForScale(scale) {
+        let urD = national.ur;
+        let lfD = national.lfpr;
+        let wpD = national.wpr;
+        if (scale === "indexed") {
+          urD = indexedSeries(national.ur);
+          lfD = indexedSeries(national.lfpr);
+          wpD = indexedSeries(national.wpr);
+        }
+        const suf = scale === "indexed" ? " (index)" : "";
+        return [
+          {
+            label: `UR${suf}`,
+            data: urD,
+            borderColor: "#ba1a1a",
+            backgroundColor: "rgba(186,26,26,0.08)",
+            tension: 0.25,
+            fill: true,
+          },
+          {
+            label: `LFPR${suf}`,
+            data: lfD,
+            borderColor: "#0061a5",
+            backgroundColor: "rgba(0,97,165,0.06)",
+            tension: 0.25,
+            fill: true,
+          },
+          {
+            label: `WPR${suf}`,
+            data: wpD,
+            borderColor: "#319795",
+            backgroundColor: "rgba(49,151,149,0.06)",
+            tension: 0.25,
+            fill: true,
+          },
+        ];
+      }
+
+      function yAxisForScale(scale) {
+        if (scale === "indexed") {
+          return { ticks: { callback: (v) => Number(v).toFixed(0) } };
+        }
+        return { min: 0, max: 100, ticks: { callback: (v) => `${v}%` } };
+      }
+
+      function tooltipCb(scale) {
+        return (ctx) => {
+          const y = ctx.parsed.y;
+          if (y == null || Number.isNaN(y)) return `${ctx.dataset.label}: —`;
+          if (scale === "indexed") return `${ctx.dataset.label}: ${y.toFixed(1)}`;
+          return `${ctx.dataset.label}: ${y.toFixed(2)}%`;
+        };
+      }
+
+      function rebuildOverviewChart(scale) {
+        const ds = datasetsForScale(scale);
+        const yAxis = yAxisForScale(scale);
+        if (overviewChart) {
+          overviewChart.data.datasets = ds;
+          overviewChart.options.scales.y = yAxis;
+          overviewChart.options.plugins.tooltip.callbacks.label = tooltipCb(scale);
+          overviewChart.update();
+          return;
+        }
+        const stale = Chart.getChart ? Chart.getChart(chartEl) : null;
+        if (stale) stale.destroy();
+        overviewChart = new Chart(chartEl, {
+          type: "line",
+          data: { labels, datasets: ds },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: "index", intersect: false },
+            plugins: {
+              legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 10 } } },
+              tooltip: { callbacks: { label: tooltipCb(scale) } },
             },
-            {
-              label: "LFPR",
-              data: rows.map((r) => r.lfpr),
-              borderColor: "#0061a5",
-              backgroundColor: "rgba(0,97,165,0.06)",
-              tension: 0.25,
-              fill: true,
-            },
-            {
-              label: "WPR",
-              data: rows.map((r) => r.wpr),
-              borderColor: "#319795",
-              backgroundColor: "rgba(49,151,149,0.06)",
-              tension: 0.25,
-              fill: true,
-            },
-          ],
-        },
-        options: {
-          responsive: true,
-          maintainAspectRatio: false,
-          interaction: { mode: "index", intersect: false },
-          plugins: {
-            legend: { position: "bottom", labels: { boxWidth: 12, font: { size: 10 } } },
-            tooltip: {
-              callbacks: {
-                label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toFixed(2)}%`,
-              },
+            scales: {
+              y: yAxisForScale(scale),
+              x: { ticks: { maxRotation: 45, minRotation: 45, font: { size: 9 } } },
             },
           },
-          scales: {
-            y: {
-              min: 0,
-              max: 100,
-              ticks: { callback: (v) => `${v}%` },
-            },
-            x: { ticks: { maxRotation: 45, minRotation: 45, font: { size: 9 } } },
-          },
-        },
-      });
+        });
+      }
+
+      rebuildOverviewChart("absolute");
+
+      const toolbar = document.getElementById("plfs-chart-scale-toolbar");
+      if (toolbar) {
+        toolbar.querySelectorAll(".plfs-scale-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const sc = btn.getAttribute("data-scale") || "absolute";
+            rebuildOverviewChart(sc);
+            toolbar.querySelectorAll(".plfs-scale-btn").forEach((b) => {
+              const on = b.getAttribute("data-scale") === sc;
+              b.classList.toggle("bg-white", on);
+              b.classList.toggle("shadow-sm", on);
+              b.classList.toggle("text-primary", on);
+              b.classList.toggle("text-slate-600", !on);
+            });
+          });
+        });
+      }
     }
+
+    drawSparklines(rows);
 
     fillCoverageTable(rows, meta);
     updateInsights(rows, nat);
+    bindTrendStatistics(data.trend_statistics);
 
     bindDemographics(data.demographics_latest_round);
     bindAgeGroups(data.age_groups_latest_round);
@@ -252,12 +407,84 @@
       const tr = document.createElement("tr");
       tr.className = "hover:bg-surface-container-highest transition-colors";
       tr.innerHTML = `
-        <td class="px-2 sm:px-4 py-3 text-xs sm:text-sm font-bold tabular-nums align-top">${labelRound(r.round)}</td>
-        <td class="px-2 sm:px-4 py-3 text-xs sm:text-sm font-medium tabular-nums break-words">${fmtNum(hh)}</td>
-        <td class="px-2 sm:px-4 py-3 text-xs sm:text-sm font-medium tabular-nums break-words">${fmtNum(pr)}</td>
-        <td class="px-2 sm:px-4 py-3 text-xs sm:text-sm text-secondary font-bold tabular-nums">${avg}</td>`;
+        <td class="whitespace-nowrap px-4 py-3 text-sm font-bold tabular-nums">${labelRound(r.round)}</td>
+        <td class="whitespace-nowrap px-4 py-3 text-sm font-medium tabular-nums text-right">${fmtNum(hh)}</td>
+        <td class="whitespace-nowrap px-4 py-3 text-sm font-medium tabular-nums text-right">${fmtNum(pr)}</td>
+        <td class="whitespace-nowrap px-4 py-3 text-sm text-secondary font-bold tabular-nums text-right">${avg}</td>`;
       tb.appendChild(tr);
     });
+  }
+
+  function bindTrendStatistics(ts) {
+    const card = document.getElementById("plfs-trend-stats-card");
+    if (!card) return;
+    if (!ts || typeof ts !== "object") {
+      card.hidden = true;
+      return;
+    }
+    const caveatEl = document.getElementById("plfs-trend-stats-caveat");
+    if (ts.error) {
+      if (caveatEl) caveatEl.textContent = String(ts.error);
+      card.hidden = false;
+      return;
+    }
+    if (!ts.metrics || !ts.pearson_across_rounds) {
+      card.hidden = true;
+      return;
+    }
+    if (caveatEl) caveatEl.textContent = ts.caveat || "";
+
+    const pairLabels = {
+      unemployment_rate__lfpr: "UR · LFPR",
+      unemployment_rate__wpr: "UR · WPR",
+      lfpr__wpr: "LFPR · WPR",
+    };
+
+    const slopeTb = document.querySelector("#plfs-trend-stats-slopes tbody");
+    if (slopeTb) {
+      slopeTb.innerHTML = "";
+      ["unemployment_rate", "lfpr", "wpr"].forEach((k) => {
+        const m = ts.metrics[k];
+        if (!m) return;
+        const tr = document.createElement("tr");
+        tr.className = "hover:bg-surface-container-highest transition-colors";
+        const slope = Number(m.slope_pp_per_year);
+        const sStr = Number.isNaN(slope) ? "—" : `${slope >= 0 ? "+" : ""}${slope.toFixed(2)}`;
+        const r2 = Number(m.r_squared);
+        const rStr = Number.isNaN(r2) ? "—" : r2.toFixed(3);
+        const td1 = document.createElement("td");
+        td1.className = "px-4 py-2 font-medium";
+        td1.textContent = m.label || k;
+        const td2 = document.createElement("td");
+        td2.className = "px-4 py-2 text-right font-mono tabular-nums text-sm";
+        td2.textContent = `${sStr} pp/yr`;
+        const td3 = document.createElement("td");
+        td3.className = "px-4 py-2 text-right font-mono tabular-nums text-sm";
+        td3.textContent = rStr;
+        tr.append(td1, td2, td3);
+        slopeTb.appendChild(tr);
+      });
+    }
+
+    const corrTb = document.querySelector("#plfs-trend-stats-corr tbody");
+    if (corrTb) {
+      corrTb.innerHTML = "";
+      Object.keys(ts.pearson_across_rounds).forEach((k) => {
+        const v = ts.pearson_across_rounds[k];
+        const tr = document.createElement("tr");
+        tr.className = "hover:bg-surface-container-highest transition-colors";
+        const td1 = document.createElement("td");
+        td1.className = "px-4 py-2 text-sm";
+        td1.textContent = pairLabels[k] || k.replace(/__/g, " · ");
+        const td2 = document.createElement("td");
+        td2.className = "px-4 py-2 text-right font-mono tabular-nums text-sm font-semibold";
+        td2.textContent = v == null ? "—" : Number(v).toFixed(4);
+        tr.append(td1, td2);
+        corrTb.appendChild(tr);
+      });
+    }
+
+    card.hidden = false;
   }
 
   function updateInsights(rows, nat) {
@@ -328,9 +555,52 @@
 
   function bindRuralUrban(data) {
     const canvas = document.getElementById("ru-trend-chart");
+    const meta = data.metadata || {};
     const nat = data.national_indicators_latest_round || {};
     const allRows = sortTrend(data.multiyear_trend || []);
     const demo = data.demographics_latest_round;
+    const ruPage = data.rural_urban_page || {};
+    const bySectorTrend = data.multiyear_trend_by_sector;
+    const factors = meta.sector_scale_factors;
+
+    const noteElPre = document.getElementById("ru-sector-composition-note");
+    if (noteElPre && ruPage.sector_composition_note != null) {
+      noteElPre.textContent = ruPage.sector_composition_note;
+    }
+
+    const sectorRows = ruPage.sector_rows;
+    if (Array.isArray(sectorRows)) {
+      sectorRows.forEach((row, i) => {
+        if (i > 2) return;
+        setText(`ru-sector-title-${i}`, row.title || "—");
+        setText(`ru-sector-cap-${i}`, row.context != null ? String(row.context) : "—");
+        const mp = Number(row.male_pct);
+        const fp = Number(row.female_pct);
+        if (!Number.isNaN(mp) && !Number.isNaN(fp)) {
+          setBarWidth(`ru-sector-bar-m-${i}`, mp);
+          setBarWidth(`ru-sector-bar-f-${i}`, fp);
+        }
+      });
+    }
+
+    const et = ruPage.employment_type_pct;
+    if (et && typeof et === "object") {
+      const self = Number(et.self_employed);
+      const wage = Number(et.regular_wage);
+      const cas = Number(et.casual_labor);
+      if (!Number.isNaN(self)) {
+        setBarWidth("ru-emp-bar-self", self);
+        setText("ru-emp-pct-self", `${self.toFixed(1)}%`);
+      }
+      if (!Number.isNaN(wage)) {
+        setBarWidth("ru-emp-bar-wage", wage);
+        setText("ru-emp-pct-wage", `${wage.toFixed(1)}%`);
+      }
+      if (!Number.isNaN(cas)) {
+        setBarWidth("ru-emp-bar-casual", cas);
+        setText("ru-emp-pct-casual", `${cas.toFixed(1)}%`);
+      }
+    }
 
     if (demo?.by_sector) {
       const r = demo.by_sector.rural || {};
@@ -346,14 +616,24 @@
       const lfGap = Number(u.lfpr) - Number(r.lfpr);
       setText("ru-gap-lfpr", `${lfGap >= 0 ? "+" : ""}${lfGap.toFixed(2)} pp`);
     }
+
+    if (ruPage.executive_lfpr_gap_pp != null && String(ruPage.executive_lfpr_gap_pp).trim() !== "") {
+      const raw = String(ruPage.executive_lfpr_gap_pp).replace(/pp/gi, "").trim();
+      const g = Number(raw);
+      if (!Number.isNaN(g)) {
+        setText("ru-gap-lfpr", `${g >= 0 ? "+" : ""}${g.toFixed(2)} pp`);
+      } else {
+        setText("ru-gap-lfpr", String(ruPage.executive_lfpr_gap_pp));
+      }
+    }
+
     if (nat.unemployment_rate != null) {
-      const el = document.getElementById("ru-runtime-ur");
-      if (el) el.textContent = fmtPct(nat.unemployment_rate);
+      setText("ru-runtime-ur", fmtPct(nat.unemployment_rate));
     }
 
     if (!canvas || typeof Chart === "undefined") return;
 
-    function fieldForMetric(m) {
+    function fieldKey(m) {
       if (m === "ur") return "unemployment_rate";
       if (m === "lfpr") return "lfpr";
       return "wpr";
@@ -372,7 +652,67 @@
       return rows;
     }
 
+    function rowMap(list) {
+      const m = new Map();
+      (list || []).forEach((r) => m.set(r.round, r));
+      return m;
+    }
+
+    function dualSeriesFromPipeline(rows, key) {
+      const rural = bySectorTrend?.rural;
+      const urban = bySectorTrend?.urban;
+      if (!rural?.length || !urban?.length) return null;
+      const mr = rowMap(rural);
+      const mu = rowMap(urban);
+      const ruralData = [];
+      const urbanData = [];
+      for (const nr of rows) {
+        const rr = mr.get(nr.round);
+        const uu = mu.get(nr.round);
+        const rv = rr?.[key];
+        const uv = uu?.[key];
+        ruralData.push(rv == null || Number.isNaN(Number(rv)) ? null : Number(rv));
+        urbanData.push(uv == null || Number.isNaN(Number(uv)) ? null : Number(uv));
+      }
+      if (ruralData.every((v) => v == null) && urbanData.every((v) => v == null)) return null;
+      return { ruralData, urbanData, fromPipeline: true };
+    }
+
+    function dualSeriesScaled(rows, key) {
+      if (!factors?.rural || !factors?.urban) return null;
+      const fr = factors.rural[key];
+      const fu = factors.urban[key];
+      if (fr == null || fu == null) return null;
+      const ruralData = rows.map((r) => {
+        const v = r[key];
+        return v == null || Number.isNaN(Number(v)) ? null : Number(v) * Number(fr);
+      });
+      const urbanData = rows.map((r) => {
+        const v = r[key];
+        return v == null || Number.isNaN(Number(v)) ? null : Number(v) * Number(fu);
+      });
+      return { ruralData, urbanData, fromPipeline: false };
+    }
+
     let metric = "ur";
+    const params = new URLSearchParams(window.location.search);
+    const pm = params.get("metric");
+    if (pm === "ur" || pm === "lfpr" || pm === "wpr") metric = pm;
+    const py = params.get("years");
+    const yrSel = document.getElementById("year-range");
+    if (yrSel && py && (py === "all" || py === "3" || py === "5")) yrSel.value = py;
+
+    function syncRuralUrl() {
+      const y = document.getElementById("year-range")?.value || "all";
+      try {
+        const u = new URL(window.location.href);
+        u.searchParams.set("metric", metric);
+        u.searchParams.set("years", y);
+        history.replaceState(null, "", `${u.pathname}${u.search}`);
+      } catch (_) {
+        /* ignore */
+      }
+    }
 
     function styleMetricButtons() {
       document.querySelectorAll(".ru-metric-btn").forEach((b) => {
@@ -407,70 +747,140 @@
       note.hidden = !nonDefault;
     }
 
-    const chartOptions = {
-      responsive: true,
-      maintainAspectRatio: false,
-      interaction: { mode: "index", intersect: false },
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: (ctx) => `${ctx.dataset.label}: ${Number(ctx.parsed.y).toFixed(2)}%`,
-          },
-        },
-      },
-      scales: {
-        y: {
-          min: 0,
-          max: 100,
-          ticks: { callback: (v) => `${v}%` },
-        },
-        x: { ticks: { maxRotation: 45, minRotation: 0, font: { size: 9 } } },
-      },
-    };
-
-    function bgForMetric(m) {
-      if (m === "ur") return "rgba(186,26,26,0.08)";
-      if (m === "lfpr") return "rgba(0,97,165,0.06)";
+    function bgForMetricTone(color) {
+      if (color === "#ba1a1a") return "rgba(186,26,26,0.08)";
+      if (color === "#0061a5") return "rgba(0,97,165,0.06)";
       return "rgba(49,151,149,0.06)";
     }
 
     function apply() {
       const yearMode = document.getElementById("year-range")?.value || "all";
       const rows = sliceRows(yearMode);
-      const key = fieldForMetric(metric);
+      const key = fieldKey(metric);
       const color = colorForMetric(metric);
       const labels = rows.map((r) => labelRound(r.round));
-      const values = rows.map((r) => {
-        const v = r[key];
-        return v == null || Number.isNaN(Number(v)) ? 0 : Number(v);
-      });
 
-      const ds = {
-        label: metric.toUpperCase(),
-        data: values,
-        borderColor: color,
-        backgroundColor: bgForMetric(metric),
-        tension: 0.25,
-        fill: true,
+      const fromPipe = dualSeriesFromPipeline(rows, key);
+      const scaled = !fromPipe ? dualSeriesScaled(rows, key) : null;
+      const dual = fromPipe || scaled;
+      const isDual = dual != null;
+
+      const noteEl = document.getElementById("ru-trend-note");
+      if (noteEl) {
+        if (isDual && fromPipe) {
+          noteEl.textContent =
+            "Rural and urban series from multiyear_trend_by_sector in dashboard_data.json (per round).";
+        } else if (isDual) {
+          noteEl.textContent = meta.sector_scale_note || "";
+        } else {
+          noteEl.textContent =
+            "National pooled series only—rural/urban multi-year paths appear when sector split is published (see JSON schema).";
+        }
+      }
+
+      if (ruChart && ruChartIsDual !== isDual) {
+        ruChart.destroy();
+        ruChart = null;
+      }
+      ruChartIsDual = isDual;
+
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: {
+            display: isDual,
+            position: "bottom",
+            labels: { boxWidth: 12, font: { size: 10 } },
+          },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const y = ctx.parsed.y;
+                const lab = ctx.dataset.label || "";
+                if (y == null || Number.isNaN(y)) return `${lab}: —`;
+                return `${lab}: ${Number(y).toFixed(2)}%`;
+              },
+            },
+          },
+        },
+        scales: {
+          y: {
+            min: 0,
+            max: 100,
+            ticks: { callback: (v) => `${v}%` },
+          },
+          x: { ticks: { maxRotation: 45, minRotation: 0, font: { size: 9 } } },
+        },
       };
 
-      if (ruChart) {
-        ruChart.data.labels = labels;
-        const d0 = ruChart.data.datasets[0];
-        d0.label = ds.label;
-        d0.data = ds.data;
-        d0.borderColor = ds.borderColor;
-        d0.backgroundColor = ds.backgroundColor;
-        ruChart.update();
+      if (isDual) {
+        const ruralColor = "#2d6a4f";
+        const urbanColor = color;
+        const rLab = fromPipe ? "Rural" : "Rural (est.)";
+        const uLab = fromPipe ? "Urban" : "Urban (est.)";
+        const datasets = [
+          {
+            label: rLab,
+            data: dual.ruralData,
+            borderColor: ruralColor,
+            backgroundColor: "rgba(45,106,79,0.08)",
+            tension: 0.25,
+            fill: true,
+          },
+          {
+            label: uLab,
+            data: dual.urbanData,
+            borderColor: urbanColor,
+            backgroundColor: bgForMetricTone(urbanColor),
+            tension: 0.25,
+            fill: true,
+          },
+        ];
+        const stale = Chart.getChart ? Chart.getChart(canvas) : null;
+        if (stale && !ruChart) stale.destroy();
+        if (ruChart) {
+          ruChart.data.labels = labels;
+          ruChart.data.datasets = datasets;
+          ruChart.options.plugins.legend.display = true;
+          ruChart.update();
+        } else {
+          if (stale) stale.destroy();
+          ruChart = new Chart(canvas, {
+            type: "line",
+            data: { labels, datasets },
+            options: chartOptions,
+          });
+        }
       } else {
-        const stale = typeof Chart !== "undefined" && Chart.getChart ? Chart.getChart(canvas) : null;
-        if (stale) stale.destroy();
-        ruChart = new Chart(canvas, {
-          type: "line",
-          data: { labels, datasets: [ds] },
-          options: chartOptions,
+        const values = rows.map((r) => {
+          const v = r[key];
+          return v == null || Number.isNaN(Number(v)) ? 0 : Number(v);
         });
+        const ds = {
+          label: metric.toUpperCase(),
+          data: values,
+          borderColor: color,
+          backgroundColor: bgForMetricTone(color),
+          tension: 0.25,
+          fill: true,
+        };
+        const stale = Chart.getChart ? Chart.getChart(canvas) : null;
+        if (stale && !ruChart) stale.destroy();
+        if (ruChart) {
+          ruChart.data.labels = labels;
+          ruChart.data.datasets = [ds];
+          ruChart.options.plugins.legend.display = false;
+          ruChart.update();
+        } else {
+          if (stale) stale.destroy();
+          ruChart = new Chart(canvas, {
+            type: "line",
+            data: { labels, datasets: [ds] },
+            options: chartOptions,
+          });
+        }
       }
 
       const legend = document.getElementById("ru-year-cells");
@@ -482,14 +892,29 @@
             : rows.length <= 5
               ? "grid-cols-5"
               : "grid-cols-2 sm:grid-cols-4 lg:grid-cols-7");
-        legend.innerHTML = rows
-          .map((r) => {
-            const y = labelRound(r.round);
-            const v = r[key];
-            return `<div class="text-center"><p class="text-[10px] text-slate-400 font-bold uppercase">${y}</p><p class="text-sm font-black text-primary">${Number(v).toFixed(2)}%</p></div>`;
-          })
-          .join("");
+        if (isDual) {
+          legend.innerHTML = rows
+            .map((r, i) => {
+              const y = labelRound(r.round);
+              const rv = dual.ruralData[i];
+              const uv = dual.urbanData[i];
+              const rs = rv == null ? "—" : `${Number(rv).toFixed(2)}%`;
+              const us = uv == null ? "—" : `${Number(uv).toFixed(2)}%`;
+              return `<div class="text-center"><p class="text-[10px] text-slate-400 font-bold uppercase">${y}</p><p class="text-[10px] font-bold text-[#2d6a4f]">${rs}</p><p class="text-[10px] font-bold text-primary">${us}</p></div>`;
+            })
+            .join("");
+        } else {
+          legend.innerHTML = rows
+            .map((r) => {
+              const y = labelRound(r.round);
+              const v = r[key];
+              return `<div class="text-center"><p class="text-[10px] text-slate-400 font-bold uppercase">${y}</p><p class="text-sm font-black text-primary">${Number(v).toFixed(2)}%</p></div>`;
+            })
+            .join("");
+        }
       }
+
+      syncRuralUrl();
     }
 
     const metricGroup = document.getElementById("ru-metric-toggles");
@@ -521,6 +946,9 @@
           updateScopeNote(sexSel);
         });
     });
+
+    const yr = document.getElementById("year-range");
+    if (yr) yr.addEventListener("change", () => apply());
 
     const form = document.getElementById("ru-filter-form");
     if (form) {

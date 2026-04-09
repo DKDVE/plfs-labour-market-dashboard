@@ -1,0 +1,55 @@
+/* PLFS dashboard — print, mobile nav, chart toolbar helpers */
+
+/* --- Mobile sidebar (paired with plfs-dashboard.js) --- */
+.plfs-sidebar {
+  transition: transform 0.2s ease;
+}
+@media (max-width: 1023px) {
+  .plfs-sidebar:not(.plfs-sidebar-open) {
+    transform: translateX(-100%);
+  }
+  .plfs-sidebar.plfs-sidebar-open {
+    transform: translateX(0);
+  }
+  .plfs-nav-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 35;
+    background: rgba(0, 32, 69, 0.35);
+  }
+  .plfs-nav-backdrop.plfs-backdrop-visible {
+    display: block;
+  }
+  .plfs-main {
+    margin-left: 0 !important;
+  }
+}
+
+/* --- Print (board report + dashboard) --- */
+@media print {
+  .plfs-sidebar,
+  .plfs-nav-toggle,
+  .plfs-nav-backdrop,
+  #plfs-chart-scale-toolbar,
+  .no-print {
+    display: none !important;
+  }
+  .plfs-main {
+    margin-left: 0 !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+  .rounded-xl,
+  .rounded-lg,
+  .rounded-md {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}

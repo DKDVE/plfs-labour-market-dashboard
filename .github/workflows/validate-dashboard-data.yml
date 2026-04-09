@@ -1,0 +1,23 @@
+# Fails fast if dashboard JSON is malformed before Pages deploy.
+name: Validate dashboard JSON
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/data/dashboard_data.json"
+      - "scripts/validate_dashboard_json.py"
+      - ".github/workflows/validate-dashboard-data.yml"
+  pull_request:
+    paths:
+      - "docs/data/dashboard_data.json"
+      - "scripts/validate_dashboard_json.py"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate structure
+        run: python3 scripts/validate_dashboard_json.py

@@ -6,19 +6,36 @@ ROOT = Path(__file__).parent
 
 CHART_UMD_SCRIPT = '<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js" crossorigin="anonymous"></script>\n'
 
+
+def inject_dashboard_extras_css(html: str) -> str:
+    """Ensure mobile nav + print helpers load on every generated page."""
+    if "dashboard-extras.css" in html:
+        return html
+    link = '<link rel="stylesheet" href="assets/css/dashboard-extras.css"/>\n'
+    if "</head>" in html:
+        return html.replace("</head>", link + "</head>", 1)
+    return html
+
+
+# Closes lg:col-span-2 after chart so Key Insights stays in the third grid column (not nested / squeezed).
 CHART_REPLACEMENT = """<!-- Live Chart.js (data from data/dashboard_data.json) -->
 <div class="relative h-64 w-full">
 <canvas id="plfs-trend-chart" aria-label="UR, LFPR, and WPR over time"></canvas>
+</div>
+<div class="flex flex-wrap gap-2 justify-end mt-3 no-print" id="plfs-chart-scale-toolbar" role="group" aria-label="Chart scale">
+<button type="button" class="plfs-scale-btn text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 bg-white text-primary shadow-sm" data-scale="absolute">% levels</button>
+<button type="button" class="plfs-scale-btn text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 text-slate-600" data-scale="indexed">Indexed (first round = 100)</button>
+</div>
 </div>"""
 
 
 def patch_overview(html: str) -> str:
     # Sidebar + top nav + chrome are already wired in stitch_overview.html
 
-    # Ribbon meta
+    # Ribbon meta (keep Source bound to JSON)
     html = html.replace(
         '<p class="text-[10px] text-on-surface-variant font-mono opacity-70">Source: data/processed/plfs_processed_data.parquet</p>',
-        '<p class="text-[10px] text-on-surface-variant font-mono opacity-70">Latest round: <span data-bind="meta-round">—</span> · Generated: <span data-bind="meta-generated">—</span> · Rounds: <span data-bind="meta-rounds-count">—</span></p>',
+        '<p class="text-[10px] text-on-surface-variant font-mono opacity-70">Latest round: <span data-bind="meta-round">—</span> · Generated: <span data-bind="meta-generated">—</span> · Rounds: <span data-bind="meta-rounds-count">—</span></p>\n<p class="text-[10px] text-on-surface-variant font-mono opacity-70 truncate max-w-[min(100%,28rem)]">Source: <span data-bind="meta-source-parquet">—</span></p>',
     )
 
     # Last computed
@@ -103,10 +120,10 @@ def patch_overview(html: str) -> str:
         '<strong class="text-white block mb-1">Worker Ratio Alignment</strong>\n                                <span id="insight-wpr" class="block mt-1">Worker Population Ratio (WPR) has tracked closely with LFPR, increasing from 43.40% to 51.93%.</span>',
     )
 
-    # Coverage table
+    # Coverage table (auto layout; no table-fixed — avoids cramped columns / mid-number wraps)
     html = html.replace(
-        '<table class="w-full table-fixed text-left border-collapse">',
-        '<table class="w-full table-fixed text-left border-collapse" id="plfs-coverage-table">',
+        '<table class="w-full border-collapse text-left text-sm">',
+        '<table class="w-full border-collapse text-left text-sm" id="plfs-coverage-table">',
         1,
     )
     # Remove old static coverage tbody rows
@@ -145,9 +162,62 @@ def patch_overview(html: str) -> str:
 </div>
 </div>
 """
+    trend_stats_block = """
+<!-- Descriptive trend statistics (trend_statistics in dashboard_data.json) -->
+<div class="w-full bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(0,32,69,0.08)] border border-outline-variant/10" id="plfs-trend-stats-card" hidden>
+<div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+<div>
+<h4 class="text-lg font-bold text-on-surface">Descriptive trend analysis</h4>
+<p class="text-xs text-on-surface-variant mt-1">OLS on survey reference year (July) · Pearson correlation across pooled national rounds</p>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary px-2 py-1 rounded border border-outline-variant/30 whitespace-nowrap">Descriptive stats — not ML</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-6 border-l-2 border-secondary pl-3" id="plfs-trend-stats-caveat"></p>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h5 class="text-sm font-bold text-on-surface mb-3">Linear trend (percentage points / year)</h5>
+<div class="overflow-x-auto rounded-lg border border-outline-variant/10">
+<table class="w-full text-left text-sm" id="plfs-trend-stats-slopes">
+<thead class="bg-surface-container-high">
+<tr>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Indicator</th>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">Slope</th>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">R²</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10"></tbody>
+</table>
+</div>
+</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface mb-3">Correlation across rounds</h5>
+<div class="overflow-x-auto rounded-lg border border-outline-variant/10">
+<table class="w-full text-left text-sm" id="plfs-trend-stats-corr">
+<thead class="bg-surface-container-high">
+<tr>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Pair</th>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">Pearson r</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10"></tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+"""
+    cov_marker = "<!-- Secondary Panel: Sample Coverage"
+    i_cov = html.find(cov_marker)
+    if i_cov != -1:
+        line_end = html.find("\n", i_cov)
+        if line_end != -1:
+            line = html[i_cov : line_end + 1]
+            html = html.replace(line, age_block + trend_stats_block + line, 1)
+
     html = html.replace(
-        "<!-- Secondary Panel: Sample Coverage -->",
-        age_block + "\n<!-- Secondary Panel: Sample Coverage -->",
+        '<div class="flex items-center gap-2 overflow-x-auto no-scrollbar">\n<span class="text-[10px] font-black uppercase text-on-surface-variant/60 mr-2 tracking-widest">Methodology:</span>',
+        '<div class="flex items-center gap-2 overflow-x-auto no-scrollbar" id="plfs-methodology-chips">\n<span class="text-[10px] font-black uppercase text-on-surface-variant/60 mr-2 tracking-widest">Methodology:</span>',
+        1,
     )
 
     # Scripts before </body>
@@ -238,15 +308,15 @@ def patch_board_report(html: str) -> str:
 
 def main():
     overview = (ROOT / "stitch_overview.html").read_text(encoding="utf-8")
-    (ROOT / "index.html").write_text(patch_overview(overview), encoding="utf-8")
+    (ROOT / "index.html").write_text(inject_dashboard_extras_css(patch_overview(overview)), encoding="utf-8")
 
     d = (ROOT / "stitch_demographics.html").read_text(encoding="utf-8")
-    d = patch_demographics(d)
+    d = inject_dashboard_extras_css(patch_demographics(d))
     d = d.replace("</body>", '<script src="assets/js/plfs-dashboard.js" defer></script>\n</body>', 1)
     (ROOT / "demographics.html").write_text(d, encoding="utf-8")
 
     r = (ROOT / "stitch_rural_urban.html").read_text(encoding="utf-8")
-    r = patch_rural_urban(r)
+    r = inject_dashboard_extras_css(patch_rural_urban(r))
     r = r.replace(
         "</body>",
         CHART_UMD_SCRIPT + '<script src="assets/js/plfs-dashboard.js" defer></script>\n</body>',
@@ -255,12 +325,12 @@ def main():
     (ROOT / "rural-urban.html").write_text(r, encoding="utf-8")
 
     m = (ROOT / "stitch_methodology.html").read_text(encoding="utf-8")
-    m = patch_methodology(m)
+    m = inject_dashboard_extras_css(patch_methodology(m))
     m = m.replace("</body>", '<script src="assets/js/plfs-dashboard.js" defer></script>\n</body>', 1)
     (ROOT / "methodology.html").write_text(m, encoding="utf-8")
 
     b = (ROOT / "stitch_board_report.html").read_text(encoding="utf-8")
-    b = patch_board_report(b)
+    b = inject_dashboard_extras_css(patch_board_report(b))
     b = b.replace("</body>", '<script src="assets/js/plfs-dashboard.js" defer></script>\n</body>', 1)
     (ROOT / "board-report.html").write_text(b, encoding="utf-8")
 

@@ -87,10 +87,12 @@
             background-size: 40px 40px;
         }
     </style>
+<link rel="stylesheet" href="assets/css/dashboard-extras.css"/>
 </head>
 <body class="bg-surface text-on-surface flex min-h-screen">
+<div id="plfs-nav-backdrop" class="plfs-nav-backdrop lg:hidden" aria-hidden="true"></div>
 <!-- Sidebar Component -->
-<aside class="h-screen w-64 fixed left-0 top-0 bg-[#002045] font-['Inter'] tracking-tight text-white flex flex-col shadow-[0_12px_32px_-4px_rgba(0,32,69,0.08)] z-40">
+<aside id="plfs-sidebar" class="plfs-sidebar h-screen w-64 fixed left-0 top-0 bg-[#002045] font-['Inter'] tracking-tight text-white flex flex-col shadow-[0_12px_32px_-4px_rgba(0,32,69,0.08)] z-50">
 <div class="p-6">
 <div class="flex items-center gap-3 mb-8">
 <div class="w-10 h-10 bg-[#66affe] rounded flex items-center justify-center">
@@ -127,11 +129,14 @@
 </div>
 </aside>
 <!-- Main Content Area -->
-<main class="ml-64 flex-1 flex flex-col min-h-screen min-w-0">
+<main class="plfs-main ml-64 flex-1 flex flex-col min-h-screen min-w-0">
 <!-- TopNavBar -->
-<header class="w-full sticky top-0 z-30 flex justify-between items-center px-8 py-4 bg-[#f1f4f6] dark:bg-[#1a1c1e] font-['Inter'] font-medium text-sm border-b border-outline-variant/10">
-<div class="flex items-center gap-8">
-<span class="text-lg font-black text-[#002045] dark:text-white uppercase tracking-tighter">Labour Force Intelligence</span>
+<header class="w-full sticky top-0 z-30 flex justify-between items-center px-4 sm:px-8 py-4 bg-[#f1f4f6] dark:bg-[#1a1c1e] font-['Inter'] font-medium text-sm border-b border-outline-variant/10">
+<div class="flex items-center gap-3 sm:gap-8 min-w-0">
+<button type="button" class="plfs-nav-toggle lg:hidden shrink-0 p-2 rounded-md border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-[#002045] dark:text-white" id="plfs-nav-toggle" aria-expanded="false" aria-controls="plfs-sidebar">
+<span class="material-symbols-outlined text-[22px]">menu</span>
+</button>
+<span class="text-base sm:text-lg font-black text-[#002045] dark:text-white uppercase tracking-tighter truncate">Labour Force Intelligence</span>
 <nav class="flex gap-6">
 <a class="text-[#0061a5] border-b-2 border-[#0061a5] pb-1" href="index.html">Dashboard</a>
 <a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="demographics.html">Demographics</a>
@@ -143,7 +148,7 @@
 </header>
 <!-- Methodology Ribbon -->
 <section class="bg-white border-b border-outline-variant/10 px-8 py-3 flex flex-wrap items-center justify-between gap-4">
-<div class="flex items-center gap-2 overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar" id="plfs-methodology-chips">
 <span class="text-[10px] font-black uppercase text-on-surface-variant/60 mr-2 tracking-widest">Methodology:</span>
 <span class="bg-surface-container-high text-on-surface text-[10px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap uppercase tracking-wider">UPS</span>
 <span class="bg-surface-container-high text-on-surface text-[10px] font-bold px-2.5 py-1 rounded-full whitespace-nowrap uppercase tracking-wider">Age 15+</span>
@@ -156,6 +161,7 @@
 <span class="text-[10px] font-bold uppercase tracking-wider">Data quality checks passed</span>
 </div>
 <p class="text-[10px] text-on-surface-variant font-mono opacity-70">Latest round: <span data-bind="meta-round">—</span> · Generated: <span data-bind="meta-generated">—</span> · Rounds: <span data-bind="meta-rounds-count">—</span></p>
+<p class="text-[10px] text-on-surface-variant font-mono opacity-70 truncate max-w-[min(100%,28rem)]">Source: <span data-bind="meta-source-parquet">—</span></p>
 </div>
 </section>
 <!-- Dashboard Canvas -->
@@ -182,9 +188,12 @@
 <span id="delta-ur">+0.24</span>
                         </div>
 </div>
+<div class="flex items-end justify-between gap-3 flex-wrap">
 <div class="flex items-baseline gap-2">
 <h3 class="text-5xl font-black tracking-tighter text-on-surface" id="kpi-ur">4.18%</h3>
 <span class="text-xs text-on-surface-variant font-medium" data-bind="kpi-year">2023-24</span>
+</div>
+<canvas id="spark-ur" width="132" height="36" class="shrink-0 opacity-85 hidden sm:block" aria-hidden="true"></canvas>
 </div>
 <div class="mt-6 h-1 w-full bg-surface-container-high rounded-full">
 <div class="h-full bg-error rounded-full transition-all" id="bar-ur" style="width:4.18%"></div>
@@ -199,9 +208,12 @@
 <span id="delta-lfpr">+1.58</span>
                         </div>
 </div>
+<div class="flex items-end justify-between gap-3 flex-wrap">
 <div class="flex items-baseline gap-2">
 <h3 class="text-5xl font-black tracking-tighter text-on-surface" id="kpi-lfpr">54.19%</h3>
 <span class="text-xs text-on-surface-variant font-medium" data-bind="kpi-year">2023-24</span>
+</div>
+<canvas id="spark-lfpr" width="132" height="36" class="shrink-0 opacity-85 hidden sm:block" aria-hidden="true"></canvas>
 </div>
 <div class="mt-6 h-1 w-full bg-surface-container-high rounded-full">
 <div class="h-full bg-secondary rounded-full transition-all" id="bar-lfpr" style="width:54.19%"></div>
@@ -216,9 +228,12 @@
 <span id="delta-wpr">+1.40</span>
                         </div>
 </div>
+<div class="flex items-end justify-between gap-3 flex-wrap">
 <div class="flex items-baseline gap-2">
 <h3 class="text-5xl font-black tracking-tighter text-on-surface" id="kpi-wpr">51.93%</h3>
 <span class="text-xs text-on-surface-variant font-medium" data-bind="kpi-year">2023-24</span>
+</div>
+<canvas id="spark-wpr" width="132" height="36" class="shrink-0 opacity-85 hidden sm:block" aria-hidden="true"></canvas>
 </div>
 <div class="mt-6 h-1 w-full bg-surface-container-high rounded-full">
 <div class="h-full bg-on-tertiary-container rounded-full transition-all" id="bar-wpr" style="width:51.93%"></div>
@@ -248,6 +263,11 @@
 <!-- Live Chart.js (data from data/dashboard_data.json) -->
 <div class="relative h-64 w-full">
 <canvas id="plfs-trend-chart" aria-label="UR, LFPR, and WPR over time"></canvas>
+</div>
+<div class="flex flex-wrap gap-2 justify-end mt-3 no-print" id="plfs-chart-scale-toolbar" role="group" aria-label="Chart scale">
+<button type="button" class="plfs-scale-btn text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 bg-white text-primary shadow-sm" data-scale="absolute">% levels</button>
+<button type="button" class="plfs-scale-btn text-xs font-bold px-3 py-1.5 rounded-full border border-slate-200 text-slate-600" data-scale="indexed">Indexed (first round = 100)</button>
+</div>
 </div>
 <!-- Insights Panel -->
 <div class="bg-primary text-white p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(0,32,69,0.08)] flex flex-col">
@@ -298,28 +318,64 @@
 </div>
 </div>
 
-<!-- Secondary Panel: Sample Coverage -->
-<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant/10">
-<div class="flex justify-between items-center mb-8">
+<!-- Descriptive trend statistics (trend_statistics in dashboard_data.json) -->
+<div class="w-full bg-surface-container-lowest p-6 sm:p-8 rounded-xl shadow-[0_12px_32px_-4px_rgba(0,32,69,0.08)] border border-outline-variant/10" id="plfs-trend-stats-card" hidden>
+<div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+<div>
+<h4 class="text-lg font-bold text-on-surface">Descriptive trend analysis</h4>
+<p class="text-xs text-on-surface-variant mt-1">OLS on survey reference year (July) · Pearson correlation across pooled national rounds</p>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-secondary px-2 py-1 rounded border border-outline-variant/30 whitespace-nowrap">Descriptive stats — not ML</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed mb-6 border-l-2 border-secondary pl-3" id="plfs-trend-stats-caveat"></p>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h5 class="text-sm font-bold text-on-surface mb-3">Linear trend (percentage points / year)</h5>
+<div class="overflow-x-auto rounded-lg border border-outline-variant/10">
+<table class="w-full text-left text-sm" id="plfs-trend-stats-slopes">
+<thead class="bg-surface-container-high">
+<tr>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Indicator</th>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">Slope</th>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">R²</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10"></tbody>
+</table>
+</div>
+</div>
+<div>
+<h5 class="text-sm font-bold text-on-surface mb-3">Correlation across rounds</h5>
+<div class="overflow-x-auto rounded-lg border border-outline-variant/10">
+<table class="w-full text-left text-sm" id="plfs-trend-stats-corr">
+<thead class="bg-surface-container-high">
+<tr>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Pair</th>
+<th class="px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">Pearson r</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10"></tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Panel: Sample Coverage (full width of canvas; table uses auto column sizing) -->
+<div class="w-full bg-surface-container-low p-6 sm:p-8 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
 <div>
 <h4 class="text-lg font-bold text-on-surface uppercase tracking-tight">Sample Coverage Metrics</h4>
 <p class="text-xs text-on-surface-variant">Annual enumeration of households and persons surveyed</p>
 </div>
 </div>
-<div class="w-full min-w-0 rounded-lg border border-outline-variant/10 overflow-hidden">
-<table class="w-full table-fixed text-left border-collapse" id="plfs-coverage-table">
-<colgroup>
-<col class="w-[19%]"/>
-<col class="w-[27%]"/>
-<col class="w-[27%]"/>
-<col class="w-[27%]"/>
-</colgroup>
+<div class="w-full min-w-0 rounded-lg border border-outline-variant/10 overflow-x-auto">
+<table class="w-full border-collapse text-left text-sm" id="plfs-coverage-table">
 <thead class="bg-surface-container-high">
 <tr>
-<th class="px-2 sm:px-4 py-3 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-on-surface-variant leading-tight">Survey period</th>
-<th class="px-2 sm:px-4 py-3 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-on-surface-variant leading-tight">Households</th>
-<th class="px-2 sm:px-4 py-3 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-on-surface-variant leading-tight">Persons</th>
-<th class="px-2 sm:px-4 py-3 text-[9px] sm:text-[10px] font-black uppercase tracking-wider text-on-surface-variant leading-tight">Avg. hh size</th>
+<th class="whitespace-nowrap px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant">Survey period</th>
+<th class="whitespace-nowrap px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">Households</th>
+<th class="whitespace-nowrap px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">Persons</th>
+<th class="whitespace-nowrap px-4 py-3 text-[10px] font-black uppercase tracking-widest text-on-surface-variant text-right">Avg. hh size</th>
 </tr>
 </thead>
 <tbody class="divide-y divide-outline-variant/10"></tbody>
