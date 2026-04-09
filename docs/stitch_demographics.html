@@ -85,121 +85,59 @@
         }
     </script>
 </head>
-<body class="bg-surface font-body text-on-surface antialiased">
+<body class="bg-[#f7fafc] font-body text-on-surface antialiased">
 <!-- TopNavBar -->
-<header class="fixed top-0 w-full z-40 bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/20 dark:border-slate-800/20 shadow-sm flex justify-between items-center h-16 px-6">
-<div class="flex items-center gap-4">
-<span class="text-xl font-black tracking-tighter text-blue-900 dark:text-blue-100 uppercase">PLFS Analytics</span>
-<nav class="hidden md:flex items-center gap-6 ml-8"><a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Dashboard</a>
-<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Demographics</a>
-<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Rural vs Urban</a>
-<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Methodology</a>
-<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Board Report</a>
-<div class="flex items-center gap-2 border-l border-slate-200 dark:border-slate-800 ml-4 pl-4">
-<button class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md hover:bg-slate-50 transition-colors focus:ring-2 focus:ring-primary outline-none">
-<span class="material-symbols-outlined text-sm">csv</span> Export CSV
-                </button>
-<button class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md hover:bg-slate-50 transition-colors focus:ring-2 focus:ring-primary outline-none">
-<span class="material-symbols-outlined text-sm">image</span> Export PNG
-                </button>
-<button class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-md hover:bg-slate-50 transition-colors focus:ring-2 focus:ring-primary outline-none">
-<span class="material-symbols-outlined text-sm">design_services</span> Open in Figma
-                </button>
-</div></nav>
+<header class="fixed top-0 w-full z-40 bg-[#f1f4f6] border-b border-slate-200/80 flex justify-between items-center min-h-16 px-6 py-3">
+<div class="flex items-center gap-6 flex-wrap">
+<span class="text-lg font-black tracking-tighter text-[#002045] uppercase">PLFS Analytics</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#181c1e]/70 hover:text-[#002045] font-medium transition-colors px-1 py-0.5" href="index.html">Dashboard</a>
+<a class="text-[#0061a5] border-b-2 border-[#0061a5] font-semibold pb-0.5" href="demographics.html">Demographics</a>
+<a class="text-[#181c1e]/70 hover:text-[#002045] font-medium transition-colors px-1 py-0.5" href="rural-urban.html">Rural vs Urban</a>
+<a class="text-[#181c1e]/70 hover:text-[#002045] font-medium transition-colors px-1 py-0.5" href="methodology.html">Methodology</a>
+<a class="text-[#181c1e]/70 hover:text-[#002045] font-medium transition-colors px-1 py-0.5" href="board-report.html">Board Report</a>
+</nav>
 </div>
-<div class="flex items-center gap-4">
-<div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-green-700 border border-green-200">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 text-green-800 border border-green-200/80">
 <span class="material-symbols-outlined text-sm">verified</span>
 <span class="text-[10px] font-bold uppercase tracking-tight">Data quality checks passed</span>
 </div>
-<button class="material-symbols-outlined text-slate-500 hover:bg-slate-100 p-2 rounded-full transition-colors cursor-pointer active:opacity-70 focus:ring-2 focus:ring-primary outline-none">notifications</button>
-<button class="material-symbols-outlined text-slate-500 hover:bg-slate-100 p-2 rounded-full transition-colors cursor-pointer active:opacity-70 focus:ring-2 focus:ring-primary outline-none">settings</button>
-<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden ring-1 ring-slate-200">
-<img alt="Analyst Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVSE9o-TpwCVjrEJeJYRyqfFi5eHtp_JOLibcl3E_DAotSj-7yLKQj-YiLAxekwWRJlFFow2dMn7jptD0P2bRRgIG8_7lpdjvJPz2LdM7dRNAzPRaNT1p5lNI29gBJTevE6k7el1N1CJT_XyE99-677Pv27u5DdALOiKCRJwZeKbyY0FxNtq_Hjnjq2EsNwFYW8SdKiGK9EtF46-jDL8uVjQ0URnh_RmleE6RIyJBPk3cN5MIEQSAW052hZMO1GIZxDTnOVXFRS1Jk"/>
-</div>
-</div>
 </header>
-<!-- SideNavBar -->
-<aside class="fixed left-0 top-0 h-full w-64 z-50 bg-blue-950 dark:bg-slate-950 shadow-2xl flex flex-col py-8 tonal-shift">
-<div class="px-6 mb-10">
+<!-- SideNavBar (aligned with top nav) -->
+<aside class="fixed left-0 top-0 h-full w-64 z-50 bg-[#002045] text-white flex flex-col shadow-[0_12px_32px_-4px_rgba(0,32,69,0.12)] py-6">
+<div class="px-6 mb-8">
 <div class="flex items-center gap-3">
-<div class="h-10 w-10 bg-blue-400 rounded-sm flex items-center justify-center">
-<span class="material-symbols-outlined text-blue-950 font-bold">analytics</span>
+<div class="w-10 h-10 bg-[#66affe] rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[#002045]" style="font-variation-settings:'FILL' 1;">analytics</span>
 </div>
 <div>
 <h1 class="text-white font-bold tracking-tight text-lg">PLFS Analytics</h1>
-<p class="text-slate-400 text-xs font-inter">FY 2023-24 Intelligence</p>
+<p class="text-white/50 text-[10px] uppercase tracking-widest">Labour Force Survey</p>
 </div>
 </div>
 </div>
-<nav class="flex-1 px-0">
-<div class="text-slate-500 text-[10px] uppercase tracking-widest px-6 mb-4 font-bold">Main Dashboard</div>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-inter text-sm">Executive Summary</span>
+<nav class="flex-1 space-y-1 px-3">
+<a class="flex items-center gap-3 px-3 py-3 rounded text-white/80 hover:text-white hover:bg-white/5" href="index.html">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span class="text-sm font-medium">Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-white bg-white/10 border-l-4 border-blue-400 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">
-<span class="material-symbols-outlined">groups</span>
-<span class="font-inter text-sm">Demographics</span>
+<a class="flex items-center gap-3 px-3 py-3 rounded border-l-4 border-[#66affe] bg-white/10 text-white font-semibold" href="demographics.html">
+<span class="material-symbols-outlined text-[20px]">groups</span>
+<span class="text-sm">Demographics</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">
-<span class="material-symbols-outlined">factory</span>
-<span class="font-inter text-sm">Sectoral Trends</span>
+<a class="flex items-center gap-3 px-3 py-3 rounded text-white/80 hover:text-white hover:bg-white/5" href="rural-urban.html">
+<span class="material-symbols-outlined text-[20px]">compare_arrows</span>
+<span class="text-sm font-medium">Rural vs Urban</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">
-<span class="material-symbols-outlined">map</span>
-<span class="font-inter text-sm">Regional Heatmaps</span>
+<a class="flex items-center gap-3 px-3 py-3 rounded text-white/80 hover:text-white hover:bg-white/5" href="methodology.html">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<span class="text-sm font-medium">Methodology</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">
-<span class="material-symbols-outlined">history</span>
-<span class="font-inter text-sm">Historical Archive</span>
+<a class="flex items-center gap-3 px-3 py-3 rounded text-white/80 hover:text-white hover:bg-white/5" href="board-report.html">
+<span class="material-symbols-outlined text-[20px]">description</span>
+<span class="text-sm font-medium">Board Report</span>
 </a>
-<div class="mt-8 px-6">
-<div class="text-slate-500 text-[10px] uppercase tracking-widest mb-4 font-bold">Demographic Filters</div>
-<div class="space-y-4">
-<div>
-<label class="text-[10px] text-slate-400 block mb-1">Sex</label>
-<select class="w-full bg-white/5 border-none text-slate-300 text-xs rounded-sm focus:ring-1 focus:ring-blue-400">
-<option>All Individuals</option>
-<option>Male</option>
-<option>Female</option>
-</select>
-</div>
-<div>
-<label class="text-[10px] text-slate-400 block mb-1">Age Band</label>
-<select class="w-full bg-white/5 border-none text-slate-300 text-xs rounded-sm focus:ring-1 focus:ring-blue-400">
-<option>15+ Years</option>
-<option>15-29 Years</option>
-<option>30-59 Years</option>
-</select>
-</div>
-<div>
-<label class="text-[10px] text-slate-400 block mb-1">Sector</label>
-<select class="w-full bg-white/5 border-none text-slate-300 text-xs rounded-sm focus:ring-1 focus:ring-blue-400">
-<option>Combined</option>
-<option>Rural</option>
-<option>Urban</option>
-</select>
-</div>
-</div>
-</div>
 </nav>
-<div class="px-6 py-4 mt-auto">
-<button class="w-full bg-gradient-to-tr from-primary to-primary-container text-white py-3 px-4 rounded-md text-xs font-bold shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2 focus:ring-2 focus:ring-blue-400 outline-none">
-<span class="material-symbols-outlined text-sm">download</span>
-            Download Full Report
-        </button>
-<div class="mt-6 flex flex-col gap-2">
-<a class="flex items-center gap-3 text-slate-400 hover:text-white transition-all focus:ring-2 focus:ring-blue-400 outline-none p-1 rounded" href="#">
-<span class="material-symbols-outlined text-sm">tune</span>
-<span class="font-inter text-[10px] uppercase tracking-wider">Data Settings</span>
-</a>
-<a class="flex items-center gap-3 text-slate-400 hover:text-white transition-all focus:ring-2 focus:ring-blue-400 outline-none p-1 rounded" href="#">
-<span class="material-symbols-outlined text-sm">help_outline</span>
-<span class="font-inter text-[10px] uppercase tracking-wider">Support</span>
-</a>
-</div>
-</div>
 </aside>
 <!-- Main Content Canvas -->
 <main class="ml-64 pt-24 pb-12 px-10 min-h-screen bg-surface">

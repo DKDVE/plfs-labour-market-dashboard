@@ -89,103 +89,72 @@
 </head>
 <body class="bg-surface text-on-surface antialiased">
 <!-- TopNavBar (Shared Component) -->
-<header class="fixed top-0 w-full z-40 flex justify-between items-center px-8 py-3 bg-[#f7fafc] dark:bg-[#181c1e] font-['Inter'] tracking-[-0.02em] antialiased border-b border-outline-variant/20">
-<div class="flex items-center gap-4">
-<span class="text-xl font-bold tracking-tight text-[#002045] dark:text-[#ffffff]">PLFS Analytics</span>
-</div>
-<nav aria-label="Main Navigation" class="hidden md:flex gap-8">
-<a class="text-[#181c1e]/60 dark:text-[#ffffff]/60 hover:text-[#0061a5] transition-colors focus-ring" href="index.html">Dashboard</a>
-<a class="text-[#181c1e]/60 dark:text-[#ffffff]/60 hover:text-[#0061a5] transition-colors focus-ring" href="demographics.html">Demographics</a>
-<a class="text-[#181c1e]/60 dark:text-[#ffffff]/60 hover:text-[#0061a5] transition-colors focus-ring" href="rural-urban.html">Rural vs Urban</a>
-<a aria-current="page" class="text-[#002045] dark:text-[#66affe] border-b-2 border-[#0061a5] font-semibold transition-colors focus-ring" href="methodology.html">Methodology</a>
-<a class="text-[#181c1e]/60 dark:text-[#ffffff]/60 hover:text-[#0061a5] transition-colors focus-ring" href="board-report.html">Board Report</a>
+<header class="fixed top-0 w-full z-40 flex justify-between items-center px-8 py-3 bg-[#f1f4f6] font-['Inter'] tracking-[-0.02em] antialiased border-b border-outline-variant/20">
+<div class="flex items-center gap-8 flex-wrap">
+<span class="text-lg font-black tracking-tight text-[#002045]">PLFS Analytics</span>
+<nav aria-label="Main Navigation" class="hidden md:flex gap-6">
+<a class="text-[#181c1e]/70 hover:text-[#002045] transition-colors" href="index.html">Dashboard</a>
+<a class="text-[#181c1e]/70 hover:text-[#002045] transition-colors" href="demographics.html">Demographics</a>
+<a class="text-[#181c1e]/70 hover:text-[#002045] transition-colors" href="rural-urban.html">Rural vs Urban</a>
+<a aria-current="page" class="text-[#0061a5] border-b-2 border-[#0061a5] font-semibold pb-0.5" href="methodology.html">Methodology</a>
+<a class="text-[#181c1e]/70 hover:text-[#002045] transition-colors" href="board-report.html">Board Report</a>
 </nav>
-<div class="flex items-center gap-4">
-<button aria-label="Help" class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary transition-colors focus-ring">help</button>
-<button aria-label="Settings" class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary transition-colors focus-ring">settings</button>
-<img alt="Executive User Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXTk0gMR0WvT5NbsydXBsr_zQM87SUBpjeaH2gKiAPXjonRs7QQLpQqrUHeihjOSyQ25OE-XO0RvlbZTgzHQMRv_YJOZ1YXmT10_OWXKCOFFxNf4FLA-JohFMQxOeES2Aird_Ig9-fBxFq1pugbe0PpDQRaNDthiviQpHkXmpT1zcNEIY-0_genyDghnzSfcSNNp7Fpnl3UUp3mLz6x9HUnzo2oxwB8yxp0fMbEo5VcKgvlE4gmmdEmIRxSsMxSmGMLNqnXZIb_U7U"/>
 </div>
 </header>
-<!-- SideNavBar (Shared Component) -->
-<nav aria-label="Sidebar Navigation" class="fixed left-0 top-0 h-full w-64 z-50 flex flex-col py-6 px-4 bg-[#002045] dark:bg-[#001025] font-['Inter'] text-sm font-medium shadow-2xl shadow-[#002045]/20">
-<div class="mb-10 px-2">
+<!-- SideNavBar (matches top nav) -->
+<aside aria-label="Sidebar Navigation" class="fixed left-0 top-0 h-full w-64 z-50 flex flex-col py-6 px-3 bg-[#002045] font-['Inter'] text-sm font-medium shadow-xl">
+<div class="mb-8 px-3">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center">
-<span class="material-symbols-outlined text-white">analytics</span>
+<div class="w-10 h-10 bg-[#66affe] rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-[#002045]">analytics</span>
 </div>
 <div>
-<h1 class="text-white font-black tracking-tighter uppercase">PLFS Portal</h1>
-<p class="text-white/50 text-[10px] uppercase tracking-widest">Intelligence Report</p>
+<h1 class="text-white font-bold tracking-tight">PLFS Analytics</h1>
+<p class="text-white/50 text-[10px] uppercase tracking-widest">Labour Force Survey</p>
 </div>
 </div>
 </div>
-<div class="flex flex-col gap-1 flex-1">
-<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="index.html">
+<nav class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/75 hover:text-white hover:bg-white/5" href="index.html">
 <span class="material-symbols-outlined">dashboard</span>
 <span>Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="rural-urban.html">
-<span class="material-symbols-outlined">work</span>
-<span>Labor Metrics</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="demographics.html">
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/75 hover:text-white hover:bg-white/5" href="demographics.html">
 <span class="material-symbols-outlined">groups</span>
 <span>Demographics</span>
 </a>
-<a class="relative flex items-center gap-3 px-4 py-3 rounded-md bg-[#ffffff]/10 text-white before:content-[''] before:absolute before:left-0 before:h-6 before:w-1 before:bg-[#66affe] before:rounded-r-full duration-200 ease-in-out focus-ring" href="methodology.html">
-<span class="material-symbols-outlined">menu_book</span>
-<span>Data Dictionary</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/75 hover:text-white hover:bg-white/5" href="rural-urban.html">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span>Rural vs Urban</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="methodology.html">
-<span class="material-symbols-outlined">biotech</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md bg-white/10 text-white border-l-4 border-[#66affe]" href="methodology.html">
+<span class="material-symbols-outlined">menu_book</span>
 <span>Methodology</span>
 </a>
-</div>
-<button class="mt-4 mb-8 mx-2 py-2.5 px-4 bg-gradient-to-br from-[#0061a5] to-[#1a365d] text-white rounded text-xs font-bold uppercase tracking-wider shadow-lg focus-ring">
-        Export Dataset
-    </button>
-<div class="pt-6 border-t border-white/10 flex flex-col gap-1">
-<a class="flex items-center gap-3 px-4 py-2 text-white/50 hover:text-white duration-200 focus-ring" href="#">
-<span class="material-symbols-outlined text-sm">contact_support</span>
-<span>Support</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/75 hover:text-white hover:bg-white/5" href="board-report.html">
+<span class="material-symbols-outlined">description</span>
+<span>Board Report</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-2 text-white/50 hover:text-white duration-200 focus-ring" href="#">
-<span class="material-symbols-outlined text-sm">history</span>
-<span>Release Notes</span>
-</a>
-</div>
 </nav>
+</aside>
 <!-- Main Content -->
 <main class="ml-64 mt-16 p-8 min-h-screen flex flex-col gap-8">
 <!-- Header & Breadcrumbs & Actions -->
 <section class="flex flex-col gap-6">
 <div class="flex flex-col gap-2">
 <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-medium text-outline uppercase tracking-widest">
-<span>Home</span>
+<a href="index.html" class="hover:text-primary">Home</a>
 <span aria-hidden="true" class="material-symbols-outlined text-[14px]">chevron_right</span>
-<span class="text-secondary font-bold">Data Dictionary &amp; Methodology</span>
+<span class="text-secondary font-bold">Methodology</span>
 </nav>
-<div class="flex justify-between items-start">
 <div>
 <h2 class="text-3xl font-black tracking-tighter text-primary">Technical Documentation</h2>
-<div class="mt-2 flex items-center gap-3">
+<div class="mt-2 flex items-center gap-3 flex-wrap">
 <span class="px-2 py-1 bg-on-tertiary-container/10 text-on-tertiary-container text-[10px] font-bold rounded uppercase tracking-tighter flex items-center gap-1">
 <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
                             Data quality checks passed
                         </span>
-<div class="text-[10px] text-on-surface-variant/60 font-mono">v2.4.0-STABLE | Last Synced: 2024-05-21</div>
-</div>
-</div>
-<div class="flex gap-2">
-<button class="px-3 py-1.5 border border-outline-variant text-[10px] font-bold uppercase tracking-widest rounded bg-surface hover:bg-surface-container-low transition-colors flex items-center gap-2 focus-ring">
-<span class="material-symbols-outlined text-sm">csv</span> Export CSV
-                    </button>
-<button class="px-3 py-1.5 border border-outline-variant text-[10px] font-bold uppercase tracking-widest rounded bg-surface hover:bg-surface-container-low transition-colors flex items-center gap-2 focus-ring">
-<span class="material-symbols-outlined text-sm">image</span> Export PNG
-                    </button>
-<button class="px-3 py-1.5 border border-outline-variant text-[10px] font-bold uppercase tracking-widest rounded bg-surface hover:bg-surface-container-low transition-colors flex items-center gap-2 focus-ring">
-<span class="material-symbols-outlined text-sm">draw</span> Open in Figma
-                    </button>
+<span class="text-[10px] text-on-surface-variant/60 font-mono">Pipeline JSON · <span data-bind="meta-generated">—</span></span>
 </div>
 </div>
 </div>

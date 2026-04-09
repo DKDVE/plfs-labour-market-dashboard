@@ -101,60 +101,29 @@
 <p class="text-[10px] uppercase tracking-widest text-white/50">Labour Force Survey</p>
 </div>
 </div>
-<!-- Navigation -->
+<!-- Navigation (matches top nav: Dashboard, Demographics, Rural vs Urban, Methodology, Board Report) -->
 <nav class="space-y-1">
-<a class="flex items-center gap-3 border-l-4 border-[#66affe] bg-white/10 text-white font-semibold px-4 py-3 transition-all scale-95 duration-200 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">
+<a class="flex items-center gap-3 border-l-4 border-[#66affe] bg-white/10 text-white font-semibold px-4 py-3 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="index.html">
 <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span>Overview</span>
+<span>Dashboard</span>
 </a>
-<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">
-<span class="material-symbols-outlined" data-icon="work">work</span>
-<span>Employment</span>
-</a>
-<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">
+<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="demographics.html">
 <span class="material-symbols-outlined" data-icon="groups">groups</span>
 <span>Demographics</span>
 </a>
-<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">
-<span class="material-symbols-outlined" data-icon="school">school</span>
-<span>Education</span>
+<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="rural-urban.html">
+<span class="material-symbols-outlined" data-icon="compare_arrows">compare_arrows</span>
+<span>Rural vs Urban</span>
 </a>
-<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">
-<span class="material-symbols-outlined" data-icon="map">map</span>
-<span>Regional</span>
+<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="methodology.html">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span>Methodology</span>
+</a>
+<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="board-report.html">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span>Board Report</span>
 </a>
 </nav>
-<!-- Runtime Filters -->
-<div class="mt-10 border-t border-white/10 pt-6">
-<span class="text-[10px] font-bold text-white/40 uppercase tracking-widest block mb-4">Runtime Filters</span>
-<div class="space-y-4">
-<div>
-<label class="text-xs font-medium block mb-1 text-white/70">Year Range (runtime-bound)</label>
-<div class="bg-white/5 p-2 rounded text-xs text-white/90">2017-18 to 2023-24</div>
-</div>
-<div>
-<label class="text-xs font-medium block mb-1 text-white/70">Sector (Rural/Urban) (runtime-bound)</label>
-<div class="bg-white/5 p-2 rounded text-xs text-white/90">All Sectors</div>
-</div>
-<div class="bg-primary-container/30 border border-[#66affe]/20 p-3 rounded-lg text-[10px] leading-relaxed opacity-60">
-<span class="material-symbols-outlined text-[#66affe] text-xs align-middle mr-1">info</span>
-                        Bound to interactive dataset modules.
-                    </div>
-</div>
-</div>
-</div>
-<div class="mt-auto p-6 space-y-1">
-<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-<span>Settings</span>
-</a>
-<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-<span>Support</span>
-</a>
-<button class="w-full mt-4 bg-gradient-to-br from-[#66affe] to-[#0061a5] text-white py-3 rounded-md font-bold text-sm shadow-lg active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-white">
-                Update Dataset
-            </button>
 </div>
 </aside>
 <!-- Main Content Area -->
@@ -164,26 +133,12 @@
 <div class="flex items-center gap-8">
 <span class="text-lg font-black text-[#002045] dark:text-white uppercase tracking-tighter">Labour Force Intelligence</span>
 <nav class="flex gap-6">
-<a class="text-[#0061a5] border-b-2 border-[#0061a5] pb-1" href="#">Dashboard</a>
-<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="#">Demographics</a>
-<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="#">Rural vs Urban</a>
-<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="#">Methodology</a>
-<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="#">Board Report</a>
+<a class="text-[#0061a5] border-b-2 border-[#0061a5] pb-1" href="index.html">Dashboard</a>
+<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="demographics.html">Demographics</a>
+<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="rural-urban.html">Rural vs Urban</a>
+<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="methodology.html">Methodology</a>
+<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="board-report.html">Board Report</a>
 </nav>
-</div>
-<div class="flex items-center gap-3">
-<div class="flex items-center gap-2"><button class="bg-primary text-white px-4 py-2 rounded-md font-bold text-xs transition-transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#0061a5] flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">description</span>Open Board Report (A4)</button>
-<button class="bg-primary text-white px-4 py-2 rounded-md font-semibold text-xs transition-transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#0061a5]">Export CSV</button>
-<button class="border border-outline-variant/30 px-4 py-2 rounded-md font-semibold text-xs text-primary transition-transform active:scale-95 hover:bg-surface focus:outline-none focus:ring-2 focus:ring-primary">Export PNG</button>
-<button class="border border-outline-variant/30 px-4 py-2 rounded-md font-semibold text-xs text-primary transition-transform active:scale-95 hover:bg-surface focus:outline-none focus:ring-2 focus:ring-primary flex items-center gap-1">
-<span class="material-symbols-outlined text-[14px]">token</span>
-        Open in Figma
-    </button>
-</div>
-<div class="flex items-center gap-2 border-l border-outline-variant/20 ml-2 pl-4">
-<span class="material-symbols-outlined text-primary cursor-pointer opacity-80 hover:opacity-100" data-icon="notifications">notifications</span>
-<span class="material-symbols-outlined text-primary cursor-pointer opacity-80 hover:opacity-100" data-icon="account_circle">account_circle</span>
-</div>
 </div>
 </header>
 <!-- Methodology Ribbon -->

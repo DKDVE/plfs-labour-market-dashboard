@@ -11,61 +11,7 @@ CHART_REPLACEMENT = """<!-- Live Chart.js (data from data/dashboard_data.json) -
 
 
 def patch_overview(html: str) -> str:
-    # Sidebar
-    html = html.replace(
-        '<a class="flex items-center gap-3 border-l-4 border-[#66affe] bg-white/10 text-white font-semibold px-4 py-3 transition-all scale-95 duration-200 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">',
-        '<a class="flex items-center gap-3 border-l-4 border-[#66affe] bg-white/10 text-white font-semibold px-4 py-3 transition-all scale-95 duration-200 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="index.html">',
-        1,
-    )
-    # Employment link — fix href on line before work icon
-    html = html.replace(
-        '<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">\n<span class="material-symbols-outlined" data-icon="work">work</span>',
-        '<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="rural-urban.html">\n<span class="material-symbols-outlined" data-icon="work">work</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">\n<span class="material-symbols-outlined" data-icon="groups">groups</span>',
-        '<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="demographics.html">\n<span class="material-symbols-outlined" data-icon="groups">groups</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">\n<span class="material-symbols-outlined" data-icon="school">school</span>',
-        '<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="methodology.html">\n<span class="material-symbols-outlined" data-icon="school">school</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="#">\n<span class="material-symbols-outlined" data-icon="map">map</span>',
-        '<a class="flex items-center gap-3 text-white/70 hover:text-white px-4 py-3 transition-colors hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#66affe]/50" href="rural-urban.html">\n<span class="material-symbols-outlined" data-icon="map">map</span>',
-        1,
-    )
-
-    # Top nav
-    html = html.replace(
-        '<a class="text-[#0061a5] border-b-2 border-[#0061a5] pb-1" href="#">Dashboard</a>',
-        '<a class="text-[#0061a5] border-b-2 border-[#0061a5] pb-1" href="index.html">Dashboard</a>',
-    )
-    html = html.replace(
-        '<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="#">Demographics</a>',
-        '<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="demographics.html">Demographics</a>',
-    )
-    html = html.replace(
-        '<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="#">Rural vs Urban</a>',
-        '<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="rural-urban.html">Rural vs Urban</a>',
-    )
-    html = html.replace(
-        '<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="#">Methodology</a>',
-        '<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="methodology.html">Methodology</a>',
-    )
-    html = html.replace(
-        '<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="#">Board Report</a>',
-        '<a class="text-[#181c1e]/60 dark:text-white/60 hover:text-[#002045] dark:hover:text-white transition-colors" href="board-report.html">Board Report</a>',
-    )
-
-    # Board report CTA
-    html = html.replace(
-        '<button class="bg-primary text-white px-4 py-2 rounded-md font-bold text-xs transition-transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#0061a5] flex items-center gap-2"><span class="material-symbols-outlined text-[16px]">description</span>Open Board Report (A4)</button>',
-        '<a class="bg-primary text-white px-4 py-2 rounded-md font-bold text-xs transition-transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#0061a5] flex items-center gap-2" href="board-report.html"><span class="material-symbols-outlined text-[16px]">description</span>Open Board Report (A4)</a>',
-    )
+    # Sidebar + top nav + chrome are already wired in stitch_overview.html
 
     # Ribbon meta
     html = html.replace(
@@ -212,28 +158,12 @@ def patch_overview(html: str) -> str:
     return html
 
 
-NAV_DEMO_ACTIVE = (
-    '<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="index.html">Dashboard</a>\n'
-    '<a class="text-primary font-bold border-b-2 border-primary pb-0.5" href="demographics.html">Demographics</a>\n'
-    '<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="rural-urban.html">Rural vs Urban</a>\n'
-    '<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="methodology.html">Methodology</a>\n'
-    '<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="board-report.html">Board Report</a>'
-)
-
 NAV_RURAL_ACTIVE = (
     '<a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="index.html">Dashboard</a>\n'
     '<a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="demographics.html">Demographics</a>\n'
     '<a class="text-[#0061a5] font-bold border-b-2 border-[#0061a5] pb-1" href="rural-urban.html">Rural vs Urban</a>\n'
     '<a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="methodology.html">Methodology</a>\n'
     '<a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="board-report.html">Board Report</a>'
-)
-
-NAV_BOARD_ACTIVE = (
-    '<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="index.html">Dashboard</a>\n'
-    '<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="demographics.html">Demographics</a>\n'
-    '<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="rural-urban.html">Rural vs Urban</a>\n'
-    '<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="methodology.html">Methodology</a>\n'
-    '<a class="text-[11px] font-bold uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="board-report.html">Board Report</a>'
 )
 
 METH_NAV_OLD = """<nav aria-label="Main Navigation" class="hidden md:flex gap-8">
@@ -254,12 +184,6 @@ METH_NAV_NEW = """<nav aria-label="Main Navigation" class="hidden md:flex gap-8"
 
 
 def patch_demographics(html: str) -> str:
-    old = """<nav class="hidden md:flex items-center gap-6 ml-8"><a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Dashboard</a>
-<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Demographics</a>
-<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Rural vs Urban</a>
-<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Methodology</a>
-<a class="text-slate-500 dark:text-slate-400 font-medium hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors px-2 py-1 rounded focus:ring-2 focus:ring-primary outline-none" href="#">Board Report</a>"""
-    html = html.replace(old, f'<nav class="hidden md:flex items-center gap-6 ml-8">{NAV_DEMO_ACTIVE}')
     html = html.replace(
         '<div class="text-4xl font-black text-on-surface tracking-tighter mb-1">3.83%</div>',
         '<div class="text-4xl font-black text-on-surface tracking-tighter mb-1" id="demo-male-ur">3.83%</div>',
@@ -268,31 +192,6 @@ def patch_demographics(html: str) -> str:
     html = html.replace(
         '<div class="text-4xl font-black text-on-surface tracking-tighter mb-1">4.88%</div>',
         '<div class="text-4xl font-black text-on-surface tracking-tighter mb-1" id="demo-female-ur">4.88%</div>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">\n<span class="material-symbols-outlined">dashboard</span>',
-        '<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="index.html">\n<span class="material-symbols-outlined">dashboard</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 px-4 py-3 text-white bg-white/10 border-l-4 border-blue-400 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">\n<span class="material-symbols-outlined">groups</span>',
-        '<a class="flex items-center gap-3 px-4 py-3 text-white bg-white/10 border-l-4 border-blue-400 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="demographics.html">\n<span class="material-symbols-outlined">groups</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">\n<span class="material-symbols-outlined">factory</span>',
-        '<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="rural-urban.html">\n<span class="material-symbols-outlined">factory</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">\n<span class="material-symbols-outlined">map</span>',
-        '<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="rural-urban.html">\n<span class="material-symbols-outlined">map</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="#">\n<span class="material-symbols-outlined">history</span>',
-        '<a class="flex items-center gap-3 px-4 py-3 text-slate-400 hover:text-white hover:bg-white/5 transition-all focus:ring-inset focus:ring-2 focus:ring-blue-400 outline-none" href="index.html">\n<span class="material-symbols-outlined">history</span>',
         1,
     )
     html = html.replace(
@@ -314,32 +213,8 @@ def patch_rural_urban(html: str) -> str:
 <a class="text-[#0061a5] font-bold border-b-2 border-[#0061a5] pb-1" href="#">Rural vs Urban</a>
 <a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="#">Methodology</a>
 <a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="#">Board Report</a></nav>"""
-    html = html.replace(old, f"<nav class=\"hidden md:flex gap-8\">{NAV_RURAL_ACTIVE}</nav>")
-    html = html.replace(
-        '<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">\n<span class="material-symbols-outlined">dashboard</span>',
-        '<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="index.html">\n<span class="material-symbols-outlined">dashboard</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 bg-white/10 text-white border-l-4 border-[#66affe] py-3 px-6 cursor-pointer focus-visible:bg-white/20" href="#">\n<span class="material-symbols-outlined">compare_arrows</span>',
-        '<a class="flex items-center gap-3 bg-white/10 text-white border-l-4 border-[#66affe] py-3 px-6 cursor-pointer focus-visible:bg-white/20" href="rural-urban.html">\n<span class="material-symbols-outlined">compare_arrows</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">\n<span class="material-symbols-outlined">groups</span>',
-        '<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="demographics.html">\n<span class="material-symbols-outlined">groups</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">\n<span class="material-symbols-outlined">factory</span>',
-        '<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="rural-urban.html">\n<span class="material-symbols-outlined">factory</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">\n<span class="material-symbols-outlined">description</span>',
-        '<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="methodology.html">\n<span class="material-symbols-outlined">description</span>',
-        1,
-    )
+    if old in html:
+        html = html.replace(old, f"<nav class=\"hidden md:flex gap-8\">{NAV_RURAL_ACTIVE}</nav>")
     html = html.replace('<a class="hover:text-primary" href="#">Home</a>', '<a class="hover:text-primary" href="index.html">Home</a>', 1)
     html = html.replace(
         '<a class="hover:text-[#002045] transition-colors focus-visible:text-primary" href="#">Methodology Notes</a>',
@@ -350,56 +225,12 @@ def patch_rural_urban(html: str) -> str:
 
 
 def patch_methodology(html: str) -> str:
-    if METH_NAV_OLD not in html:
-        return html
-    html = html.replace(METH_NAV_OLD, METH_NAV_NEW)
-    html = html.replace(
-        '<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="#">\n<span class="material-symbols-outlined">dashboard</span>',
-        '<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="index.html">\n<span class="material-symbols-outlined">dashboard</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="#">\n<span class="material-symbols-outlined">work</span>',
-        '<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="rural-urban.html">\n<span class="material-symbols-outlined">work</span>',
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="#">\n<span class="material-symbols-outlined">groups</span>',
-        '<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="demographics.html">\n<span class="material-symbols-outlined">groups</span>',
-        1,
-    )
-    html = html.replace(
-        """<a class="relative flex items-center gap-3 px-4 py-3 rounded-md bg-[#ffffff]/10 text-white before:content-[''] before:absolute before:left-0 before:h-6 before:w-1 before:bg-[#66affe] before:rounded-r-full duration-200 ease-in-out focus-ring" href="#">""",
-        """<a class="relative flex items-center gap-3 px-4 py-3 rounded-md bg-[#ffffff]/10 text-white before:content-[''] before:absolute before:left-0 before:h-6 before:w-1 before:bg-[#66affe] before:rounded-r-full duration-200 ease-in-out focus-ring" href="methodology.html">""",
-        1,
-    )
-    html = html.replace(
-        '<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="#">\n<span class="material-symbols-outlined">biotech</span>',
-        '<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="methodology.html">\n<span class="material-symbols-outlined">biotech</span>',
-        1,
-    )
+    if METH_NAV_OLD in html:
+        html = html.replace(METH_NAV_OLD, METH_NAV_NEW)
     return html
 
 
 def patch_board_report(html: str) -> str:
-    old = """<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="#">Dashboard</a>
-<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="#">Demographics</a>
-<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="#">Rural vs Urban</a>
-<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="#">Methodology</a>
-<a class="text-[11px] font-bold uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Board Report</a>"""
-    if old not in html:
-        return html
-    html = html.replace(old, NAV_BOARD_ACTIVE)
-    html = html.replace(
-        '<button class="flex items-center gap-1.5 text-primary hover:text-secondary transition-colors font-bold text-xs uppercase tracking-wider">',
-        '<a class="flex items-center gap-1.5 text-primary hover:text-secondary transition-colors font-bold text-xs uppercase tracking-wider" href="index.html">',
-        1,
-    )
-    html = html.replace(
-        "Back to Dashboard\n</button>",
-        "Back to Dashboard\n</a>",
-        1,
-    )
     return html
 
 

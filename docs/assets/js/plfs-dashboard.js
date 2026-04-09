@@ -145,6 +145,62 @@
 
     bindDemographics(data.demographics_latest_round);
     bindAgeGroups(data.age_groups_latest_round);
+    bindBoardReport(nat, rows, deltas, meta, data.demographics_latest_round);
+  }
+
+  function fyLabel(roundId) {
+    const m = String(roundId).match(/july(\d{4})_june(\d{4})/);
+    if (!m) return String(roundId);
+    return `${m[1].slice(2)}-${m[2].slice(2)}`;
+  }
+
+  function bindBoardReport(nat, rows, deltas, meta, demo) {
+    if (!document.getElementById("board-kpi-ur")) return;
+    setText("board-kpi-ur", fmtPct(nat.unemployment_rate));
+    setText("board-kpi-lfpr", fmtPct(nat.lfpr));
+    setText("board-kpi-wpr", fmtPct(nat.wpr));
+    const fmtPP = (d) => {
+      if (d == null || Number.isNaN(d)) return "—";
+      const s = d >= 0 ? "+" : "";
+      return `${s}${d.toFixed(2)} pp`;
+    };
+    setText("board-delta-ur", fmtPP(deltas.ur));
+    setText("board-delta-lfpr", fmtPP(deltas.lfpr));
+    setText("board-delta-wpr", fmtPP(deltas.wpr));
+    if (demo) {
+      const g = demo.by_gender || {};
+      const m = g.male || {};
+      const f = g.female || {};
+      setText("board-demo-m-ur", fmtPct(m.unemployment));
+      setText("board-demo-f-ur", fmtPct(f.unemployment));
+      const s = demo.by_sector || {};
+      const ru = s.rural || {};
+      const uu = s.urban || {};
+      setText("board-demo-r-ur", fmtPct(ru.unemployment));
+      setText("board-demo-u-ur", fmtPct(uu.unemployment));
+      setText("board-demo-r-lfpr", fmtPct(ru.lfpr));
+      setText("board-demo-u-lfpr", fmtPct(uu.lfpr));
+    }
+    const tb = document.getElementById("board-trend-tbody");
+    if (!tb || !rows.length) return;
+    const latest = meta.latest_round;
+    tb.innerHTML = "";
+    rows.forEach((r) => {
+      const isLatest = latest && r.round === latest;
+      const tr = document.createElement("tr");
+      tr.className = isLatest
+        ? "bg-primary/5 font-bold"
+        : "hover:bg-surface-container-low transition-colors";
+      const y = fyLabel(r.round);
+      const tdCls = isLatest ? "text-primary" : "text-on-surface";
+      const numCls = isLatest ? "text-primary" : "text-slate-600";
+      tr.innerHTML = `
+        <td class="px-6 py-3 font-medium ${tdCls}">${y}</td>
+        <td class="px-6 py-3 text-right font-mono ${numCls}">${Number(r.unemployment_rate).toFixed(2)}</td>
+        <td class="px-6 py-3 text-right font-mono ${numCls}">${Number(r.lfpr).toFixed(2)}</td>
+        <td class="px-6 py-3 text-right font-mono ${numCls}">${Number(r.wpr).toFixed(2)}</td>`;
+      tb.appendChild(tr);
+    });
   }
 
   function computeDeltas(rows) {

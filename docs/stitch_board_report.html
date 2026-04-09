@@ -104,79 +104,73 @@
         }
     </style>
 </head>
-<body class="bg-surface-container-low p-8">
-<div class="a4-landscape shadow-2xl print:shadow-none">
-<!-- Header (Shared TopNavBar Logic) -->
-<header class="flex items-center w-full px-12 py-8 max-w-[297mm] mx-auto bg-white border-b border-surface-container justify-start"><button class="flex items-center gap-1.5 text-primary hover:text-secondary transition-colors font-bold text-xs uppercase tracking-wider">
-<span class="material-symbols-outlined">arrow_back</span>
+<body class="min-h-screen bg-[#f7fafc] text-on-surface">
+<div class="max-w-7xl mx-auto w-full min-h-screen flex flex-col shadow-sm bg-white sm:rounded-lg sm:my-6 overflow-hidden border border-slate-200/80">
+<!-- Header -->
+<header class="border-b border-slate-200 bg-white">
+<div class="flex flex-col gap-4 px-4 sm:px-8 py-6 lg:flex-row lg:flex-wrap lg:items-center lg:justify-between">
+<div class="flex flex-col sm:flex-row sm:items-start gap-4 min-w-0">
+<a class="inline-flex items-center gap-1.5 text-primary hover:text-secondary font-bold text-xs uppercase tracking-wider shrink-0" href="index.html">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
     Back to Dashboard
-</button>
-<div class="ml-6">
-<h1 class="text-2xl font-black text-primary tracking-tighter uppercase">PLFS Labour Market Board Report</h1>
-<p class="text-secondary text-sm font-medium tracking-tight">Multi-year summary (2017-18 to 2023-24)</p>
-</div><nav class="flex items-center gap-6 ml-10">
-<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="#">Dashboard</a>
-<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="#">Demographics</a>
-<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="#">Rural vs Urban</a>
-<a class="text-[11px] font-bold uppercase tracking-widest text-slate-400 hover:text-primary transition-colors" href="#">Methodology</a>
-<a class="text-[11px] font-bold uppercase tracking-widest text-primary border-b-2 border-primary pb-1" href="#">Board Report</a>
+</a>
+<div class="min-w-0">
+<h1 class="text-xl sm:text-2xl font-black text-primary tracking-tight uppercase">PLFS Labour Market Board Report</h1>
+<p class="text-secondary text-sm font-medium mt-1">Multi-year summary (2017-18 to 2023-24) · UPS, age 15+</p>
+</div>
+</div>
+<nav class="flex flex-wrap items-center gap-x-5 gap-y-2 text-[11px] font-bold uppercase tracking-widest">
+<a class="text-slate-500 hover:text-primary transition-colors" href="index.html">Dashboard</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="demographics.html">Demographics</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="rural-urban.html">Rural vs Urban</a>
+<a class="text-slate-500 hover:text-primary transition-colors" href="methodology.html">Methodology</a>
+<a class="text-primary border-b-2 border-primary pb-0.5" href="board-report.html">Board Report</a>
 </nav>
-<div class="flex items-center gap-3 ml-auto">
-<button class="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold transition-all hover:opacity-90 active:scale-95 shadow-sm">
-<span class="material-symbols-outlined">download</span>
-                    Export PDF
-                </button>
-<button class="flex items-center gap-2 border border-outline-variant text-primary px-4 py-2 rounded-lg text-sm font-bold transition-all hover:bg-surface-container-low active:scale-95">
-<span class="material-symbols-outlined">print</span>
-                    Print Report
-                </button>
-<button class="flex items-center gap-2 border border-outline-variant text-primary px-4 py-2 rounded-lg text-sm font-bold transition-all hover:bg-surface-container-low active:scale-95">
-<span class="material-symbols-outlined">file_download</span>
-                    Export CSV
-                </button>
+<button type="button" onclick="window.print()" class="inline-flex items-center justify-center gap-2 border border-slate-300 text-primary px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined text-[20px]">print</span>
+Print
+</button>
+</div>
+<!-- Methodology Ribbon -->
+<div class="px-4 sm:px-8 py-3 bg-[#f1f4f6] flex flex-wrap justify-between items-center gap-3 border-b border-slate-200/80 text-[10px]">
+<div class="flex flex-wrap gap-2">
+<span class="px-2 py-0.5 bg-white text-[10px] font-bold uppercase tracking-wider rounded border border-slate-200 text-slate-600">UPS</span>
+<span class="px-2 py-0.5 bg-white text-[10px] font-bold uppercase tracking-wider rounded border border-slate-200 text-slate-600">Age 15+</span>
+<span class="px-2 py-0.5 bg-white text-[10px] font-bold uppercase tracking-wider rounded border border-slate-200 text-slate-600">Annual pooled</span>
+<span class="px-2 py-0.5 bg-white text-[10px] font-bold uppercase tracking-wider rounded border border-slate-200 text-slate-600">Weighted (MLTS)</span>
+</div>
+<p class="font-mono text-slate-500">Latest round: <span data-bind="meta-round" class="font-semibold text-slate-700">—</span> · Generated: <span data-bind="meta-generated" class="font-semibold text-slate-700">—</span></p>
 </div>
 </header>
-<!-- Methodology Ribbon -->
-<div class="px-12 py-3 bg-surface-container-low flex justify-between items-center border-b border-surface-container">
-<div class="flex gap-2">
-<span class="px-2 py-0.5 bg-surface-container-highest text-[10px] font-bold uppercase tracking-wider rounded text-on-surface-variant">UPS</span>
-<span class="px-2 py-0.5 bg-surface-container-highest text-[10px] font-bold uppercase tracking-wider rounded text-on-surface-variant">Age 15+</span>
-<span class="px-2 py-0.5 bg-surface-container-highest text-[10px] font-bold uppercase tracking-wider rounded text-on-surface-variant">Annual Pooled</span>
-<span class="px-2 py-0.5 bg-surface-container-highest text-[10px] font-bold uppercase tracking-wider rounded text-on-surface-variant">Weighted (MLTS/400)</span>
-</div>
-<div class="text-[10px] font-mono text-slate-500">
-                SOURCE: <span class="font-bold">data/processed/plfs_processed_data.parquet</span>
-</div>
-</div>
 <!-- Main Content Grid -->
-<main class="flex-grow p-12 pt-8 flex flex-col gap-8">
+<main class="flex-grow p-6 sm:p-10 flex flex-col gap-8">
 <!-- Section 1: Executive KPI Strip -->
 <section class="grid grid-cols-3 gap-6">
 <!-- UR -->
 <div class="bg-surface-container-lowest p-6 border-l-4 border-primary">
 <div class="flex justify-between items-start mb-2">
 <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Unemployment Rate (UR)</span>
-<span class="text-[10px] font-bold text-error bg-error-container/20 px-2 py-0.5 rounded">+0.24 pp</span>
+<span class="text-[10px] font-bold text-error bg-error-container/20 px-2 py-0.5 rounded" id="board-delta-ur">+0.24 pp</span>
 </div>
-<div class="text-4xl font-black text-on-surface tracking-tighter">4.18%</div>
+<div class="text-4xl font-black text-on-surface tracking-tighter" id="board-kpi-ur">4.18%</div>
 <div class="text-[11px] text-slate-400 mt-1 italic">FY 2023-24 Actuals</div>
 </div>
 <!-- LFPR -->
 <div class="bg-surface-container-lowest p-6 border-l-4 border-secondary">
 <div class="flex justify-between items-start mb-2">
 <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Labour Force Participation (LFPR)</span>
-<span class="text-[10px] font-bold text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded">+1.58 pp</span>
+<span class="text-[10px] font-bold text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded" id="board-delta-lfpr">+1.58 pp</span>
 </div>
-<div class="text-4xl font-black text-on-surface tracking-tighter">54.19%</div>
+<div class="text-4xl font-black text-on-surface tracking-tighter" id="board-kpi-lfpr">54.19%</div>
 <div class="text-[11px] text-slate-400 mt-1 italic">FY 2023-24 Actuals</div>
 </div>
 <!-- WPR -->
 <div class="bg-surface-container-lowest p-6 border-l-4 border-tertiary">
 <div class="flex justify-between items-start mb-2">
 <span class="text-[10px] font-bold uppercase tracking-widest text-slate-500">Worker Population Ratio (WPR)</span>
-<span class="text-[10px] font-bold text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded">+1.40 pp</span>
+<span class="text-[10px] font-bold text-on-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded" id="board-delta-wpr">+1.40 pp</span>
 </div>
-<div class="text-4xl font-black text-on-surface tracking-tighter">51.93%</div>
+<div class="text-4xl font-black text-on-surface tracking-tighter" id="board-kpi-wpr">51.93%</div>
 <div class="text-[11px] text-slate-400 mt-1 italic">FY 2023-24 Actuals</div>
 </div>
 </section>
@@ -198,50 +192,7 @@
 <th class="px-6 py-4 text-[11px] font-black uppercase text-primary tracking-widest text-right">WPR (%)</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-surface-container text-sm">
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="px-6 py-3 font-medium text-on-surface">2017-18</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">7.80</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">47.08</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">43.40</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="px-6 py-3 font-medium text-on-surface">2018-19</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">7.41</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">46.68</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">43.22</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="px-6 py-3 font-medium text-on-surface">2019-20</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">6.32</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">49.04</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">45.94</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="px-6 py-3 font-medium text-on-surface">2020-21</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">5.01</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">51.61</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">49.02</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="px-6 py-3 font-medium text-on-surface">2021-22</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">4.85</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">51.64</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">49.14</td>
-</tr>
-<tr class="hover:bg-surface-container-low transition-colors">
-<td class="px-6 py-3 font-medium text-on-surface">2022-23</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">3.94</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">52.61</td>
-<td class="px-6 py-3 text-right font-mono text-slate-600">50.53</td>
-</tr>
-<tr class="bg-primary/5 font-bold">
-<td class="px-6 py-3 text-primary">2023-24</td>
-<td class="px-6 py-3 text-right font-mono text-primary">4.18</td>
-<td class="px-6 py-3 text-right font-mono text-primary">54.19</td>
-<td class="px-6 py-3 text-right font-mono text-primary">51.93</td>
-</tr>
-</tbody>
+<tbody id="board-trend-tbody" class="divide-y divide-surface-container text-sm"></tbody>
 </table>
 </div>
 </div>
@@ -254,22 +205,22 @@
 <div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
 <div class="text-[11px] font-semibold text-slate-500">SEX RATIO (UR)</div>
 <div class="text-xs space-x-3">
-<span class="text-on-surface">M: <span class="font-bold">3.83%</span></span>
-<span class="text-on-surface">F: <span class="font-bold text-error">4.88%</span></span>
+<span class="text-on-surface">M: <span class="font-bold" id="board-demo-m-ur">3.83%</span></span>
+<span class="text-on-surface">F: <span class="font-bold text-error" id="board-demo-f-ur">4.88%</span></span>
 </div>
 </div>
 <div class="flex justify-between items-center border-b border-outline-variant/20 pb-2">
 <div class="text-[11px] font-semibold text-slate-500">REGION (UR)</div>
 <div class="text-xs space-x-3">
-<span class="text-on-surface">R: <span class="font-bold">3.51%</span></span>
-<span class="text-on-surface">U: <span class="font-bold text-primary">5.72%</span></span>
+<span class="text-on-surface">R: <span class="font-bold" id="board-demo-r-ur">3.51%</span></span>
+<span class="text-on-surface">U: <span class="font-bold text-primary" id="board-demo-u-ur">5.72%</span></span>
 </div>
 </div>
 <div class="flex justify-between items-center">
 <div class="text-[11px] font-semibold text-slate-500">REGION (LFPR)</div>
 <div class="text-xs space-x-3">
-<span class="text-on-surface">R: <span class="font-bold">55.68%</span></span>
-<span class="text-on-surface">U: <span class="font-bold">49.81%</span></span>
+<span class="text-on-surface">R: <span class="font-bold" id="board-demo-r-lfpr">55.68%</span></span>
+<span class="text-on-surface">U: <span class="font-bold" id="board-demo-u-lfpr">49.81%</span></span>
 </div>
 </div>
 </div>
@@ -296,20 +247,20 @@
 </div>
 </main>
 <!-- Footer (Shared Component Logic) -->
-<footer class="flex flex-row justify-between items-center w-full px-12 py-8 max-w-[297mm] mx-auto bg-slate-50 border-t border-surface-container">
-<div class="flex flex-col gap-1">
-<div class="text-[10px] uppercase tracking-widest font-bold text-slate-400">© 2024 Executive Data Journalism. Classified: Board Use Only.</div>
-<div class="text-[9px] text-slate-400 flex gap-4">
-<span>Data Sources: Ministry of Statistics &amp; Programme Implementation (MoSPI)</span>
-<span>•</span>
-<span>Methodology: PLFS UPS (Usual Principal Status)</span>
+<footer class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 w-full px-6 sm:px-10 py-8 bg-[#f1f4f6] border-t border-slate-200 text-slate-600">
+<div class="flex flex-col gap-1 max-w-2xl">
+<div class="text-[10px] uppercase tracking-widest font-bold text-slate-500">PLFS analytical summary · not an official NSO release</div>
+<div class="text-[9px] text-slate-500 leading-relaxed">
+<span>Sources: NSSO PLFS (MoSPI), pipeline JSON in this repository.</span>
+<span class="mx-1">·</span>
+<span>UPS, age 15+, survey-weighted indicators.</span>
 </div>
 </div>
-<div class="text-right">
-<div class="text-[10px] uppercase tracking-widest font-bold text-slate-400">Generated on: <span class="text-primary">2024-11-20 09:42 UTC</span></div>
-<div class="text-[9px] text-slate-400 mt-1 max-w-xs ml-auto">
-                    Benchmarks may vary if definition slice differs (UPS/CWS, sector, sex, age).
-                </div>
+<div class="text-left sm:text-right">
+<div class="text-[10px] uppercase tracking-widest font-bold text-slate-500">Generated: <span data-bind="meta-generated" class="text-primary">—</span></div>
+<div class="text-[9px] text-slate-500 mt-1 max-w-sm sm:ml-auto">
+Definitions must match published PLFS reports for official use.
+</div>
 </div>
 </footer>
 </div>
