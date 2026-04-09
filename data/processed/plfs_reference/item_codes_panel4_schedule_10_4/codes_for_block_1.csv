@@ -1,0 +1,25 @@
+Item no.,Item Description,Code Description,Code
+9, Month of Survey , Jan             ,1
+9, Month of Survey , Feb             ,2
+9, Month of Survey , Mar             ,3
+9, Month of Survey , Apr             ,4
+9, Month of Survey , May             ,5
+9, Month of Survey , Jun             ,6
+9, Month of Survey , Jul             ,7
+9, Month of Survey , Aug             ,8
+9, Month of Survey , Sep             ,9
+9, Month of Survey , Oct             ,10
+9, Month of Survey , Nov             ,11
+9, Month of Survey , Dec             ,12
+17, Response Code: Informant , co-operative and capable ,1
+17, Response Code: Informant , co-operative but not capable ,2
+17, Response Code: Informant , busy ,3
+17, Response Code: Informant , reluctant ,4
+17, Response Code: Informant , others ,9
+18, Survey Code: Household Surveyed , original ,1
+18, Survey Code: Household Surveyed , substitute ,2
+18, Survey Code: Household Surveyed , casualty ,3
+19, Reason for Substitution of Original Household , informant busy ,1
+19, Reason for Substitution of Original Household , members away from home ,2
+19, Reason for Substitution of Original Household , informant non-cooperative ,3
+19, Reason for Substitution of Original Household , others ,9

@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rural vs Urban Comparison | PLFS Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eef1f3",
+                        "on-primary-fixed": "#001b3c",
+                        "on-tertiary-fixed-variant": "#00504e",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d7dadc",
+                        "surface-bright": "#f7fafc",
+                        "on-surface": "#181c1e",
+                        "on-secondary-fixed": "#001d37",
+                        "on-error": "#ffffff",
+                        "outline": "#74777f",
+                        "inverse-primary": "#adc7f7",
+                        "surface-tint": "#455f88",
+                        "on-secondary-container": "#004172",
+                        "on-error-container": "#93000a",
+                        "background": "#f7fafc",
+                        "tertiary-fixed-dim": "#77d6d3",
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-container": "#86a0cd",
+                        "on-surface-variant": "#43474e",
+                        "secondary-fixed-dim": "#9fcaff",
+                        "primary-fixed": "#d6e3ff",
+                        "secondary-container": "#66affe",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f1f4f6",
+                        "surface": "#f7fafc",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#00497e",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#00201f",
+                        "tertiary": "#002625",
+                        "primary": "#002045",
+                        "outline-variant": "#c4c6cf",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "surface-container-high": "#e5e9eb",
+                        "on-tertiary-container": "#4cadab",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#003d3c",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#ebeef0",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#181c1e",
+                        "primary-fixed-dim": "#adc7f7",
+                        "secondary-fixed": "#d2e4ff",
+                        "secondary": "#0061a5",
+                        "primary-container": "#1a365d",
+                        "tertiary-fixed": "#94f2f0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-effect { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(20px); }
+        body { font-family: 'Inter', sans-serif; background-color: #f7fafc; color: #181c1e; }
+        .primary-gradient { background: linear-gradient(135deg, #002045 0%, #1a365d 100%); }
+        .chart-grid { background-image: radial-gradient(#c4c6cf 0.5px, transparent 0.5px); background-size: 24px 24px; }
+        button:focus-visible { outline: 2px solid #0061a5; outline-offset: 2px; }
+        select:focus { ring: 2px solid #0061a5; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-8 bg-[#002045] text-white w-72 z-50">
+<div class="px-8 mb-10">
+<h1 class="text-lg font-bold text-white tracking-tight">Executive Portal</h1>
+<p class="text-slate-400 text-xs font-medium uppercase tracking-wider">Data Journalism Unit</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-medium text-sm">Overview</span>
+</a>
+<a class="flex items-center gap-3 bg-white/10 text-white border-l-4 border-[#66affe] py-3 px-6 cursor-pointer focus-visible:bg-white/20" href="#">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="font-medium text-sm">Rural vs Urban Comparison</span>
+</a>
+<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-medium text-sm">Demographics</span>
+</a>
+<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">
+<span class="material-symbols-outlined">factory</span>
+<span class="font-medium text-sm">Sectoral Shift</span>
+</a>
+<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-medium text-sm">Methodology</span>
+</a>
+</nav>
+<div class="px-6 py-6">
+<button class="w-full primary-gradient text-white py-3 px-4 rounded-md text-sm font-semibold flex items-center justify-center gap-2 active:scale-95 transition-transform focus-visible:ring-2 focus-visible:ring-white">
+            Generate Insight
+        </button>
+</div>
+<div class="mt-auto border-t border-white/10 pt-4">
+<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium text-sm">Settings</span>
+</a>
+<a class="flex items-center gap-3 text-slate-300 py-3 px-6 hover:bg-white/5 hover:text-white transition-all cursor-pointer focus-visible:bg-white/10" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-medium text-sm">Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="ml-72 flex-1 flex flex-col min-w-0">
+<!-- TopNavBar -->
+<header class="flex justify-between items-center px-8 py-4 w-full bg-slate-50 sticky top-0 z-40 border-b border-slate-200">
+<div class="flex items-center gap-4">
+<span class="text-xl font-black text-[#002045]">PLFS Analytics</span>
+<div class="hidden lg:flex items-center px-3 py-1 bg-green-100 rounded-full border border-green-200">
+<span class="material-symbols-outlined text-green-700 text-sm mr-1.5">check_circle</span>
+<span class="text-[10px] font-bold text-green-700 uppercase tracking-tight">Data quality checks passed</span>
+</div>
+</div>
+<nav class="hidden md:flex gap-8"><a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="#">Dashboard</a>
+<a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="#">Demographics</a>
+<a class="text-[#0061a5] font-bold border-b-2 border-[#0061a5] pb-1" href="#">Rural vs Urban</a>
+<a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="#">Methodology</a>
+<a class="text-[#181c1e] font-medium hover:text-[#0061a5] transition-colors focus-visible:text-[#0061a5]" href="#">Board Report</a></nav>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 mr-2">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-slate-100 rounded-md transition-all focus-visible:ring-2 focus-visible:ring-primary" title="Export CSV">
+<span class="material-symbols-outlined">csv</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-slate-100 rounded-md transition-all focus-visible:ring-2 focus-visible:ring-primary" title="Export PNG">
+<span class="material-symbols-outlined">image</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-slate-100 rounded-md transition-all focus-visible:ring-2 focus-visible:ring-primary" title="Open in Figma">
+<span class="material-symbols-outlined">design_services</span>
+</button>
+</div>
+<button class="primary-gradient text-white px-4 py-2 rounded-md text-sm font-bold active:opacity-80 transition-opacity focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary">
+                Export Report
+            </button>
+</div>
+</header>
+<!-- Methodology Ribbon -->
+<div class="bg-white px-8 py-3 border-b border-slate-200 flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="text-[10px] font-black text-slate-400 uppercase tracking-widest mr-2">Framework:</span>
+<div class="flex gap-2">
+<span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold text-slate-600">UPS</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold text-slate-600">Age 15+</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold text-slate-600">Annual pooled</span>
+<span class="px-2 py-0.5 bg-slate-100 rounded text-[10px] font-bold text-slate-600">Weighted (MLTS/400)</span>
+</div>
+</div>
+<div class="text-[10px] font-medium text-slate-400 font-mono">
+            Source: <span class="text-slate-500">data/processed/plfs_processed_data.parquet</span>
+</div>
+</div>
+<div class="p-8 space-y-8 max-w-7xl mx-auto w-full">
+<!-- Breadcrumbs & Header -->
+<div class="flex flex-col gap-2">
+<nav class="flex text-xs font-medium text-slate-500 uppercase tracking-widest gap-2">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-[10px] self-center">chevron_right</span>
+<span class="text-[#0061a5]">Rural vs Urban Comparison</span>
+</nav>
+<div class="flex justify-between items-end">
+<h2 class="text-3xl font-black text-[#002045] tracking-tight">Rural vs Urban Comparison</h2>
+<p class="text-sm text-slate-500 font-medium italic">Latest Release: Annual Report 2023-24</p>
+</div>
+</div>
+<div class="flex gap-8">
+<!-- Left Content Area (70%) -->
+<div class="w-[72%] space-y-8">
+<!-- KPI Bento Grid -->
+<div class="grid grid-cols-3 gap-6">
+<!-- UR Card -->
+<section class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-slate-100">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xs font-bold text-secondary uppercase tracking-wider">Unemployment Rate (UR)</h3>
+<span class="material-symbols-outlined text-slate-400">query_stats</span>
+</div>
+<div class="flex items-baseline gap-4">
+<div class="flex-1">
+<p class="text-[10px] text-slate-500 mb-1 font-bold uppercase">Rural</p>
+<p class="text-2xl font-black text-[#002045]">3.51%</p>
+</div>
+<div class="w-px h-10 bg-slate-100"></div>
+<div class="flex-1">
+<p class="text-[10px] text-slate-500 mb-1 font-bold uppercase">Urban</p>
+<p class="text-2xl font-black text-[#002045]">5.72%</p>
+</div>
+</div>
+<div class="mt-4 h-8 flex items-end">
+<div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 45%"></div>
+</div>
+</div>
+</section>
+<!-- LFPR Card -->
+<section class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-slate-100">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xs font-bold text-secondary uppercase tracking-wider">Labour Force Participation Rate (LFPR)</h3>
+<span class="material-symbols-outlined text-slate-400">group_work</span>
+</div>
+<div class="flex items-baseline gap-4">
+<div class="flex-1">
+<p class="text-[10px] text-slate-500 mb-1 font-bold uppercase">Rural</p>
+<p class="text-2xl font-black text-[#002045]">55.68%</p>
+</div>
+<div class="w-px h-10 bg-slate-100"></div>
+<div class="flex-1">
+<p class="text-[10px] text-slate-500 mb-1 font-bold uppercase">Urban</p>
+<p class="text-2xl font-black text-[#002045]">49.81%</p>
+</div>
+</div>
+<div class="mt-4 h-8 flex items-end">
+<div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 65%"></div>
+</div>
+</div>
+</section>
+<!-- WPR Card -->
+<section class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-slate-100">
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xs font-bold text-secondary uppercase tracking-wider">Worker Population Ratio (WPR)</h3>
+<span class="material-symbols-outlined text-slate-400">badge</span>
+</div>
+<div class="flex items-baseline gap-4">
+<div class="flex-1">
+<p class="text-[10px] text-slate-500 mb-1 font-bold uppercase">Rural</p>
+<p class="text-2xl font-black text-[#002045]">53.73%</p>
+</div>
+<div class="w-px h-10 bg-slate-100"></div>
+<div class="flex-1">
+<p class="text-[10px] text-slate-500 mb-1 font-bold uppercase">Urban</p>
+<p class="text-2xl font-black text-[#002045]">46.96%</p>
+</div>
+</div>
+<div class="mt-4 h-8 flex items-end">
+<div class="w-full h-1 bg-slate-100 rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 60%"></div>
+</div>
+</div>
+</section>
+</div>
+<div class="mt-4 mb-2 px-1 text-[10px] text-slate-400 font-medium italic">Computed from data/processed/plfs_processed_data.parquet (latest round 2023-24). Runtime-bound subgroup series might vary based on historical weighting.</div>
+<!-- Main Chart Section -->
+<section class="bg-surface-container-lowest p-8 rounded-lg shadow-sm space-y-6 border border-slate-100">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="text-xl font-black text-[#002045]">Annual Labor Trends</h3>
+<p class="text-sm text-slate-500 font-medium">Historical performance from 2017-18 to 2023-24</p>
+</div>
+<div class="flex bg-surface-container-low p-1 rounded-md">
+<button class="px-4 py-1.5 text-xs font-bold rounded bg-white shadow-sm text-primary focus-visible:ring-1 focus-visible:ring-primary">UR</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded text-slate-500 hover:text-primary transition-colors">LFPR</button>
+<button class="px-4 py-1.5 text-xs font-bold rounded text-slate-500 hover:text-primary transition-colors">WPR</button>
+</div>
+</div>
+<!-- Chart Visualization Area -->
+<div aria-label="Labor Trend Line Chart" class="h-80 w-full relative chart-grid border-l border-b border-slate-200">
+<svg class="absolute inset-0 w-full h-full p-4 overflow-visible" viewbox="0 0 700 300">
+<path d="M 0 50 L 116 65 L 232 100 L 348 140 L 464 145 L 580 170 L 696 160" fill="none" stroke="#0061a5" stroke-linecap="round" stroke-width="4"></path>
+<circle cx="0" cy="50" fill="#0061a5" r="4"></circle>
+<circle cx="116" cy="65" fill="#0061a5" r="4"></circle>
+<circle cx="232" cy="100" fill="#0061a5" r="4"></circle>
+<circle cx="348" cy="140" fill="#0061a5" r="4"></circle>
+<circle cx="464" cy="145" fill="#0061a5" r="4"></circle>
+<circle cx="580" cy="170" fill="#0061a5" r="4"></circle>
+<circle cx="696" cy="160" fill="#0061a5" r="4"></circle>
+</svg>
+<div class="absolute -bottom-6 w-full flex justify-between px-4 text-[10px] font-bold text-slate-400 tracking-tighter">
+<span>2017-18</span>
+<span>2018-19</span>
+<span>2019-20</span>
+<span>2020-21</span>
+<span>2021-22</span>
+<span>2022-23</span>
+<span>2023-24</span>
+</div>
+</div>
+<div class="grid grid-cols-7 gap-4 pt-4 border-t border-slate-100">
+<div class="text-center">
+<p class="text-[10px] text-slate-400 font-bold uppercase">17-18</p>
+<p class="text-sm font-black text-primary">7.80%</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-slate-400 font-bold uppercase">18-19</p>
+<p class="text-sm font-black text-primary">7.41%</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-slate-400 font-bold uppercase">19-20</p>
+<p class="text-sm font-black text-primary">6.32%</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-slate-400 font-bold uppercase">20-21</p>
+<p class="text-sm font-black text-primary">5.01%</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-slate-400 font-bold uppercase">21-22</p>
+<p class="text-sm font-black text-primary">4.85%</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-slate-400 font-bold uppercase">22-23</p>
+<p class="text-sm font-black text-primary">3.94%</p>
+</div>
+<div class="text-center">
+<p class="text-[10px] text-slate-400 font-bold uppercase">23-24</p>
+<p class="text-sm font-black text-primary">4.18%</p>
+</div>
+</div>
+</section>
+<!-- Distribution Section -->
+<div class="grid grid-cols-2 gap-8">
+<section class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-slate-100">
+<h4 class="text-sm font-bold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">pie_chart</span>
+                            Sectoral Composition by Sex
+                        </h4>
+<div class="space-y-4">
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold text-slate-500">
+<span>Agriculture</span>
+<span>{{rural_agri_sex_dist}}</span>
+</div>
+<div class="w-full h-4 bg-slate-100 flex rounded overflow-hidden">
+<div class="h-full bg-primary" style="width: 40%"></div>
+<div class="h-full bg-secondary" style="width: 60%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold text-slate-500">
+<span>Manufacturing</span>
+<span>{{urban_mfg_sex_dist}}</span>
+</div>
+<div class="w-full h-4 bg-slate-100 flex rounded overflow-hidden">
+<div class="h-full bg-primary" style="width: 70%"></div>
+<div class="h-full bg-secondary" style="width: 30%"></div>
+</div>
+</div>
+<div class="space-y-1">
+<div class="flex justify-between text-[10px] font-bold text-slate-500">
+<span>Services</span>
+<span>{{urban_svc_sex_dist}}</span>
+</div>
+<div class="w-full h-4 bg-slate-100 flex rounded overflow-hidden">
+<div class="h-full bg-primary" style="width: 55%"></div>
+<div class="h-full bg-secondary" style="width: 45%"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-slate-100">
+<h4 class="text-sm font-bold text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">bar_chart_4_bars</span>
+                            Employment Type Distribution
+                        </h4>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-24 text-[10px] font-bold text-slate-400 uppercase">Self-Employed</div>
+<div class="flex-1 h-3 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 58%"></div>
+</div>
+<div class="w-12 text-[10px] font-black text-primary text-right">{{self_emp_pct}}</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-24 text-[10px] font-bold text-slate-400 uppercase">Regular Wage</div>
+<div class="flex-1 h-3 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 21%"></div>
+</div>
+<div class="w-12 text-[10px] font-black text-primary text-right">{{wage_emp_pct}}</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-24 text-[10px] font-bold text-slate-400 uppercase">Casual Labor</div>
+<div class="flex-1 h-3 bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-tertiary-container" style="width: 21%"></div>
+</div>
+<div class="w-12 text-[10px] font-black text-primary text-right">{{casual_emp_pct}}</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- Right Sidebar (28%) -->
+<aside class="w-[28%] space-y-6">
+<!-- Filters Panel -->
+<div class="bg-surface-container-low p-6 rounded-lg border border-slate-200 shadow-sm">
+<h4 class="text-xs font-black text-primary uppercase tracking-widest mb-6 border-b border-slate-200 pb-2">Analysis Filters</h4>
+<form class="space-y-6">
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-2" for="year-range">Year Range</label>
+<select class="w-full bg-white border-outline-variant text-sm rounded-md focus:ring-secondary focus:border-secondary" id="year-range">
+<option>2017-18 to 2023-24</option>
+<option>Last 3 Years</option>
+<option>Last 5 Years</option>
+</select>
+</div>
+<div>
+<span class="block text-[10px] font-bold text-slate-500 uppercase mb-2">Sex Disaggregation</span>
+<div class="grid grid-cols-3 gap-2">
+<button class="py-2 text-[10px] font-bold border border-slate-300 rounded hover:bg-slate-50 transition-colors focus-visible:bg-slate-50" type="button">Male</button>
+<button class="py-2 text-[10px] font-bold border border-slate-300 rounded hover:bg-slate-50 transition-colors focus-visible:bg-slate-50" type="button">Female</button>
+<button class="py-2 text-[10px] font-bold border-2 border-primary text-primary rounded bg-primary-fixed focus-visible:ring-2 focus-visible:ring-primary" type="button">All</button>
+</div>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-2" for="state-filter">State / UT Selection</label>
+<select class="w-full bg-white border-outline-variant text-sm rounded-md focus:ring-secondary focus:border-secondary" id="state-filter">
+<option>All India</option>
+<option>Uttar Pradesh</option>
+<option>Maharashtra</option>
+<option>Bihar</option>
+</select>
+</div>
+<div>
+<label class="block text-[10px] font-bold text-slate-500 uppercase mb-2" for="age-band">Age Band</label>
+<select class="w-full bg-white border-outline-variant text-sm rounded-md focus:ring-secondary focus:border-secondary" id="age-band">
+<option>15 Years &amp; Above</option>
+<option>15-29 Years (Youth)</option>
+<option>15-59 Years</option>
+</select>
+</div>
+<button class="w-full primary-gradient text-white py-3 rounded text-xs font-bold uppercase tracking-widest shadow-md hover:shadow-lg transition-all active:scale-95 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary mt-4" type="submit">
+                            Update Dashboard
+                        </button>
+</form>
+</div>
+<!-- Gap Analysis -->
+<section class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-slate-100">
+<h4 class="text-xs font-black text-primary uppercase tracking-widest mb-4">Metric Gap Analysis</h4>
+<div class="space-y-4">
+<div class="p-4 bg-slate-50 rounded-md border-l-4 border-error">
+<p class="text-[10px] font-bold text-slate-500 uppercase">UR Gap (Urban-Rural)</p>
+<p class="text-xl font-black text-error">+2.21 pp</p>
+<p class="text-[10px] text-slate-400 mt-1 italic leading-tight">Urban unemployment consistently tracks higher across surveyed rounds.</p>
+</div>
+<div class="p-4 bg-slate-50 rounded-md border-l-4 border-secondary">
+<p class="text-[10px] font-bold text-slate-500 uppercase">LFPR Gap (Rural-Urban)</p>
+<p class="text-xl font-black text-secondary">-5.87 pp</p>
+<p class="text-[10px] text-slate-400 mt-1 italic leading-tight">Rural participation remains elevated, driven primarily by primary sector engagement.</p>
+</div>
+</div>
+</section>
+<!-- Narrative Insights -->
+<section class="bg-primary text-white p-6 rounded-lg shadow-xl relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+<h4 class="text-xs font-black uppercase tracking-widest mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary-container">auto_awesome</span>
+                        Executive Insights
+                    </h4>
+<div class="space-y-4 text-xs leading-relaxed font-medium text-slate-300">
+<p>
+                            Observation indicates a <span class="text-white font-bold">convergence trend</span> in rural-urban LFPR, likely correlated with increased rural female labor participation in recent cycles.
+                        </p>
+<p>
+                            While the national UR has reached a stable equilibrium near <span class="text-white font-bold">{{runtime_national_ur}}%</span>, urban segments continue to display structural friction within youth demographics.
+                        </p>
+<div class="p-3 bg-white/10 rounded-md border border-white/5">
+<p class="text-[10px] italic text-slate-400">NOTE: Figures are runtime-bound based on the 2023-24 PLFS annual data pool.</p>
+</div>
+</div>
+</section>
+</aside>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto flex justify-between items-center px-12 py-8 bg-[#f1f4f6] dark:bg-slate-950 border-t border-slate-200">
+<div class="flex gap-4">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold text-primary tracking-tighter">UPS (Usual Principal Status)</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold text-primary tracking-tighter">15+ Age Group</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] font-bold text-primary tracking-tighter">Annual Pooled Data</span>
+</div>
+<div class="flex flex-col items-end gap-3">
+<nav aria-label="Footer Navigation" class="flex gap-6 text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+<a class="hover:text-[#002045] transition-colors focus-visible:text-primary" href="#">Methodology Notes</a>
+<a class="hover:text-[#002045] transition-colors focus-visible:text-primary" href="#">Data Sources</a>
+<a class="hover:text-[#002045] transition-colors focus-visible:text-primary" href="#">Terms of Service</a>
+</nav>
+<p class="text-[10px] font-medium text-slate-400">
+                © 2024 PLFS Analytics • Data Journalism Division • Periodic Labour Force Survey Framework
+            </p>
+</div>
+</footer>
+</main>
+</body></html>

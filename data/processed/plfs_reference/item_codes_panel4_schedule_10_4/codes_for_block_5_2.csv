@@ -1,0 +1,62 @@
+Column no.,Column Description,Code Description,Code
+3, Status          , worked in h.h. enterprise (self-employed): own account worker ,11
+3, Status          , worked in h.h. enterprise (self-employed): employer ,12
+3, Status          , worked as helper in h.h. enterprise (unpaid family worker) ,21
+3, Status          , worked as regular salaried/wage employee ,31
+3, Status          , worked as casual wage labour: in public works ,41
+3, Status          , worked as casual wage labour: in other types of work ,51
+7, Location of Workplace (Rural) , workplace in rural areas and located in: own dwelling unit ,10
+7, Location of Workplace (Rural) , workplace in rural areas and located in: structure attached to own dwelling unit ,11
+7, Location of Workplace (Rural) , workplace in rural areas and located in: open area adjacent to own dwelling unit ,12
+7, Location of Workplace (Rural) , workplace in rural areas and located in: detached structure adjacent to own dwelling unit ,13
+7, Location of Workplace (Rural) , workplace in rural areas and located in: own enterprise/unit/office/shop but away from own dwelling ,14
+7, Location of Workplace (Rural) , workplace in rural areas and located in: employer’s dwelling unit ,15
+7, Location of Workplace (Rural) , workplace in rural areas and located in: employer’s enterprise/unit/office/shop but outside employer’s dwelling ,16
+7, Location of Workplace (Rural) , workplace in rural areas and located in: street with fixed location ,17
+7, Location of Workplace (Rural) , workplace in rural areas and located in: construction site ,18
+7, Location of Workplace (Rural) , workplace in rural areas and located in: others ,19
+7, Location of Workplace (Urban) , workplace in urban areas and located in: own dwelling unit ,20
+7, Location of Workplace (Urban) , workplace in urban areas and located in: structure attached to own dwelling unit ,21
+7, Location of Workplace (Urban) , workplace in urban areas and located in: open area adjacent to own dwelling unit ,22
+7, Location of Workplace (Urban) , workplace in urban areas and located in: detached structure adjacent to own dwelling unit ,23
+7, Location of Workplace (Urban) , workplace in urban areas and located in: own enterprise/unit/office/shop but away from own dwelling ,24
+7, Location of Workplace (Urban) , workplace in urban areas and located in: employer’s dwelling unit ,25
+7, Location of Workplace (Urban) , workplace in urban areas and located in: employer’s enterprise/unit/office/shop but outside employer’s dwelling ,26
+7, Location of Workplace (Urban) , workplace in urban areas and located in: street with fixed location ,27
+7, Location of Workplace (Urban) , workplace in urban areas and located in: construction site ,28
+7, Location of Workplace (Urban) , workplace in urban areas and located in: others ,29
+7, Location of Workplace , no fixed workplace ,99
+8, Enterprise Type , proprietary: male ,1
+8, Enterprise Type , proprietary: female ,2
+8, Enterprise Type , partnership: with members from same household ,3
+8, Enterprise Type , partnership: with members from different household ,4
+8, Enterprise Type , Government/local body ,5
+8, Enterprise Type , Public Sector Enterprises ,6
+8, Enterprise Type , Autonomous Bodies ,7
+8, Enterprise Type , Public/Private limited company ,8
+8, Enterprise Type , Co-operative societies ,10
+8, Enterprise Type , trust/other non-profit institutions ,11
+8, Enterprise Type ," employer’s households (i.e., private households employing maid servant, watchman, cook, etc.) ",12
+8, Enterprise Type , others ,19
+9, Number of Workers in Enterprise , less than 6 ,1
+9, Number of Workers in Enterprise , 6 and above but less than 10 ,2
+9, Number of Workers in Enterprise , 10 and above but less than 20 ,3
+9, Number of Workers in Enterprise , 20 and above ,4
+9, Number of Workers in Enterprise , not known ,9
+10, Type of Job Contract , no written job contract ,1
+10, Type of Job Contract , written job contract: for 1 year or less ,2
+10, Type of Job Contract , written job contract: more than 1 year to 3 years ,3
+10, Type of Job Contract , written job contract: more than 3 years ,4
+12, Availability of Social Security Benefits ," eligible for: only PF/ pension (i.e., GPF, CPF, PPF, pension, etc.) ",1
+12, Availability of Social Security Benefits , eligible for: only gratuity ,2
+12, Availability of Social Security Benefits , eligible for: only health care/maternity benefits ,3
+12, Availability of Social Security Benefits , eligible for: only PF/ pension and gratuity ,4
+12, Availability of Social Security Benefits , eligible for: only PF/ pension and health care/ maternity benefits ,5
+12, Availability of Social Security Benefits , eligible for: only gratuity and health care/ maternity benefits ,6
+12, Availability of Social Security Benefits ," eligible for: PF/ pension, gratuity, health care/ maternity benefits ",7
+12, Availability of Social Security Benefits , not eligible for any of above social security benefits ,8
+12, Availability of Social Security Benefits , not known ,9
+13, Product of Economic Activity , for own consumption only and did not intend to sell any part of it ,1
+13, Product of Economic Activity , for own consumption and intended to sell some part of it (less than 50%) ,2
+13, Product of Economic Activity , for own consumption and intended to sell major part of it (more than or equal 50%) ,3
+13, Product of Economic Activity , the entire produce is for selling ,4

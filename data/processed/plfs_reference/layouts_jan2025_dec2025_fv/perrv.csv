@@ -1,0 +1,105 @@
+Srl,Full Name,Block,Item /Col.,Field Length,Field_Name
+1,File Identification,,,4,file_id
+2,Schdule,1,2,3,sch
+3,Quarter,,,2,qtr
+4,Visit,,,2,visit
+5,Sector,1,3,1,sec
+6,State/Ut Code,,,2,st
+7,District Code,1,4,2,dc
+8,NSS-Region,1,4,3,nss_reg
+9,Stratum,1,5,2,strm
+10,Sub-Stratum,1,6,2,sstrm
+11,Sub-Sample,1,11,1,ss
+12,Fod Sub-Region,1,12,4,sro
+13,FSU,1,1,5,mfsu
+14,Sample Sg/Sb No.,1,13,1,seg
+15,Second Stage Stratum No.,1,14,1,sss
+16,Sample Household Number,1,15,2,ssu
+17,Person Serial No.,4,1,2,srl
+19,Relationship To Head,4,4,1,rel
+20,Sex,4,5,1,sex
+21,Age,4,6,3,age
+22,Marital Status,4,7,1,marst
+23,General Educaion Level,4,8,2,gedu_lvl
+24,Technical Educaion Level,4,9,2,tedu_lvl
+25,No. of years in Formal Education,4,10,2,form_edu
+26,Status of Current Attendance in Educational Institution,4,11,2,curr_att
+27,Status Code for activity 1,6,4/3.1,2,das17
+28,Industry Code (NIC) for activity 1,6,5/3.1,2,ind17
+29,hours actuallly worked for activity 1 on 7 th day,6,6/3.1,2,hr17
+30,wage earning for activity 1 on 7 th day,6,9/3.1,5,ern17
+31,Status Code for activity 2,6,4/3.1,2,das27
+32,Industry Code (NIC) for activity 2,6,5/3.1,2,ind27
+33,hours actuallly worked for activity 2 on 7 th day,6,6/3.1,2,hr27
+34,wage earning for activity 2 on 7 th day,6,9/3.1,5,ern27
+35,total hours actually worked on 7th day,6,7/3.1,2,hr7
+36,hours available for aditional worked on 7th day,6,8/3.1,2,ahr7
+37,Status Code for activity 1,6,4/3.2,2,das16
+38,Industry Code (NIC) for activity 1,6,5/3.2,2,ind16
+39,hours actuallly worked for activity 1 on 6 th day,6,6/3.2,2,hr16
+40,wage earning for activity 1 on 7 th day,6,9/3.2,5,ern16
+41,Status Code for activity 2,6,4/3.2,2,das26
+42,Industry Code (NIC) for activity 2,6,5/3.2,2,ind26
+43,hours actuallly worked for activity 2 on 6 th day,6,6/3.2,2,hr26
+44,wage earning for activity 2 on 6 th day,6,9/3.2,5,ern26
+45,total hours actually worked on 6th day,6,7/3.2,2,hr6
+46,hours available for aditional worked on 6th day,6,8/3.2,2,ahr6
+47,Status Code for activity 1,6,4/3.3,2,das15
+48,Industry Code (NIC) for activity 1,6,5/3.3,2,ind15
+49,hours actuallly worked for activity 1 on5 th day,6,6/3.3,2,hr15
+50,wage earning for activity 1 on 5 th day,6,9/3.3,5,ern15
+51,Status Code for activity 2,6,4/3.3,2,das25
+52,Industry Code (NIC) for activity 2,6,5/3.3,2,ind25
+53,hours actuallly worked for activity 2 on 5 th day,6,6/3.3,2,hr25
+54,wage earning for activity 2 on 5 th day,6,9/3.3,5,ern25
+55,total hours actually worked on 5th day,6,7/3.3,2,hr5
+56,hours available for aditional worked on 5th day,6,8/3.3,2,ahr5
+57,Status Code for activity 1,6,4/3.4,2,das14
+58,Industry Code (NIC) for activity 1,6,5/3.4,2,ind14
+59,hours actuallly worked for activity 1 on 4th day,6,6/3.4,2,hr14
+60,wage earning for activity 1 on 4th day,6,9/3.4,5,ern14
+61,Status Code for activity 2,6,4/3.4,2,das24
+62,Industry Code (NIC) for activity 2,6,5/3.4,2,ind24
+63,hours actuallly worked for activity 2 on 4th day,6,6/3.4,2,hr24
+64,wage earning for activity 2 on 4th day,6,9/3.4,5,ern24
+65,total hours actually worked on 4th day,6,7/3.4,2,hr4
+66,hours available for aditional worked on 4th day,6,8/3.4,2,ahr4
+67,Status Code for activity 1,6,4/3.5,2,das13
+68,Industry Code (NIC) for activity 1,6,5/3.5,2,ind13
+69,hours actuallly worked for activity 1 on 3rd day,6,6/3.5,2,hr13
+70,wage earning for activity 1 on 3rd day,6,9/3.5,5,ern13
+71,Status Code for activity 2,6,4/3.5,2,das23
+72,Industry Code (NIC) for activity 2,6,5/3.5,2,ind23
+73,hours actuallly worked for activity 2 on 3rd day,6,6/3.5,2,hr23
+74,wage earning for activity 2 on 3 rd day,6,9/3.5,5,ern23
+75,total hours actually worked on 3rd day,6,7/3.5,2,hr3
+76,hours available for aditional worked on 3rd day,6,8/3.5,2,ahr3
+77,Status Code for activity 1,6,4/3.6,2,das12
+78,Industry Code (NIC) for activity 1,6,5/3.6,2,ind12
+79,hours actuallly worked for activity 1 on 2nd day,6,6/3.6,2,hr12
+80,wage earning for activity 1 on 2nd day,6,9/3.6,5,ern12
+81,Status Code for activity 2,6,4/3.6,2,das22
+82,Industry Code (NIC) for activity 2,6,5/3.6,2,ind22
+83,hours actuallly worked for activity 2 on 2nd day,6,6/3.6,2,hr22
+84,wage earning for activity 2 on 2nd day,6,9/3.6,5,ern22
+85,total hours actually worked on 2nd day,6,7/3.6,2,hr2
+86,hours available for aditional worked on 2nd day,6,8/3.6,2,ahr2
+87,Status Code for activity 1,6,4/3.7,2,das11
+88,Industry Code (NIC) for activity 1,6,5/3.7,2,ind11
+89,hours actuallly worked for activity 1 on 1st day,6,6/3.7,2,hr11
+90,wage earning for activity 1 on 1st day,6,9/3.7,5,ern11
+91,Status Code for activity 2,6,4/3.7,2,das21
+92,Industry Code (NIC) for activity 2,6,5/3.7,2,ind21
+93,hours actuallly worked for activity 2 on 1st day,6,6/3.7,2,hr21
+94,wage earning for activity 2 on 1st day,6,9/3.7,5,ern21
+95,total hours actually worked on 1st day,6,7/3.7,2,hr1
+96,hours available for aditional worked on 1st day,6,8/3.7,2,ahr1
+97,Current Weekly Status (CWS),6,5,2,acws
+98,Industry Code (CWS),6,6,2,aind_cws
+99,Occupation Code (CWS),6,7,3,ocu_cws
+100,Earnings For Regular Salarid/Wage Activity,6,9,8,ern_reg
+101,Earnings For Self Employed,6,10,8,ern_self
+102,Ns count for sector x stratum x substratum x sub-sample,Generated,,3,nss
+103,Ns count for sector x stratum x substratum,Generated,,3,nsc
+104,Sub-sample wise Multiplier,Generated,,10,mult
+105,Occurence of FSUs in State x Sector x Stratum x SubStratum in that Quarter including earlier visits,Generated,,1,no_qtr

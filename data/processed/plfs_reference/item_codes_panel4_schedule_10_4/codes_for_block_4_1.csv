@@ -1,0 +1,32 @@
+Column no.,Column Description,Code Description,Code
+4, Field of Training , aerospace and aviation ,1
+4, Field of Training ," agriculture, non-crop based agriculture, food processing ",2
+4, Field of Training ," allied manufacturing- gems and jewellery, leather, rubber, furniture and fittings, printing ",3
+4, Field of Training , artisan/craftsman/handicraft/creative arts and cottage based production ,4
+4, Field of Training , automotive ,5
+4, Field of Training , beauty and wellness ,6
+4, Field of Training ," chemical engineering, hydrocarbons, chemicals and petrochemicals ",7
+4, Field of Training ," civil engineering- construction, plumbing, paints and coatings ",8
+4, Field of Training ," electrical, power and electronics ",9
+4, Field of Training , healthcare and life sciences ,10
+4, Field of Training , hospitality and tourism ,11
+4, Field of Training ," iron and steel, mining, earthmoving and infra building ",12
+4, Field of Training , IT-ITeS ,13
+4, Field of Training , logistics ,14
+4, Field of Training ," mechanical engineering-capital goods, strategic manufacturing ",15
+4, Field of Training ," media-journalism, mass communication and entertainment ",16
+4, Field of Training , office and business related work ,17
+4, Field of Training , security ,18
+4, Field of Training , telecom ,19
+4, Field of Training ," textiles and handlooms, apparels ",20
+4, Field of Training ," work related to childcare, nutrition, pre-school and crèche ",21
+4, Field of Training , other ,99
+5, Duration of Training , less than 3 months ,1
+5, Duration of Training , 3 months or more but less than 6 months ,2
+5, Duration of Training , 6 months or more but less than 12 months ,3
+5, Duration of Training , 12 months or more but less than 18 months ,4
+5, Duration of Training , 18 months or more but less than 24 months ,5
+5, Duration of Training , 24 months or more ,6
+6, Type of Training , on the job ,1
+6, Type of Training , other than on the job: part time ,2
+6, Type of Training , other than on the job: full time ,3

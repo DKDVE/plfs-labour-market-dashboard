@@ -1,0 +1,43 @@
+Item no.,Column no.,Item/Column Description,Code Description,Code
+3.1 to 3.7,4.0,Status, worked in h.h. enterprise (self-employed): own account worker ,11
+3.1 to 3.7,4.0,Status, worked in h.h. enterprise (self-employed): employer ,12
+3.1 to 3.7,4.0,Status, worked as helper in h.h. enterprise (unpaid family worker) ,21
+3.1 to 3.7,4.0,Status, worked as regular salaried/wage employee ,31
+3.1 to 3.7,4.0,Status, worked as casual wage labour: in public works ,41
+3.1 to 3.7,4.0,Status, worked as casual wage labour in MGNREG works ,42
+3.1 to 3.7,4.0,Status, worked as casual wage labour in other types of work ,51
+3.1 to 3.7,4.0,Status, had work in h.h. enterprise but did not work due to: sickness ,61
+3.1 to 3.7,4.0,Status, had work in h.h. enterprise but did not work due to: other reasons ,62
+3.1 to 3.7,4.0,Status, had regular salaried/wage employment but did not work due to: sickness ,71
+3.1 to 3.7,4.0,Status, had regular salaried/wage employment but did not work due to: other reasons ,72
+3.1 to 3.7,4.0,Status, sought work ,81
+3.1 to 3.7,4.0,Status, did not seek but was available for work ,82
+3.1 to 3.7,4.0,Status, attended educational institution ,91
+3.1 to 3.7,4.0,Status, attended domestic duties only ,92
+3.1 to 3.7,4.0,Status," attended domestic duties and was also engaged in free collection of goods (vegetables, roots, firewood, cattle feed, etc.), sewing, tailoring, weaving, etc. for household use ",93
+3.1 to 3.7,4.0,Status," rentiers, pensioners, remittance recipients, etc. ",94
+3.1 to 3.7,4.0,Status, not able to work due to disability ,95
+3.1 to 3.7,4.0,Status," others (including begging, prostitution, etc.) ",97
+3.1 to 3.7,4.0,Status, did not work due to temporary sickness (for casual workers only) ,98
+3.1 to 3.7,4.0,Status, For persons age<5,99
+5,,Status, worked in h.h. enterprise (self-employed): own account worker ,11
+5,,Status, worked in h.h. enterprise (self-employed): employer ,12
+5,,Status, worked as helper in h.h. enterprise (unpaid family worker) ,21
+5,,Status, worked as regular salaried/wage employee ,31
+5,,Status, worked as casual wage labour: in public works ,41
+5,,Status, worked as casual wage labour in MGNREG works ,42
+5,,Status, worked as casual wage labour in other types of work ,51
+5,,Status, had work in h.h. enterprise but did not work due to: sickness ,61
+5,,Status, had work in h.h. enterprise but did not work due to: other reasons ,62
+5,,Status, had regular salaried/wage employment but did not work due to: sickness ,71
+5,,Status, had regular salaried/wage employment but did not work due to: other reasons ,72
+5,,Status, sought work ,81
+5,,Status, did not seek but was available for work ,82
+5,,Status, attended educational institution ,91
+5,,Status, attended domestic duties only ,92
+5,,Status," attended domestic duties and was also engaged in free collection of goods (vegetables, roots, firewood, cattle feed, etc.), sewing, tailoring, weaving, etc. for household use ",93
+5,,Status," rentiers, pensioners, remittance recipients, etc. ",94
+5,,Status, not able to work due to disability ,95
+5,,Status," others (including begging, prostitution, etc.) ",97
+5,,Status, did not work due to temporary sickness (for casual workers only) ,98
+5,,Status, For persons age<5,99

@@ -1,0 +1,51 @@
+{
+  "generated_at_utc": "2026-04-09T04:55:00.400414+00:00",
+  "bundle_root": "/mnt/e/plfs-project/data/Periodic Labour Force Survey -20260408T175758Z-3-001/Periodic Labour Force Survey",
+  "output_dir": "/mnt/e/plfs-project/data/processed/plfs_reference",
+  "geography": {
+    "states_source": "/mnt/e/plfs-project/data/Periodic Labour Force Survey -20260408T175758Z-3-001/Periodic Labour Force Survey/Jan 25-Dec25/4. Indian_States_and_UTs_Code  Name.xlsx",
+    "districts_source": "/mnt/e/plfs-project/data/Periodic Labour Force Survey -20260408T175758Z-3-001/Periodic Labour Force Survey/Jan 25-Dec25/5. Indian_Districts_Code  Name.xlsx",
+    "state_rows": 36,
+    "district_rows": 771,
+    "basic_stratum": {
+      "source": "/mnt/e/plfs-project/data/Periodic Labour Force Survey -20260408T175758Z-3-001/Periodic Labour Force Survey/Jan 25-Dec25/3. Bstrm_file.xlsx",
+      "rows": 1891
+    }
+  },
+  "layouts_july2023_june2024": {
+    "source": "/mnt/e/plfs-project/data/Periodic Labour Force Survey -20260408T175758Z-3-001/Periodic Labour Force Survey/July 2023-June 2024/Data_LayoutPLFS_2023-24.xlsx",
+    "sheets_exported": 6
+  },
+  "layouts_calendar_year_2024": {
+    "source": "/mnt/e/plfs-project/data/Periodic Labour Force Survey -20260408T175758Z-3-001/Periodic Labour Force Survey/Jan 24-Dec 24/Data_LayoutPLFS_Calendar_2024 (4).xlsx",
+    "note": "Use these field names when parsing CHHV1/CPerV1 CSV from NSO (calendar year)."
+  },
+  "item_codes_panel4": {
+    "source": "/mnt/e/plfs-project/data/Periodic Labour Force Survey -20260408T175758Z-3-001/Periodic Labour Force Survey/Jan 24-Dec 24/PLFS Panel 4 Sch 10.4 Item Code Description & Codes (1).xlsx",
+    "sheets": [
+      "Codes for Block 1",
+      "Codes for Block 3",
+      "Codes for Block 4",
+      "Codes for Block 4.1",
+      "Codes for Block 5.1",
+      "Codes for Block 5.2",
+      "Codes for Block 5.3",
+      "Codes for Block 6"
+    ]
+  },
+  "layouts_fv_2025": {
+    "source": "/mnt/e/plfs-project/data/Periodic Labour Force Survey -20260408T175758Z-3-001/Periodic Labour Force Survey/Jan 25-Dec25/2. FV_Data_LayoutPLFS_2025.xlsx",
+    "sheets": [
+      "Data Layout",
+      "CHHV1",
+      "CPERV1",
+      "hhrv",
+      "perrv",
+      "perv1 (2)"
+    ]
+  },
+  "microdata": {
+    "status": "not_included_in_documentation_bundle",
+    "expected_raw_paths": "data/raw/chhv1.csv, data/raw/cperv1.csv (names configurable in config.yaml)"
+  }
+}

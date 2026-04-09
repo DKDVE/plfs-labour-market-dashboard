@@ -1,0 +1,41 @@
+Column no.,Column Description,Code Description,Code
+6, Duration of Engagement , less than or equal to 6 months ,1
+6, Duration of Engagement , more than 6 months but less than or equal to 1 year ,2
+6, Duration of Engagement , more than 1 year but less than or equal to 2 years ,3
+6, Duration of Engagement , more than 2 years but less than or equal to 3 years ,4
+6, Duration of Engagement , more than three years ,5
+7, Duration of Engagement , less than or equal to 6 months ,1
+7, Duration of Engagement , more than 6 months but less than or equal to 1 year ,2
+7, Duration of Engagement , more than 1 year but less than or equal to 2 years ,3
+7, Duration of Engagement , more than 2 years but less than or equal to 3 years ,4
+7, Duration of Engagement , more than three years ,5
+8, Efforts to Search Work ," apply to prospective employers/place or answer job advertisements/check at factories, work sites ",1
+8, Efforts to Search Work , register with employment exchange ,2
+8, Efforts to Search Work , register with private employment center ,3
+8, Efforts to Search Work , seek financial help to start a business ,4
+8, Efforts to Search Work ," seek help from relatives, friends ",5
+8, Efforts to Search Work , apply for permit or license to start a business ,6
+8, Efforts to Search Work , others ,7
+9, Duration of Unemployment , less than or equal to 6 months ,1
+9, Duration of Unemployment , more than 6 months but less than or equal to 1 year ,2
+9, Duration of Unemployment , more than 1 year but less than or equal to 2 years ,3
+9, Duration of Unemployment , more than 2 years but less than or equal to 3 years ,4
+9, Duration of Unemployment , more than three years ,5
+11, Reason for Not Working , retrenchment/lay-off without pay ,1
+11, Reason for Not Working , end of contract/quit ,2
+11, Reason for Not Working , not operating the unit ,3
+11, Reason for Not Working , lack of work in the area ,4
+11, Reason for Not Working , retirement ,5
+11, Reason for Not Working , child care ,6
+11, Reason for Not Working , household responsibilities other than child care ,7
+11, Reason for Not Working , health related reasons ,8
+11, Reason for Not Working , no financial need ,10
+11, Reason for Not Working , others ,19
+12,Main reason for being in the status 91-97, did not have the required training/qualification/age for work ,1
+12,Main reason for being in the status 91-97, non availability of work at a convenient location ,2
+12,Main reason for being in the status 91-97, health/age related reason ,3
+12,Main reason for being in the status 91-97, want to continue study ,4
+12,Main reason for being in the status 91-97, social reasons ,5
+12,Main reason for being in the status 91-97, financially well-off ,6
+12,Main reason for being in the status 91-97, child care/personal commitments in home making ,7
+12,Main reason for being in the status 91-97, others ,9

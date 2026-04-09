@@ -1,0 +1,47 @@
+{
+  "source_file": "data/processed/plfs_processed_data.parquet",
+  "methodology": "UPS, age 15+, annual pooled",
+  "latest_round": "2023-24",
+  "male_ur_2023_24": 3.83,
+  "female_ur_2023_24": 4.88,
+  "rural_male_ur_2023_24": 3.43,
+  "urban_female_ur_2023_24": 8.74,
+  "rural_ur_2023_24": 3.51,
+  "urban_ur_2023_24": 5.72,
+  "rural_lfpr_2023_24": 55.68,
+  "urban_lfpr_2023_24": 49.81,
+  "rural_wpr_2023_24": 53.73,
+  "urban_wpr_2023_24": 46.96,
+  "ur_gap_2023_24": 2.21,
+  "lfpr_gap_2023_24": -5.87,
+  "age_band_ur_2023_24": {
+    "15-24": 17.8,
+    "25-34": 5.89,
+    "35-44": 0.74,
+    "45-54": 0.37,
+    "55-64": 0.28,
+    "65+": 0.31
+  },
+  "matrix_2023_24": {
+    "rural_male": {
+      "UR": 3.43,
+      "LFPR": 78.24,
+      "WPR": 75.56
+    },
+    "rural_female": {
+      "UR": 3.68,
+      "LFPR": 33.63,
+      "WPR": 32.39
+    },
+    "urban_male": {
+      "UR": 4.76,
+      "LFPR": 74.78,
+      "WPR": 71.22
+    },
+    "urban_female": {
+      "UR": 8.74,
+      "LFPR": 24.34,
+      "WPR": 22.21
+    }
+  }
+}

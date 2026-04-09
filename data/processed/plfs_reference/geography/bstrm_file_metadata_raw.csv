@@ -1,0 +1,13 @@
+0,1,2,3
+,,Basic stratum metadata,
+,,,
+,,Field Name,Field Description
+,,sec,Sector - Rural / Urban
+,,stnew,"State code ( Uninhibited stratum adjested; stnew = '99' for uninhibited area, stnew=state code otherwise)"
+,,strm,stratum code 
+,,grp,group code
+,,sstrm,sub-stratum code
+,,bstrm,Basic stratum code
+,,Bstrm_name,Basic stratum name
+,,,
+,,N.B : In PLFS 2025 (Panel - 5) district was basic stratum for nearly 500 districts; NSS regions were formed as basic stratum where districts were too small to form basic stratum. Each basic stratum is the sub-state level stratum formed which has a popular geographycal identity eg. district or nss-region. Design based estimate and design based rse can be generated for each basic stratum. ,

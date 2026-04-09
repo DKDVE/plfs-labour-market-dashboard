@@ -1,0 +1,81 @@
+Column no.,Column Description,Code Description,Code
+4, Relation to Head , self ,1
+4, Relation to Head , spouse of head ,2
+4, Relation to Head , married child ,3
+4, Relation to Head , spouse of married child ,4
+4, Relation to Head , unmarried child ,5
+4, Relation to Head , grandchild ,6
+4, Relation to Head , father/mother/father-in-law/mother-in-law ,7
+4, Relation to Head , brother/sister/brother-in-law/sister-in-law/other relatives ,8
+4, Relation to Head , servants/employees/other non-relatives ,9
+7, Marital Status , never married ,1
+7, Marital Status , currently married ,2
+7, Marital Status , widowed ,3
+7, Marital Status , divorced/separated ,4
+8, Educational Level - General , not literate ,1
+8, Educational Level - General , literate without formal schooling: EGS/NFEC/AEC ,2
+8, Educational Level - General , literate without formal schooling: TLC ,3
+8, Educational Level - General , literate without formal schooling: others ,4
+8, Educational Level - General , literate: below primary ,5
+8, Educational Level - General , primary ,6
+8, Educational Level - General , middle ,7
+8, Educational Level - General , secondary ,8
+8, Educational Level - General , higher secondary ,10
+8, Educational Level - General , diploma/certificate course ,11
+8, Educational Level - General , graduate ,12
+8, Educational Level - General , postgraduate and above ,13
+9, Educational Level - Technical , no technical education ,1
+9, Educational Level - Technical , technical degree in: agriculture ,2
+9, Educational Level - Technical , technical degree in: engineering/technology ,3
+9, Educational Level - Technical , technical degree in: medicine ,4
+9, Educational Level - Technical , technical degree in: crafts ,5
+9, Educational Level - Technical , technical degree in: other subjects ,6
+9, Educational Level - Technical , diploma or certificate (below graduate level) in: agriculture ,7
+9, Educational Level - Technical , diploma or certificate (below graduate level) in: engineering/technology ,8
+9, Educational Level - Technical , diploma or certificate (below graduate level) in: medicine ,9
+9, Educational Level - Technical , diploma or certificate (below graduate level) in: crafts ,10
+9, Educational Level - Technical , diploma or certificate (below graduate level) in: other subjects ,11
+9, Educational Level - Technical , diploma or certificate (graduate and above level) in: agriculture ,12
+9, Educational Level - Technical , diploma or certificate (graduate and above level) in: engineering/technology ,13
+9, Educational Level - Technical , diploma or certificate (graduate and above level) in: medicine ,14
+9, Educational Level - Technical , diploma or certificate (graduate and above level) in: crafts ,15
+9, Educational Level - Technical , diploma or certificate (graduate and above level) in: other subjects ,16
+11, Status of Current Attendance , currently not attending: never attended: school too far ,1
+11, Status of Current Attendance , currently not attending: never attended: to supplement household income ,2
+11, Status of Current Attendance , currently not attending: never attended: education not considered necessary ,3
+11, Status of Current Attendance , currently not attending: never attended: to attend domestic chores ,4
+11, Status of Current Attendance , currently not attending: never attended: others ,5
+11, Status of Current Attendance , currently not attending: ever attended but currently not attending: school too far ,11
+11, Status of Current Attendance , currently not attending: ever attended but currently not attending: to supplement household income ,12
+11, Status of Current Attendance , currently not attending: ever attended but currently not attending: education not considered necessary ,13
+11, Status of Current Attendance , currently not attending: ever attended but currently not attending: to attend domestic chores ,14
+11, Status of Current Attendance , currently not attending: ever attended but currently not attending: others ,15
+11, Status of Current Attendance , currently attending in: EGS/NFEC/AEC ,21
+11, Status of Current Attendance , currently attending in: TLC ,22
+11, Status of Current Attendance ," currently attending in: pre-primary (nursery/Kindergarten, etc.) ",23
+11, Status of Current Attendance , currently attending in: primary (class I to IV/V) ,24
+11, Status of Current Attendance , currently attending in: middle ,25
+11, Status of Current Attendance , currently attending in: secondary ,26
+11, Status of Current Attendance , currently attending in: higher secondary ,27
+11, Status of Current Attendance , currently attending in: graduate in: agriculture ,28
+11, Status of Current Attendance , currently attending in: graduate in: engineering/technology ,29
+11, Status of Current Attendance , currently attending in: graduate in: medicine ,30
+11, Status of Current Attendance , currently attending in: graduate in: other subjects ,31
+11, Status of Current Attendance , currently attending in: post graduate and above ,32
+11, Status of Current Attendance , currently attending in: diploma or certificate (below graduate level) in: agriculture ,33
+11, Status of Current Attendance , currently attending in: diploma or certificate (below graduate level) in: engineering/technology ,34
+11, Status of Current Attendance , currently attending in: diploma or certificate (below graduate level) in: medicine ,35
+11, Status of Current Attendance , currently attending in: diploma or certificate (below graduate level) in: crafts ,36
+11, Status of Current Attendance , currently attending in: diploma or certificate (below graduate level) in: other subjects ,37
+11, Status of Current Attendance , currently attending in: diploma or certificate (graduate level) in: agriculture ,38
+11, Status of Current Attendance , currently attending in: diploma or certificate (graduate level) in: engineering/technology ,39
+11, Status of Current Attendance , currently attending in: diploma or certificate (graduate level) in: medicine ,40
+11, Status of Current Attendance , currently attending in: diploma or certificate (graduate level) in: crafts ,41
+11, Status of Current Attendance , currently attending in: diploma or certificate (graduate level) in: other subjects ,42
+11, Status of Current Attendance , diploma or certificate in post graduate and above level ,43
+12, Vocational/Technical Training , yes: received formal vocational/technical training ,1
+12, Vocational/Technical Training , received vocational/technical training other than formal vocational/technical training: hereditary ,2
+12, Vocational/Technical Training , received vocational/technical training other than formal vocational/technical training: self-learning ,3
+12, Vocational/Technical Training , received vocational/technical training other than formal vocational/technical training: learning on the job ,4
+12, Vocational/Technical Training , received vocational/technical training other than formal vocational/technical training: others ,5
+12, Vocational/Technical Training , did not receive any vocational/technical training ,6

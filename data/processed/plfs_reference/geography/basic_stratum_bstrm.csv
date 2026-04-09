@@ -1,0 +1,1892 @@
+sec,stnew,strm,grp,sstrm,bstrm,Bstrm_name
+1,1,1,2,1,D001,Kupwara
+1,2,1,1,1,D001,Chamba
+1,3,1,2,1,D001,Gurdaspur
+1,3,1,2,2,D001,Gurdaspur
+1,6,1,2,1,D001,Panchkula
+1,8,1,1,1,D001,Sri Ganganagar
+1,9,1,2,1,D001,Saharanpur
+1,9,1,2,2,D001,Saharanpur
+1,10,1,2,1,D001,Pashchim Champaran
+1,10,1,2,2,D001,Pashchim Champaran
+1,10,1,2,3,D001,Pashchim Champaran
+1,16,1,2,1,D001,West Tripura
+1,16,1,2,2,D001,West Tripura
+1,18,1,2,1,D001,Kokrajhar
+1,18,1,2,2,D001,Kokrajhar
+1,19,1,2,1,D001,Darjeeling
+1,20,1,2,1,D001,Garhwa
+1,20,1,2,2,D001,Garhwa
+1,21,1,2,1,D001,Bargarh
+1,21,1,2,2,D001,Bargarh
+1,24,1,2,1,D001,Kachchh
+1,24,1,2,2,D001,Kachchh
+1,28,1,2,1,D001,Srikakulam
+1,28,1,2,2,D001,Srikakulam
+1,28,1,2,3,D001,Srikakulam
+1,29,1,2,1,D001,Belagavi
+1,29,1,2,2,D001,Belagavi
+1,29,1,2,3,D001,Belagavi
+1,30,1,2,1,D001,North Goa
+1,32,1,2,1,D001,Kasaragod
+1,33,1,2,1,D001,Thiruvallur
+1,33,1,2,2,D001,Thiruvallur
+1,36,1,2,1,D001,Adilabad
+2,1,1,9,1,D001,Kupwara
+2,2,1,9,1,D001,Chamba
+2,3,1,9,1,D001,Gurdaspur
+2,3,1,9,2,D001,Gurdaspur
+2,6,1,9,1,D001,Panchkula
+2,6,1,9,2,D001,Panchkula
+2,7,1,9,1,D001,North West Delhi
+2,7,1,9,2,D001,North West Delhi
+2,8,1,9,1,D001,Sri Ganganagar
+2,9,1,9,1,D001,Saharanpur
+2,9,1,9,2,D001,Saharanpur
+2,10,1,9,1,D001,Pashchim Champaran
+2,16,1,9,1,D001,West Tripura
+2,16,1,9,2,D001,West Tripura
+2,18,1,9,1,D001,Kokrajhar
+2,19,1,9,1,D001,Darjeeling
+2,19,1,9,2,D001,Darjeeling
+2,20,1,9,1,D001,Garhwa
+2,21,1,9,1,D001,Bargarh
+2,24,1,9,1,D001,Kachchh
+2,24,1,9,2,D001,Kachchh
+2,28,1,9,1,D001,Srikakulam
+2,29,1,9,1,D001,Belagavi
+2,29,1,9,2,D001,Belagavi
+2,30,1,9,1,D001,North Goa
+2,32,1,9,1,D001,Kasaragod
+2,33,1,9,1,D001,Thiruvallur
+2,33,1,9,2,D001,Thiruvallur
+2,33,1,9,3,D001,Thiruvallur
+2,36,1,9,1,D001,Adilabad
+2,7,201,9,1,D001,North West Delhi
+2,7,201,9,2,D001,North West Delhi
+1,9,501,2,1,D001,Saharanpur
+1,5,1,1,1,D002,Chamoli
+1,22,1,2,1,D002,Surguja
+1,23,1,2,1,D002,Morena
+1,23,1,2,2,D002,Morena
+1,27,1,2,1,D002,Dhule
+1,27,1,2,2,D002,Dhule
+2,5,1,9,1,D002,Chamoli
+2,22,1,9,1,D002,Surguja
+2,23,1,9,1,D002,Morena
+2,27,1,9,1,D002,Dhule
+1,1,2,2,1,D002,Budgam
+1,2,2,1,1,D002,Kangra
+1,2,2,2,1,D002,Kangra
+1,3,2,2,1,D002,Kapurthala
+1,6,2,2,1,D002,Ambala
+1,8,2,1,1,D002,Hanumangarh
+1,8,2,2,1,D002,Hanumangarh
+1,9,2,2,1,D002,Muzaffarnagar
+1,9,2,2,2,D002,Muzaffarnagar
+1,9,2,2,3,D002,Muzaffarnagar
+1,10,2,2,1,D002,Purba Champaran
+1,10,2,2,2,D002,Purba Champaran
+1,10,2,2,3,D002,Purba Champaran
+1,10,2,2,4,D002,Purba Champaran
+1,18,2,2,1,D002,Dhubri
+1,18,2,2,2,D002,Dhubri
+1,19,2,2,1,D002,Jalpaiguri
+1,19,2,2,2,D002,Jalpaiguri
+1,21,2,2,1,D002,Jharsuguda
+1,24,2,2,1,D002,Banas Kantha
+1,24,2,2,2,D002,Banas Kantha
+1,24,2,2,3,D002,Banas Kantha
+1,28,2,2,1,D002,Vizianagaram
+1,28,2,2,2,D002,Vizianagaram
+1,29,2,2,1,D002,Bagalkote
+1,29,2,2,2,D002,Bagalkote
+1,30,2,2,1,D002,South Goa
+1,32,2,2,1,D002,Kannur
+2,1,2,9,1,D002,Budgam
+2,2,2,9,1,D002,Kangra
+2,3,2,9,1,D002,Kapurthala
+2,6,2,9,1,D002,Ambala
+2,7,2,9,1,D002,North Delhi
+2,7,2,9,2,D002,North Delhi
+2,8,2,9,1,D002,Hanumangarh
+2,9,2,9,1,D002,Muzaffarnagar
+2,9,2,9,2,D002,Muzaffarnagar
+2,10,2,9,1,D002,Purba Champaran
+2,18,2,9,1,D002,Dhubri
+2,19,2,9,1,D002,Jalpaiguri
+2,21,2,9,1,D002,Jharsuguda
+2,24,2,9,1,D002,Banas Kantha
+2,28,2,9,1,D002,Vizianagaram
+2,29,2,9,1,D002,Bagalkote
+2,30,2,9,1,D002,South Goa
+2,32,2,9,1,D002,Kannur
+2,32,2,9,2,D002,Kannur
+2,32,2,9,3,D002,Kannur
+2,7,3,9,1,D003,North East Delhi
+2,7,202,9,1,D003,North East Delhi
+2,7,202,9,2,D003,North East Delhi
+2,7,4,9,1,D004,East Delhi
+1,15,1,2,1,D003,Aizawl
+2,15,1,9,1,D003,Aizawl
+2,15,1,9,2,D003,Aizawl
+2,15,1,9,3,D003,Aizawl
+1,20,2,2,1,D003,Koderma
+1,23,2,2,1,D003,Bhind
+1,23,2,2,2,D003,Bhind
+1,27,2,2,1,D003,Jalgaon
+1,27,2,2,2,D003,Jalgaon
+1,27,2,2,3,D003,Jalgaon
+1,33,2,2,1,D003,Kancheepuram
+1,36,2,2,1,D003,Mancherial
+2,20,2,9,1,D003,Koderma
+2,23,2,9,1,D003,Bhind
+2,27,2,9,1,D003,Jalgaon
+2,27,2,9,2,D003,Jalgaon
+2,33,2,9,1,D003,Kancheepuram
+2,33,2,9,2,D003,Kancheepuram
+2,36,2,9,1,D003,Mancherial
+1,3,3,2,1,D003,Jalandhar
+1,6,3,2,1,D003,Yamunanagar
+1,8,3,2,1,D003,Bikaner
+1,8,3,2,2,D003,Bikaner
+1,9,3,2,1,D003,Bijnor
+1,9,3,2,2,D003,Bijnor
+1,18,3,2,1,D003,Goalpara
+1,21,3,1,1,D003,Sambalpur
+1,24,3,2,1,D003,Patan
+1,24,3,2,2,D003,Patan
+1,28,3,2,1,D003,Visakhapatnam
+1,29,3,2,1,D003,Bijapur
+1,29,3,2,2,D003,Bijapur
+2,3,3,9,1,D003,Jalandhar
+2,3,3,9,2,D003,Jalandhar
+2,6,3,9,1,D003,Yamunanagar
+2,7,203,9,1,D004,East Delhi
+2,8,3,9,1,D003,Bikaner
+2,8,3,9,2,D003,Bikaner
+2,9,3,9,1,D003,Bijnor
+2,9,3,9,2,D003,Bijnor
+2,18,3,9,1,D003,Goalpara
+2,21,3,9,1,D003,Sambalpur
+2,24,3,9,1,D003,Patan
+2,29,3,9,1,D003,Bijapur
+2,28,201,9,1,D003,Visakhapatnam
+2,28,201,9,2,D003,Visakhapatnam
+2,28,201,9,3,D003,Visakhapatnam
+2,7,203,9,2,D004,East Delhi
+2,7,5,9,1,D006,Central Delhi
+1,3,503,2,1,D003,Jalandhar
+1,9,503,2,1,D003,Bijnor
+1,11,1,2,1,D004,Gangtok
+1,12,1,1,1,D004,Papum Pare
+2,11,1,9,1,D004,Gangtok
+2,12,1,9,1,D004,Papum Pare
+1,5,2,1,1,D004,Tehri Garhwal
+1,22,2,2,1,D004,Raigarh
+1,22,2,2,2,D004,Raigarh
+2,5,2,9,1,D004,Tehri Garhwal
+2,22,2,9,1,D004,Raigarh
+1,2,3,2,1,D004,Kullu
+1,10,3,2,1,D004,Sitamarhi
+1,10,3,2,2,D004,Sitamarhi
+1,10,3,2,3,D004,Sitamarhi
+1,19,3,2,1,D004,Uttar Dinajpur
+1,19,3,2,2,D004,Uttar Dinajpur
+1,19,3,2,3,D004,Uttar Dinajpur
+1,20,3,2,1,D004,Giridih
+1,20,3,2,2,D004,Giridih
+1,20,3,2,3,D004,Giridih
+1,23,3,2,1,D004,Gwalior
+1,27,3,2,1,D004,Buldhana
+1,27,3,2,2,D004,Buldhana
+1,27,3,2,3,D004,Buldhana
+1,32,3,2,1,D004,Kozhikode
+1,33,3,2,1,D004,Vellore
+1,36,3,2,1,D004,Nirmal
+2,2,3,9,1,D004,Kullu
+2,10,3,9,1,D004,Sitamarhi
+2,19,3,9,1,D004,Uttar Dinajpur
+2,20,3,9,1,D004,Giridih
+2,27,3,9,1,D004,Buldhana
+2,32,3,9,1,D004,Kozhikode
+2,32,3,9,2,D004,Kozhikode
+2,32,3,9,3,D004,Kozhikode
+2,33,3,9,1,D004,Vellore
+2,36,3,9,1,D004,Nirmal
+1,3,4,2,1,D004,Hoshiarpur
+1,3,4,2,2,D004,Hoshiarpur
+1,6,4,2,1,D004,Kurukshetra
+1,8,4,2,1,D004,Churu
+1,8,4,2,2,D004,Churu
+1,9,4,2,1,D004,Moradabad
+1,9,4,2,2,D004,Moradabad
+1,9,4,2,3,D004,Moradabad
+1,18,4,2,1,D004,Barpeta
+1,18,4,2,2,D004,Barpeta
+1,24,4,2,1,D004,Mahesana
+1,24,4,2,2,D004,Mahesana
+1,28,4,2,1,D004,East Godavari
+1,29,4,2,1,D004,Bidar
+1,29,4,2,2,D004,Bidar
+2,3,4,9,1,D004,Hoshiarpur
+2,6,4,9,1,D004,Kurukshetra
+2,7,6,9,1,D007,West Delhi
+2,8,4,9,1,D004,Churu
+2,9,4,9,1,D004,Moradabad
+2,9,4,9,2,D004,Moradabad
+2,18,4,9,1,D004,Barpeta
+2,24,4,9,1,D004,Mahesana
+2,28,4,9,1,D004,East Godavari
+2,28,4,9,2,D004,East Godavari
+2,29,4,9,1,D004,Bidar
+2,23,201,9,1,D004,Gwalior
+2,23,201,9,2,D004,Gwalior
+2,7,204,9,1,D007,West Delhi
+2,7,204,9,2,D007,West Delhi
+1,5,3,1,1,D005,Dehradun
+1,22,3,2,1,D005,Korba
+2,5,3,9,1,D005,Dehradun
+2,5,3,9,2,D005,Dehradun
+2,22,3,9,1,D005,Korba
+1,2,4,1,1,D005,Mandi
+1,2,4,2,1,D005,Mandi
+1,10,4,2,1,D005,Madhubani
+1,10,4,2,2,D005,Madhubani
+1,10,4,2,3,D005,Madhubani
+1,10,4,2,4,D005,Madhubani
+1,20,4,1,1,D005,Deoghar
+1,21,4,2,1,D005,Sundargarh
+1,21,4,2,2,D005,Sundargarh
+1,23,4,2,1,D005,Datia
+1,27,4,2,1,D005,Akola
+1,27,4,2,2,D005,Akola
+1,32,4,2,1,D005,Malappuram
+1,32,4,2,2,D005,Malappuram
+1,32,4,2,3,D005,Malappuram
+1,33,4,2,1,D005,Tiruvannamalai
+1,33,4,2,2,D005,Tiruvannamalai
+1,36,4,2,1,D005,Nizamabad
+1,36,4,2,2,D005,Nizamabad
+2,2,4,9,1,D005,Mandi
+2,10,4,9,1,D005,Madhubani
+2,20,4,9,1,D005,Deoghar
+2,21,4,9,1,D005,Sundargarh
+2,23,4,9,1,D005,Datia
+2,27,4,9,1,D005,Akola
+2,32,4,9,1,D005,Malappuram
+2,32,4,9,2,D005,Malappuram
+2,32,4,9,3,D005,Malappuram
+2,33,4,9,1,D005,Tiruvannamalai
+2,36,4,9,1,D005,Nizamabad
+1,6,5,2,1,D005,Kaithal
+1,8,5,2,1,D005,Jhunjhunu
+1,8,5,2,2,D005,Jhunjhunu
+1,9,5,2,1,D005,Rampur
+1,9,5,2,2,D005,Rampur
+1,18,5,2,1,D005,Morigaon
+1,18,5,2,2,D005,Morigaon
+1,28,5,2,1,D005,West Godavari
+1,28,5,2,2,D005,West Godavari
+1,29,5,2,1,D005,Raichur
+1,29,5,2,2,D005,Raichur
+2,6,5,9,1,D005,Kaithal
+2,8,5,9,1,D005,Jhunjhunu
+2,9,5,9,1,D005,Rampur
+2,18,5,9,1,D005,Morigaon
+2,28,5,9,1,D005,West Godavari
+2,29,5,9,1,D005,Raichur
+1,20,504,1,1,D005,Deoghar
+1,14,1,2,1,D006,Imphal West
+1,17,1,1,1,D006,East Khasi Hills
+1,17,1,2,1,D006,East Khasi Hills
+2,14,1,9,1,D006,Imphal West
+2,14,1,9,2,D006,Imphal West
+2,17,1,9,1,D006,East Khasi Hills
+2,17,1,9,2,D006,East Khasi Hills
+1,1,3,2,1,D006,Rajouri
+2,1,3,9,1,D006,Rajouri
+1,5,4,1,1,D006,Pauri Garhwal
+1,19,4,2,1,D006,Malda
+1,19,4,2,2,D006,Malda
+1,19,4,2,3,D006,Malda
+1,22,4,2,1,D006,Janjgir-Champa
+2,5,4,9,1,D006,Pauri Garhwal
+2,19,4,9,1,D006,Malda
+2,22,4,9,1,D006,Janjgir-Champa
+1,21,5,1,1,D006,Kendujhar
+1,21,5,2,1,D006,Kendujhar
+1,23,5,2,1,D006,Shivpuri
+1,23,5,2,2,D006,Shivpuri
+1,24,5,2,1,D006,Gandhinagar
+1,32,5,2,1,D006,Palakkad
+1,32,5,2,2,D006,Palakkad
+1,32,5,2,3,D006,Palakkad
+1,33,5,2,1,D006,Viluppuram
+1,33,5,2,2,D006,Viluppuram
+1,36,5,2,1,D006,Jagtial
+2,7,7,9,1,D008,South West Delhi
+2,21,5,9,1,D006,Kendujhar
+2,23,5,9,1,D006,Shivpuri
+2,24,5,9,1,D006,Gandhinagar
+2,32,5,9,1,D006,Palakkad
+2,32,5,9,2,D006,Palakkad
+2,33,5,9,1,D006,Viluppuram
+2,36,5,9,1,D006,Jagtial
+1,6,6,2,1,D006,Karnal
+1,6,6,2,2,D006,Karnal
+1,8,6,2,1,D006,Alwar
+1,8,6,2,2,D006,Alwar
+1,9,6,2,1,D006,Amroha
+1,9,6,2,2,D006,Amroha
+1,18,6,2,1,D006,Nagaon
+1,18,6,2,2,D006,Nagaon
+1,28,6,2,1,D006,Krishna
+1,28,6,2,2,D006,Krishna
+1,29,6,2,1,D006,Koppal
+1,29,6,2,2,D006,Koppal
+2,6,6,9,1,D006,Karnal
+2,8,6,9,1,D006,Alwar
+2,9,6,9,1,D006,Amroha
+2,18,6,9,1,D006,Nagaon
+2,28,6,9,1,D006,Krishna
+2,29,6,9,1,D006,Koppal
+1,14,2,2,1,D007,Imphal East
+2,14,2,9,1,D007,Imphal East
+2,14,2,9,2,D007,Imphal East
+1,1,4,2,1,D007,Kathua
+2,1,4,9,1,D007,Kathua
+1,2,5,1,1,D007,Una
+1,3,5,2,1,D007,Ludhiana
+1,3,5,2,2,D007,Ludhiana
+1,5,5,1,1,D007,Pithoragarh
+1,10,5,2,1,D007,Araria
+1,10,5,2,2,D007,Araria
+1,10,5,2,3,D007,Araria
+1,19,5,2,1,D007,Murshidabad
+1,19,5,2,2,D007,Murshidabad
+1,19,5,2,3,D007,Murshidabad
+1,19,5,2,4,D007,Murshidabad
+1,20,5,1,1,D007,Sahibganj
+1,20,5,2,1,D007,Sahibganj
+1,22,5,2,1,D007,Bilaspur
+1,22,5,2,2,D007,Bilaspur
+1,27,5,2,1,D007,Amravati
+1,27,5,2,2,D007,Amravati
+2,2,5,9,1,D007,Una
+2,3,5,9,1,D007,Ludhiana
+2,5,5,9,1,D007,Pithoragarh
+2,10,5,9,1,D007,Araria
+2,19,5,9,1,D007,Murshidabad
+2,19,5,9,2,D007,Murshidabad
+2,20,5,9,1,D007,Sahibganj
+2,22,5,9,1,D007,Bilaspur
+2,22,5,9,2,D007,Bilaspur
+2,27,5,9,1,D007,Amravati
+2,27,5,9,2,D007,Amravati
+1,21,6,1,1,D007,Mayurbhanj
+1,21,6,2,1,D007,Mayurbhanj
+1,21,6,2,2,D007,Mayurbhanj
+1,23,6,2,1,D007,Tikamgarh
+1,23,6,2,2,D007,Tikamgarh
+1,24,6,2,1,D007,Ahmedabad
+1,24,6,2,2,D007,Ahmedabad
+1,32,6,2,1,D007,Thrissur
+1,33,6,2,1,D007,Salem
+1,33,6,2,2,D007,Salem
+1,36,6,2,1,D007,Peddapalli
+2,7,205,9,1,D008,South West Delhi
+2,21,6,9,1,D007,Mayurbhanj
+2,23,6,9,1,D007,Tikamgarh
+2,32,6,9,1,D007,Thrissur
+2,32,6,9,2,D007,Thrissur
+2,32,6,9,3,D007,Thrissur
+2,33,6,9,1,D007,Salem
+2,33,6,9,2,D007,Salem
+2,33,6,9,3,D007,Salem
+2,36,6,9,1,D007,Peddapalli
+1,6,7,2,1,D007,Panipat
+1,8,7,2,1,D007,Bharatpur
+1,8,7,2,2,D007,Bharatpur
+1,9,7,2,1,D007,Meerut
+1,9,7,2,2,D007,Meerut
+1,18,7,2,1,D007,Sonitpur
+1,18,7,2,2,D007,Sonitpur
+1,28,7,2,1,D007,Guntur
+1,29,7,2,1,D007,Gadag
+2,6,7,9,1,D007,Panipat
+2,8,7,9,1,D007,Bharatpur
+2,9,7,9,1,D007,Meerut
+2,18,7,9,1,D007,Sonitpur
+2,28,7,9,1,D007,Guntur
+2,28,7,9,2,D007,Guntur
+2,29,7,9,1,D007,Gadag
+2,3,201,9,1,D007,Ludhiana
+2,3,201,9,2,D007,Ludhiana
+2,9,201,9,1,D007,Meerut
+2,9,201,9,2,D007,Meerut
+2,24,201,9,1,D007,Ahmedabad
+2,24,201,9,2,D007,Ahmedabad
+2,24,201,9,3,D007,Ahmedabad
+2,24,201,9,4,D007,Ahmedabad
+2,24,201,9,5,D007,Ahmedabad
+2,24,201,9,6,D007,Ahmedabad
+2,24,201,9,7,D007,Ahmedabad
+2,24,201,9,8,D007,Ahmedabad
+2,7,205,9,2,D008,South West Delhi
+2,7,8,9,1,D009,South Delhi
+1,1,5,2,1,D008,Baramulla
+2,1,5,9,1,D008,Baramulla
+1,3,6,2,1,D008,Moga
+1,10,6,2,1,D008,Kishanganj
+1,10,6,2,2,D008,Kishanganj
+1,19,6,2,1,D008,Birbhum
+1,19,6,2,2,D008,Birbhum
+1,19,6,2,3,D008,Birbhum
+1,20,6,1,1,D008,Pakur
+1,22,6,2,1,D008,Kabeerdham
+2,3,6,9,1,D008,Moga
+2,10,6,9,1,D008,Kishanganj
+2,19,6,9,1,D008,Birbhum
+2,20,6,9,1,D008,Pakur
+2,22,6,9,1,D008,Kabeerdham
+1,21,7,1,1,D008,Baleshwar
+1,21,7,2,1,D008,Baleshwar
+1,21,7,2,2,D008,Baleshwar
+1,23,7,2,1,D008,Chhatarpur
+1,23,7,2,2,D008,Chhatarpur
+1,24,7,2,1,D008,Surendranagar
+1,24,7,2,2,D008,Surendranagar
+1,32,7,2,1,D008,Ernakulam
+1,32,7,2,2,D008,Ernakulam
+1,33,7,2,1,D008,Namakkal
+1,33,7,2,2,D008,Namakkal
+2,7,206,9,1,D009,South Delhi
+2,21,7,9,1,D008,Baleshwar
+2,23,7,9,1,D008,Chhatarpur
+2,24,7,9,1,D008,Surendranagar
+2,32,7,9,1,D008,Ernakulam
+2,32,7,9,2,D008,Ernakulam
+2,32,7,9,3,D008,Ernakulam
+2,33,7,9,1,D008,Namakkal
+1,6,8,2,1,D008,Sonipat
+1,6,8,2,2,D008,Sonipat
+1,8,8,2,1,D008,Dholpur
+1,8,8,2,2,D008,Dholpur
+1,9,8,2,1,D008,Baghpat
+1,9,8,2,2,D008,Baghpat
+1,18,8,2,1,D008,Lakhimpur
+1,18,8,2,2,D008,Lakhimpur
+1,28,8,2,1,D008,Prakasam
+1,28,8,2,2,D008,Prakasam
+1,28,8,2,3,D008,Prakasam
+1,29,8,2,1,D008,Dharwad
+2,6,8,9,1,D008,Sonipat
+2,8,8,9,1,D008,Dholpur
+2,9,8,9,1,D008,Baghpat
+2,18,8,9,1,D008,Lakhimpur
+2,28,8,9,1,D008,Prakasam
+2,29,8,9,1,D008,Dharwad
+2,29,8,9,2,D008,Dharwad
+2,7,206,9,2,D009,South Delhi
+2,8,201,9,1,D012,Jaipur
+1,1,6,2,1,D009,Bandipore
+1,2,6,1,1,D009,Solan
+1,27,6,2,1,D009,Nagpur
+1,27,6,2,2,D009,Nagpur
+2,1,6,9,1,D009,Bandipore
+2,2,6,9,1,D009,Solan
+2,27,6,9,1,D009,Nagpur
+1,3,7,2,1,D009,Ferozepur
+1,10,7,2,1,D009,Purnia
+1,10,7,2,2,D009,Purnia
+1,10,7,2,3,D009,Purnia
+1,19,7,2,1,D009,Purba Bardhaman
+1,19,7,2,2,D009,Purba Bardhaman
+1,19,7,2,3,D009,Purba Bardhaman
+1,20,7,2,1,D009,Dhanbad
+1,20,7,2,2,D009,Dhanbad
+1,22,7,2,1,D009,Rajnandgaon
+1,36,7,2,1,D009,Bhadradri Kothagudem
+2,3,7,9,1,D009,Ferozepur
+2,10,7,9,1,D009,Purnia
+2,19,7,9,1,D009,Purba Bardhaman
+2,20,7,9,1,D009,Dhanbad
+2,22,7,9,1,D009,Rajnandgaon
+2,36,7,9,1,D009,Bhadradri Kothagudem
+1,21,8,2,1,D009,Bhadrak
+1,21,8,2,2,D009,Bhadrak
+1,23,8,2,1,D009,Panna
+1,23,8,2,2,D009,Panna
+1,24,8,2,1,D009,Rajkot
+1,24,8,2,2,D009,Rajkot
+1,33,8,2,1,D009,Erode
+1,33,8,2,2,D009,Erode
+2,8,201,9,2,D012,Jaipur
+2,21,8,9,1,D009,Bhadrak
+2,23,8,9,1,D009,Panna
+2,24,8,9,1,D009,Rajkot
+2,33,8,9,1,D009,Erode
+2,33,8,9,2,D009,Erode
+1,6,9,2,1,D009,Jind
+1,6,9,2,2,D009,Jind
+1,8,9,2,1,D009,Karauli
+1,8,9,2,2,D009,Karauli
+1,9,9,2,1,D009,Ghaziabad
+1,28,9,2,1,D009,Sri Potti Sriramulu Nellore
+1,28,9,2,2,D009,Sri Potti Sriramulu Nellore
+1,29,9,1,1,D009,Uttara Kannada
+1,29,9,2,1,D009,Uttara Kannada
+2,6,9,9,1,D009,Jind
+2,8,9,9,1,D009,Karauli
+2,9,9,9,1,D009,Ghaziabad
+2,28,9,9,1,D009,Sri Potti Sriramulu Nellore
+2,28,9,9,2,D009,Sri Potti Sriramulu Nellore
+2,29,9,9,1,D009,Uttara Kannada
+2,20,201,9,1,D009,Dhanbad
+2,20,201,9,2,D009,Dhanbad
+2,27,201,9,1,D009,Nagpur
+2,27,201,9,2,D009,Nagpur
+2,9,202,9,1,D009,Ghaziabad
+2,9,202,9,2,D009,Ghaziabad
+2,24,202,9,1,D009,Rajkot
+2,24,202,9,2,D009,Rajkot
+2,8,201,9,3,D012,Jaipur
+2,8,14,9,1,D015,Jodhpur
+1,13,1,2,1,D010,Kohima
+2,13,1,9,1,D010,Kohima
+1,1,7,2,1,D010,Srinagar
+1,2,7,1,1,D010,Sirmaur
+2,2,7,9,1,D010,Sirmaur
+1,3,8,2,1,D010,Sri Muktsar Sahib
+1,10,8,2,1,D010,Katihar
+1,10,8,2,2,D010,Katihar
+1,10,8,2,3,D010,Katihar
+1,19,8,2,1,D010,Nadia
+1,19,8,2,2,D010,Nadia
+1,19,8,2,3,D010,Nadia
+1,20,8,2,1,D010,Bokaro
+1,20,8,2,2,D010,Bokaro
+1,22,8,2,1,D010,Durg
+2,3,8,9,1,D010,Sri Muktsar Sahib
+2,10,8,9,1,D010,Katihar
+2,19,8,9,1,D010,Nadia
+2,19,8,9,2,D010,Nadia
+2,20,8,9,1,D010,Bokaro
+2,20,8,9,2,D010,Bokaro
+2,22,8,9,1,D010,Durg
+1,18,9,2,1,D010,Tinsukia
+1,18,9,2,2,D010,Tinsukia
+1,21,9,2,1,D010,Kendrapara
+1,21,9,2,2,D010,Kendrapara
+1,23,9,2,1,D010,Sagar
+1,23,9,2,2,D010,Sagar
+1,24,9,2,1,D010,Jamnagar
+1,33,9,2,1,D010,The Nilgiris
+2,18,9,9,1,D010,Tinsukia
+2,21,9,9,1,D010,Kendrapara
+2,23,9,9,1,D010,Sagar
+2,24,9,9,1,D010,Jamnagar
+2,24,9,9,2,D010,Jamnagar
+2,33,9,9,1,D010,The Nilgiris
+1,8,10,2,1,D010,Sawai Madhopur
+1,9,10,2,1,D010,Gautam Buddha Nagar
+1,28,10,2,1,D010,Y.S.R. (Cuddapah)
+1,28,10,2,2,D010,Y.S.R. (Cuddapah)
+1,29,10,2,1,D010,Haveri
+1,29,10,2,2,D010,Haveri
+2,8,10,9,1,D010,Sawai Madhopur
+2,9,10,9,1,D010,Gautam Buddha Nagar
+2,9,10,9,2,D010,Gautam Buddha Nagar
+2,28,10,9,1,D010,Y.S.R. (Cuddapah)
+2,28,10,9,2,D010,Y.S.R. (Cuddapah)
+2,29,10,9,1,D010,Haveri
+2,1,201,9,1,D010,Srinagar
+2,1,201,9,2,D010,Srinagar
+2,22,201,9,1,D010,Durg
+2,22,201,9,2,D010,Durg
+1,5,6,1,1,D011,Nainital
+2,5,6,9,1,D011,Nainital
+1,1,8,2,1,D011,Ganderbal
+1,2,8,1,1,D011,Shimla
+1,32,8,2,1,D011,Alappuzha
+2,1,8,9,1,D011,Ganderbal
+2,2,8,9,1,D011,Shimla
+2,32,8,9,1,D011,Alappuzha
+2,32,8,9,2,D011,Alappuzha
+2,32,8,9,3,D011,Alappuzha
+1,3,9,2,1,D011,Faridkot
+1,19,9,2,1,D011,North Twenty Four Parganas
+1,19,9,2,2,D011,North Twenty Four Parganas
+1,19,9,2,3,D011,North Twenty Four Parganas
+1,22,9,2,1,D011,Raipur
+1,22,9,2,2,D011,Raipur
+2,3,9,9,1,D011,Faridkot
+2,19,9,9,1,D011,North Twenty Four Parganas
+2,19,9,9,2,D011,North Twenty Four Parganas
+2,19,9,9,3,D011,North Twenty Four Parganas
+2,19,9,9,4,D011,North Twenty Four Parganas
+2,19,9,9,5,D011,North Twenty Four Parganas
+2,19,9,9,6,D011,North Twenty Four Parganas
+2,19,9,9,7,D011,North Twenty Four Parganas
+2,19,9,9,8,D011,North Twenty Four Parganas
+2,22,9,9,1,D011,Raipur
+1,6,10,2,1,D011,Sirsa
+1,6,10,2,2,D011,Sirsa
+1,18,10,2,1,D011,Dibrugarh
+1,18,10,2,2,D011,Dibrugarh
+1,21,10,2,1,D011,Jagatsinghapur
+1,21,10,2,2,D011,Jagatsinghapur
+1,23,10,2,1,D011,Damoh
+1,23,10,2,2,D011,Damoh
+1,24,10,2,1,D011,Porbandar
+1,33,10,2,1,D011,Dindigul
+1,33,10,2,2,D011,Dindigul
+2,6,10,9,1,D011,Sirsa
+2,18,10,9,1,D011,Dibrugarh
+2,21,10,9,1,D011,Jagatsinghapur
+2,23,10,9,1,D011,Damoh
+2,24,10,9,1,D011,Porbandar
+2,33,10,9,1,D011,Dindigul
+1,8,11,2,1,D011,Dausa
+1,8,11,2,2,D011,Dausa
+1,9,11,2,1,D011,Bulandshahr
+1,9,11,2,2,D011,Bulandshahr
+1,9,11,2,3,D011,Bulandshahr
+1,28,11,2,1,D011,Kurnool
+1,29,11,2,1,D011,Ballari
+2,8,11,9,1,D011,Dausa
+2,9,11,9,1,D011,Bulandshahr
+2,9,11,9,2,D011,Bulandshahr
+2,28,11,9,1,D011,Kurnool
+2,28,11,9,2,D011,Kurnool
+2,29,11,9,1,D011,Ballari
+2,29,11,9,2,D011,Ballari
+2,22,202,9,1,D011,Raipur
+2,22,202,9,2,D011,Raipur
+1,5,7,2,1,D012,Udham Singh Nagar
+1,5,7,2,2,D012,Udham Singh Nagar
+2,5,7,9,1,D012,Udham Singh Nagar
+1,36,8,2,1,D012,Hanamkonda
+2,36,8,9,1,D012,Hanamkonda
+2,36,8,9,2,D012,Hanamkonda
+1,1,9,2,1,D012,Pulwama
+1,10,9,2,1,D012,Saharsa
+1,10,9,2,2,D012,Saharsa
+1,10,9,2,3,D012,Saharsa
+1,20,9,1,1,D012,Purbi Singhbhum
+1,20,9,2,1,D012,Purbi Singhbhum
+2,1,9,9,1,D012,Pulwama
+2,10,9,9,1,D012,Saharsa
+2,20,9,9,1,D012,Purbi Singhbhum
+2,20,9,9,2,D012,Purbi Singhbhum
+1,3,10,2,1,D012,Bathinda
+1,19,10,2,1,D012,Hooghly
+1,19,10,2,2,D012,Hooghly
+1,19,10,2,3,D012,Hooghly
+1,22,10,2,1,D012,Mahasamund
+1,22,10,2,2,D012,Mahasamund
+2,3,10,9,1,D012,Bathinda
+2,19,10,9,1,D012,Hooghly
+2,19,10,9,2,D012,Hooghly
+2,19,10,9,3,D012,Hooghly
+2,22,10,9,1,D012,Mahasamund
+1,6,11,2,1,D012,Hisar
+1,6,11,2,2,D012,Hisar
+1,18,11,2,1,D012,Sivasagar
+1,21,11,2,1,D012,Cuttack
+1,21,11,2,2,D012,Cuttack
+1,23,11,2,1,D012,Satna
+1,23,11,2,2,D012,Satna
+1,24,11,2,1,D012,Junagadh
+1,24,11,2,2,D012,Junagadh
+1,33,11,2,1,D012,Karur
+2,6,11,9,1,D012,Hisar
+2,18,11,9,1,D012,Sivasagar
+2,21,11,9,1,D012,Cuttack
+2,23,11,9,1,D012,Satna
+2,24,11,9,1,D012,Junagadh
+2,33,11,9,1,D012,Karur
+1,9,12,2,1,D012,Aligarh
+1,9,12,2,2,D012,Aligarh
+1,9,12,2,3,D012,Aligarh
+1,28,12,2,1,D012,Ananthapuramu
+1,28,12,2,2,D012,Ananthapuramu
+1,29,12,2,1,D012,Chitradurga
+1,29,12,2,2,D012,Chitradurga
+2,9,12,9,1,D012,Aligarh
+2,9,12,9,2,D012,Aligarh
+2,28,12,9,1,D012,Ananthapuramu
+2,28,12,9,2,D012,Ananthapuramu
+2,29,12,9,1,D012,Chitradurga
+2,8,14,9,2,D015,Jodhpur
+2,19,202,9,1,D016,Kolkata
+2,19,202,9,2,D016,Kolkata
+1,27,7,2,1,D013,Chandrapur
+1,27,7,2,2,D013,Chandrapur
+2,27,7,9,1,D013,Chandrapur
+1,5,8,2,1,D013,Haridwar
+1,5,8,2,2,D013,Haridwar
+2,5,8,9,1,D013,Haridwar
+1,32,9,2,1,D013,Kollam
+1,32,9,2,2,D013,Kollam
+1,36,9,2,1,D013,Karimnagar
+2,32,9,9,1,D013,Kollam
+2,32,9,9,2,D013,Kollam
+2,32,9,9,3,D013,Kollam
+2,36,9,9,1,D013,Karimnagar
+1,10,10,2,1,D013,Darbhanga
+1,10,10,2,2,D013,Darbhanga
+1,20,10,2,1,D013,Palamu
+1,20,10,2,2,D013,Palamu
+1,20,10,2,3,D013,Palamu
+2,10,10,9,1,D013,Darbhanga
+2,20,10,9,1,D013,Palamu
+1,3,11,2,1,D013,Mansa
+1,22,11,2,1,D013,Dhamtari
+2,3,11,9,1,D013,Mansa
+2,22,11,9,1,D013,Dhamtari
+1,6,12,2,1,D013,Bhiwani
+1,8,12,2,1,D013,Sikar
+1,8,12,2,2,D013,Sikar
+1,18,12,2,1,D013,Jorhat
+1,21,12,2,1,D013,Jajapur
+1,21,12,2,2,D013,Jajapur
+1,23,12,2,1,D013,Rewa
+1,23,12,2,2,D013,Rewa
+1,24,12,2,1,D013,Amreli
+1,24,12,2,2,D013,Amreli
+1,33,12,2,1,D013,Tiruchirappalli
+1,33,12,2,2,D013,Tiruchirappalli
+2,6,12,9,1,D013,Bhiwani
+2,8,12,9,1,D013,Sikar
+2,18,12,9,1,D013,Jorhat
+2,21,12,9,1,D013,Jajapur
+2,23,12,9,1,D013,Rewa
+2,24,12,9,1,D013,Amreli
+2,33,12,9,1,D013,Tiruchirappalli
+2,33,12,9,2,D013,Tiruchirappalli
+1,9,13,2,1,D013,Hathras
+1,9,13,2,2,D013,Hathras
+1,28,13,2,1,D013,Chittoor
+1,28,13,2,2,D013,Chittoor
+1,29,13,2,1,D013,Davanagere
+1,29,13,2,2,D013,Davanagere
+2,9,13,9,1,D013,Hathras
+2,28,13,9,1,D013,Chittoor
+2,29,13,9,1,D013,Davanagere
+1,10,510,2,1,D013,Darbhanga
+1,27,8,2,1,D014,Yavatmal
+1,27,8,2,2,D014,Yavatmal
+1,27,8,2,3,D014,Yavatmal
+2,27,8,9,1,D014,Yavatmal
+2,27,8,9,2,D014,Yavatmal
+1,1,10,2,1,D014,Anantnag
+1,32,10,2,1,D014,Thiruvananthapuram
+1,32,10,2,2,D014,Thiruvananthapuram
+1,36,10,2,1,D014,Rajanna Sircilla
+2,1,10,9,1,D014,Anantnag
+2,32,10,9,1,D014,Thiruvananthapuram
+2,32,10,9,2,D014,Thiruvananthapuram
+2,32,10,9,3,D014,Thiruvananthapuram
+2,36,10,9,1,D014,Rajanna Sircilla
+1,10,11,2,1,D014,Muzaffarpur
+1,10,11,2,2,D014,Muzaffarpur
+1,10,11,2,3,D014,Muzaffarpur
+1,10,11,2,4,D014,Muzaffarpur
+1,19,11,2,1,D014,Purulia
+1,19,11,2,2,D014,Purulia
+1,19,11,2,3,D014,Purulia
+2,10,11,9,1,D014,Muzaffarpur
+2,19,11,9,1,D014,Purulia
+1,3,12,2,1,D014,Patiala
+1,3,12,2,2,D014,Patiala
+1,22,12,1,1,D014,Uttar Bastar Kanker
+2,3,12,9,1,D014,Patiala
+2,22,12,9,1,D014,Uttar Bastar Kanker
+1,6,13,2,1,D014,Rohtak
+1,8,13,2,1,D014,Nagaur
+1,8,13,2,2,D014,Nagaur
+1,18,13,2,1,D014,Golaghat
+1,18,13,2,2,D014,Golaghat
+1,21,13,2,1,D014,Dhenkanal
+1,21,13,2,2,D014,Dhenkanal
+1,24,13,2,1,D014,Bhavnagar
+1,24,13,2,2,D014,Bhavnagar
+2,6,13,9,1,D014,Rohtak
+2,8,13,9,1,D014,Nagaur
+2,18,13,9,1,D014,Golaghat
+2,21,13,9,1,D014,Dhenkanal
+2,24,13,9,1,D014,Bhavnagar
+2,24,13,9,2,D014,Bhavnagar
+1,9,14,2,1,D014,Mathura
+1,9,14,2,2,D014,Mathura
+1,9,14,2,3,D014,Mathura
+1,28,14,2,1,D014,Palnadu
+1,28,14,2,2,D014,Palnadu
+1,29,14,1,1,D014,Shivamogga
+1,29,14,2,1,D014,Shivamogga
+2,9,14,9,1,D014,Mathura
+2,28,14,9,1,D014,Palnadu
+2,29,14,9,1,D014,Shivamogga
+1,27,9,2,1,D015,Nanded
+1,27,9,2,2,D015,Nanded
+1,27,9,2,3,D015,Nanded
+2,27,9,9,1,D015,Nanded
+2,27,9,9,2,D015,Nanded
+1,1,11,2,1,D015,Kulgam
+1,20,11,2,1,D015,Hazaribagh
+1,20,11,2,2,D015,Hazaribagh
+1,36,11,2,1,D015,Kamareddy
+2,1,11,9,1,D015,Kulgam
+2,20,11,9,1,D015,Hazaribagh
+2,36,11,9,1,D015,Kamareddy
+1,10,12,2,1,D015,Gopalganj
+1,10,12,2,2,D015,Gopalganj
+1,10,12,2,3,D015,Gopalganj
+1,19,12,2,1,D015,Howrah
+1,19,12,2,2,D015,Howrah
+2,10,12,9,1,D015,Gopalganj
+2,19,12,9,1,D015,Howrah
+2,19,12,9,2,D015,Howrah
+1,3,13,2,1,D015,Amritsar
+1,3,13,2,2,D015,Amritsar
+1,22,13,2,1,D015,Bastar
+1,23,13,2,1,D015,Neemuch
+2,22,13,9,1,D015,Bastar
+2,23,13,9,1,D015,Neemuch
+1,6,14,2,1,D015,Jhajjar
+1,18,14,1,1,D015,Karbi Anglong
+1,21,14,1,1,D015,Anugul
+1,21,14,2,1,D015,Anugul
+1,24,14,2,1,D015,Anand
+1,24,14,2,2,D015,Anand
+2,6,14,9,1,D015,Jhajjar
+2,19,202,9,3,D016,Kolkata
+2,19,202,9,4,D016,Kolkata
+2,18,14,9,1,D015,Karbi Anglong
+2,21,14,9,1,D015,Anugul
+2,24,14,9,1,D015,Anand
+1,9,15,2,1,D015,Agra
+1,9,15,2,2,D015,Agra
+1,9,15,2,3,D015,Agra
+1,29,15,2,1,D015,Udupi
+2,9,15,9,1,D015,Agra
+2,29,15,9,1,D015,Udupi
+2,19,201,9,1,D015,Howrah
+2,3,202,9,1,D015,Amritsar
+2,3,202,9,2,D015,Amritsar
+2,9,203,9,1,D015,Agra
+2,9,203,9,2,D015,Agra
+1,20,12,2,1,D016,Ramgarh
+1,36,12,2,1,D016,Sangareddy
+2,20,12,9,1,D016,Ramgarh
+2,36,12,9,1,D016,Sangareddy
+1,10,13,2,1,D016,Siwan
+1,10,13,2,2,D016,Siwan
+1,33,13,2,1,D016,Cuddalore
+1,33,13,2,2,D016,Cuddalore
+2,10,13,9,1,D016,Siwan
+2,33,13,9,1,D016,Cuddalore
+2,33,13,9,2,D016,Cuddalore
+1,23,14,2,1,D016,Mandsaur
+1,23,14,2,2,D016,Mandsaur
+2,23,14,9,1,D016,Mandsaur
+1,18,15,1,1,D016,Dima Hasao
+1,24,15,2,1,D016,Kheda
+1,24,15,2,2,D016,Kheda
+1,28,15,2,1,D016,Tirupathi
+1,28,15,2,2,D016,Tirupathi
+2,18,15,9,1,D016,Dima Hasao
+2,24,15,9,1,D016,Kheda
+2,28,15,9,1,D016,Tirupathi
+2,28,15,9,2,D016,Tirupathi
+1,9,16,2,1,D016,Firozabad
+2,9,16,9,1,D016,Firozabad
+2,9,16,9,2,D016,Firozabad
+2,27,205,9,1,D022,Mumbai Suburban
+2,27,205,9,2,D022,Mumbai Suburban
+2,27,205,9,3,D022,Mumbai Suburban
+2,27,205,9,4,D022,Mumbai Suburban
+1,10,513,2,1,D016,Siwan
+1,9,516,2,1,D016,Firozabad
+1,27,10,2,1,D017,Parbhani
+1,27,10,2,2,D017,Parbhani
+2,27,10,9,1,D017,Parbhani
+1,19,13,2,1,D017,South Twenty Four Parganas
+1,19,13,2,2,D017,South Twenty Four Parganas
+1,19,13,2,3,D017,South Twenty Four Parganas
+1,19,13,2,4,D017,South Twenty Four Parganas
+1,20,13,1,1,D017,Dumka
+1,20,13,2,1,D017,Dumka
+1,36,13,2,1,D017,Medak
+2,19,13,9,1,D017,South Twenty Four Parganas
+2,19,13,9,2,D017,South Twenty Four Parganas
+2,19,13,9,3,D017,South Twenty Four Parganas
+2,20,13,9,1,D017,Dumka
+2,36,13,9,1,D017,Medak
+1,10,14,2,1,D017,Saran
+1,10,14,2,2,D017,Saran
+1,10,14,2,3,D017,Saran
+1,22,14,2,1,D017,Dakshin Bastar Dantewada
+2,10,14,9,1,D017,Saran
+2,22,14,9,1,D017,Dakshin Bastar Dantewada
+1,6,15,2,1,D017,Rewari
+1,21,15,2,1,D017,Khordha
+1,21,15,2,2,D017,Khordha
+1,23,15,2,1,D017,Ratlam
+1,23,15,2,2,D017,Ratlam
+2,6,15,9,1,D017,Rewari
+2,21,15,9,1,D017,Khordha
+2,21,15,9,2,D017,Khordha
+2,23,15,9,1,D017,Ratlam
+1,18,16,2,1,D017,Cachar
+1,18,16,2,2,D017,Cachar
+1,24,16,2,1,D017,Panch Mahals
+1,24,16,2,2,D017,Panch Mahals
+1,28,16,2,1,D017,Annamayya
+1,28,16,2,2,D017,Annamayya
+1,29,16,2,1,D017,Tumakuru
+1,29,16,2,2,D017,Tumakuru
+1,29,16,2,3,D017,Tumakuru
+2,18,16,9,1,D017,Cachar
+2,24,16,9,1,D017,Panch Mahals
+2,28,16,9,1,D017,Annamayya
+2,29,16,9,1,D017,Tumakuru
+1,9,17,2,1,D017,Mainpuri
+1,9,17,2,2,D017,Mainpuri
+2,9,17,9,1,D017,Mainpuri
+1,27,11,2,1,D018,Jalna
+1,27,11,2,2,D018,Jalna
+2,27,11,9,1,D018,Jalna
+1,3,14,2,1,D018,Sahibzada Ajit Singh Nagar
+1,8,14,2,1,D018,Jalore
+1,8,14,2,2,D018,Jalore
+1,19,14,1,1,D018,Paschim Medinipur
+1,19,14,2,1,D018,Paschim Medinipur
+1,19,14,2,2,D018,Paschim Medinipur
+1,20,14,1,1,D018,Jamtara
+1,36,14,2,1,D018,Siddipet
+2,3,14,9,1,D018,Sahibzada Ajit Singh Nagar
+2,19,14,9,1,D018,Paschim Medinipur
+2,20,14,9,1,D018,Jamtara
+2,36,14,9,1,D018,Siddipet
+1,10,15,2,1,D018,Vaishali
+1,10,15,2,2,D018,Vaishali
+1,10,15,2,3,D018,Vaishali
+2,8,15,9,1,D018,Jalore
+2,10,15,9,1,D018,Vaishali
+1,6,16,2,1,D018,Gurugram
+1,21,16,2,1,D018,Puri
+1,21,16,2,2,D018,Puri
+1,23,16,2,1,D018,Ujjain
+1,23,16,2,2,D018,Ujjain
+2,6,16,9,1,D018,Gurugram
+2,6,16,9,2,D018,Gurugram
+2,21,16,9,1,D018,Puri
+2,23,16,9,1,D018,Ujjain
+1,18,17,2,1,D018,Karimganj
+1,18,17,2,2,D018,Karimganj
+1,28,17,2,1,D018,Nandyal
+1,28,17,2,2,D018,Nandyal
+1,29,17,2,1,D018,Bengaluru (Urban)
+2,18,17,9,1,D018,Karimganj
+2,28,17,9,1,D018,Nandyal
+1,9,18,2,1,D018,Budaun
+1,9,18,2,2,D018,Budaun
+2,9,18,9,1,D018,Budaun
+2,29,201,9,1,D018,Bengaluru (Urban)
+2,29,201,9,2,D018,Bengaluru (Urban)
+2,29,201,9,3,D018,Bengaluru (Urban)
+2,29,201,9,4,D018,Bengaluru (Urban)
+2,29,201,9,5,D018,Bengaluru (Urban)
+2,29,201,9,6,D018,Bengaluru (Urban)
+2,29,201,9,7,D018,Bengaluru (Urban)
+2,29,201,9,8,D018,Bengaluru (Urban)
+2,29,201,9,9,D018,Bengaluru (Urban)
+2,29,201,9,10,D018,Bengaluru (Urban)
+1,9,518,2,1,D018,Budaun
+1,1,12,2,1,D019,Udhampur
+1,27,12,2,1,D019,Chhatrapati Sambhajinagar
+1,27,12,2,2,D019,Chhatrapati Sambhajinagar
+1,27,12,2,3,D019,Chhatrapati Sambhajinagar
+2,1,12,9,1,D019,Udhampur
+2,27,12,9,1,D019,Chhatrapati Sambhajinagar
+1,33,14,2,1,D019,Thanjavur
+1,33,14,2,2,D019,Thanjavur
+2,33,14,9,1,D019,Thanjavur
+2,33,14,9,2,D019,Thanjavur
+1,3,15,2,1,D019,Sangrur
+1,3,15,2,2,D019,Sangrur
+1,8,15,2,1,D019,Sirohi
+1,19,15,2,1,D019,Purba Medinipur
+1,19,15,2,2,D019,Purba Medinipur
+1,19,15,2,3,D019,Purba Medinipur
+1,19,15,2,4,D019,Purba Medinipur
+1,20,15,2,1,D019,Ranchi
+1,20,15,2,2,D019,Ranchi
+1,22,15,2,1,D019,Balodabazar-Bhatapara
+1,22,15,2,2,D019,Balodabazar-Bhatapara
+2,3,15,9,1,D019,Sangrur
+2,19,15,9,1,D019,Purba Medinipur
+2,22,15,9,1,D019,Balodabazar-Bhatapara
+1,10,16,2,1,D019,Samastipur
+1,10,16,2,2,D019,Samastipur
+1,10,16,2,3,D019,Samastipur
+2,8,16,9,1,D019,Sirohi
+2,10,16,9,1,D019,Samastipur
+1,21,17,2,1,D019,Ganjam
+1,21,17,2,2,D019,Ganjam
+1,21,17,2,3,D019,Ganjam
+1,23,17,2,1,D019,Shajapur
+1,24,17,2,1,D019,Vadodara
+1,24,17,2,2,D019,Vadodara
+2,21,17,9,1,D019,Ganjam
+2,23,17,9,1,D019,Shajapur
+1,18,18,2,1,D019,Hailakandi
+1,28,18,2,1,D019,Sri Satya Sai
+1,28,18,2,2,D019,Sri Satya Sai
+1,28,18,2,3,D019,Sri Satya Sai
+1,29,18,2,1,D019,Mandya
+1,29,18,2,2,D019,Mandya
+2,18,18,9,1,D019,Hailakandi
+2,28,18,9,1,D019,Sri Satya Sai
+2,29,18,9,1,D019,Mandya
+1,9,19,2,1,D019,Bareilly
+1,9,19,2,2,D019,Bareilly
+2,9,19,9,1,D019,Bareilly
+2,9,19,9,2,D019,Bareilly
+2,9,19,9,3,D019,Bareilly
+2,20,202,9,1,D019,Ranchi
+2,20,202,9,2,D019,Ranchi
+2,27,202,9,1,D019,Chhatrapati Sambhajinagar
+2,24,203,9,1,D019,Vadodara
+2,24,203,9,2,D019,Vadodara
+2,24,203,9,3,D019,Vadodara
+1,10,516,2,1,D019,Samastipur
+1,9,519,2,1,D019,Bareilly
+1,27,13,2,1,D020,Nashik
+1,27,13,2,2,D020,Nashik
+1,27,13,2,3,D020,Nashik
+2,27,13,9,1,D020,Nashik
+1,36,15,2,1,D020,Yadadri Bhuvanagiri
+2,36,15,9,1,D020,Yadadri Bhuvanagiri
+1,3,16,2,1,D020,Barnala
+1,8,16,2,1,D020,Pali
+1,8,16,2,2,D020,Pali
+2,3,16,9,1,D020,Barnala
+1,6,17,2,1,D020,Faridabad
+1,10,17,2,1,D020,Begusarai
+1,10,17,2,2,D020,Begusarai
+1,10,17,2,3,D020,Begusarai
+2,8,17,9,1,D020,Pali
+2,10,17,9,1,D020,Begusarai
+1,23,18,2,1,D020,Dewas
+1,23,18,2,2,D020,Dewas
+2,23,18,9,1,D020,Dewas
+1,18,19,2,1,D020,Bongaigaon
+1,29,19,1,1,D020,Hassan
+1,29,19,2,1,D020,Hassan
+2,18,19,9,1,D020,Bongaigaon
+2,29,19,9,1,D020,Hassan
+1,9,20,2,1,D020,Pilibhit
+2,9,20,9,1,D020,Pilibhit
+2,6,201,9,1,D020,Faridabad
+2,6,201,9,2,D020,Faridabad
+2,6,201,9,3,D020,Faridabad
+2,27,203,9,1,D020,Nashik
+2,27,203,9,2,D020,Nashik
+1,9,520,2,1,D020,Pilibhit
+1,1,13,2,1,D021,Jammu
+2,1,13,9,1,D021,Jammu
+1,27,14,2,1,D021,Thane
+1,27,14,2,2,D021,Thane
+2,27,14,9,1,D021,Thane
+2,27,14,9,2,D021,Thane
+2,27,14,9,3,D021,Thane
+2,27,14,9,4,D021,Thane
+1,33,15,2,1,D021,Sivaganga
+2,33,15,9,1,D021,Sivaganga
+1,22,16,2,1,D021,Kondagaon
+1,36,16,2,1,D021,Medchal-Malkajgiri
+2,22,16,9,1,D021,Kondagaon
+2,36,16,9,1,D021,Medchal-Malkajgiri
+1,3,17,2,1,D021,Pathankot
+1,8,17,2,1,D021,Ajmer
+2,3,17,9,1,D021,Pathankot
+1,6,18,2,1,D021,Palwal
+1,24,18,2,1,D021,Bharuch
+1,24,18,2,2,D021,Bharuch
+2,6,18,9,1,D021,Palwal
+2,8,18,9,1,D021,Ajmer
+2,8,18,9,2,D021,Ajmer
+2,24,18,9,1,D021,Bharuch
+1,23,19,2,1,D021,Dhar
+1,23,19,2,2,D021,Dhar
+1,23,19,2,3,D021,Dhar
+2,23,19,9,1,D021,Dhar
+1,29,20,2,1,D021,Dakshina Kannada
+1,29,20,2,2,D021,Dakshina Kannada
+2,29,20,9,1,D021,Dakshina Kannada
+2,29,20,9,2,D021,Dakshina Kannada
+1,9,21,2,1,D021,Shahjahanpur
+1,9,21,2,2,D021,Shahjahanpur
+2,9,21,9,1,D021,Shahjahanpur
+2,27,204,9,1,D021,Thane
+2,27,204,9,2,D021,Thane
+2,27,204,9,3,D021,Thane
+2,27,204,9,4,D021,Thane
+1,9,521,2,1,D021,Shahjahanpur
+1,1,14,1,1,D022,Samba
+2,1,14,9,1,D022,Samba
+1,33,16,2,1,D022,Madurai
+1,33,16,2,2,D022,Madurai
+2,33,16,9,1,D022,Madurai
+2,27,205,9,5,D022,Mumbai Suburban
+1,3,18,2,1,D022,Fazilka
+1,8,18,2,1,D022,Tonk
+1,8,18,2,2,D022,Tonk
+1,10,18,2,1,D022,Bhagalpur
+1,10,18,2,2,D022,Bhagalpur
+1,10,18,2,3,D022,Bhagalpur
+2,3,18,9,1,D022,Fazilka
+2,10,18,9,1,D022,Bhagalpur
+2,8,19,9,1,D022,Tonk
+1,18,20,2,1,D022,Kamrup
+1,18,20,2,2,D022,Kamrup
+1,23,20,2,1,D022,Indore
+2,18,20,9,1,D022,Kamrup
+2,23,20,9,1,D022,Indore
+1,9,22,2,1,D022,Kheri
+1,9,22,2,2,D022,Kheri
+2,9,22,9,1,D022,Kheri
+2,23,202,9,1,D022,Indore
+2,23,202,9,2,D022,Indore
+2,33,202,9,1,D022,Madurai
+2,27,205,9,6,D022,Mumbai Suburban
+2,27,205,9,7,D022,Mumbai Suburban
+2,27,205,9,8,D022,Mumbai Suburban
+2,27,205,9,9,D022,Mumbai Suburban
+2,27,205,9,10,D022,Mumbai Suburban
+2,27,205,9,11,D022,Mumbai Suburban
+2,27,205,9,12,D022,Mumbai Suburban
+2,27,205,9,13,D022,Mumbai Suburban
+2,27,205,9,14,D022,Mumbai Suburban
+2,33,201,9,1,D002,Chennai
+2,33,201,9,2,D002,Chennai
+2,33,201,9,3,D002,Chennai
+2,33,201,9,4,D002,Chennai
+2,36,17,9,1,D022,Hyderabad
+1,9,522,2,1,D022,Kheri
+1,19,16,2,1,D023,Paschim Bardhaman
+1,20,16,2,1,D023,Pashchimi Singhbhum
+1,20,16,2,2,D023,Pashchimi Singhbhum
+2,19,16,9,1,D023,Paschim Bardhaman
+2,19,16,9,2,D023,Paschim Bardhaman
+2,19,16,9,3,D023,Paschim Bardhaman
+2,20,16,9,1,D023,Pashchimi Singhbhum
+1,22,17,2,1,D023,Bemetara
+1,33,17,2,1,D023,Theni
+1,36,17,2,1,D023,Rangareddy
+1,36,17,2,2,D023,Rangareddy
+2,22,17,9,1,D023,Bemetara
+2,33,17,9,1,D023,Theni
+1,21,18,1,1,D023,Subarnapur
+2,21,18,9,1,D023,Subarnapur
+1,8,19,2,1,D023,Bundi
+1,8,19,2,2,D023,Bundi
+1,24,19,2,1,D023,Navsari
+1,28,19,2,1,D023,Eluru
+1,28,19,2,2,D023,Eluru
+2,24,19,9,1,D023,Navsari
+2,28,19,9,1,D023,Eluru
+2,8,20,9,1,D023,Bundi
+1,18,21,2,1,D023,Kamrup Metropolitan
+1,23,21,2,1,D023,Khargone (West Nimar)
+1,23,21,2,2,D023,Khargone (West Nimar)
+1,29,21,2,1,D023,Mysuru
+1,29,21,2,2,D023,Mysuru
+2,18,21,9,1,D023,Kamrup Metropolitan
+2,18,21,9,2,D023,Kamrup Metropolitan
+2,23,21,9,1,D023,Khargone (West Nimar)
+2,29,21,9,1,D023,Mysuru
+2,29,21,9,2,D023,Mysuru
+1,9,23,2,1,D023,Sitapur
+1,9,23,2,2,D023,Sitapur
+1,9,23,2,3,D023,Sitapur
+2,9,23,9,1,D023,Sitapur
+2,36,201,9,1,D023,Rangareddy
+2,36,201,9,2,D023,Rangareddy
+2,36,201,9,3,D023,Rangareddy
+2,36,201,9,4,D023,Rangareddy
+2,36,201,9,5,D023,Rangareddy
+2,36,201,9,6,D023,Rangareddy
+2,36,201,9,7,D023,Rangareddy
+2,36,201,9,8,D023,Rangareddy
+1,9,523,2,1,D023,Sitapur
+1,27,15,2,1,D024,Raigad
+1,27,15,2,2,D024,Raigad
+2,27,15,9,1,D024,Raigad
+2,27,15,9,2,D024,Raigad
+1,20,17,2,1,D024,Saraikela-Kharsawan
+2,20,17,9,1,D024,Saraikela-Kharsawan
+1,22,18,2,1,D024,Balod
+1,33,18,2,1,D024,Virudhunagar
+1,36,18,2,1,D024,Vikarabad
+2,22,18,9,1,D024,Balod
+2,33,18,9,1,D024,Virudhunagar
+2,33,18,9,2,D024,Virudhunagar
+1,10,19,2,1,D024,Munger
+1,10,19,2,2,D024,Munger
+1,21,19,2,1,D024,Balangir
+1,21,19,2,2,D024,Balangir
+2,10,19,9,1,D024,Munger
+2,21,19,9,1,D024,Balangir
+2,36,19,9,1,D024,Vikarabad
+1,8,20,2,1,D024,Bhilwara
+1,8,20,2,2,D024,Bhilwara
+1,24,20,2,1,D024,Valsad
+1,24,20,2,2,D024,Valsad
+1,28,20,2,1,D024,Kakinada
+1,28,20,2,2,D024,Kakinada
+2,24,20,9,1,D024,Valsad
+2,28,20,9,1,D024,Kakinada
+2,8,21,9,1,D024,Bhilwara
+1,18,22,2,1,D024,Nalbari
+1,23,22,2,1,D024,Barwani
+1,23,22,2,2,D024,Barwani
+2,18,22,9,1,D024,Nalbari
+2,23,22,9,1,D024,Barwani
+1,9,24,2,1,D024,Hardoi
+1,9,24,2,2,D024,Hardoi
+1,9,24,2,3,D024,Hardoi
+2,9,24,9,1,D024,Hardoi
+1,27,16,2,1,D025,Pune
+1,27,16,2,2,D025,Pune
+1,27,16,2,3,D025,Pune
+2,27,16,9,1,D025,Pune
+2,27,16,9,2,D025,Pune
+1,22,19,2,1,D025,Mungeli
+1,33,19,2,1,D025,Ramanathapuram
+1,36,19,2,1,D025,Mahabubnagar
+2,22,19,9,1,D025,Mungeli
+2,33,19,9,1,D025,Ramanathapuram
+1,10,20,2,1,D025,Lakhisarai
+1,10,20,2,2,D025,Lakhisarai
+2,10,20,9,1,D025,Lakhisarai
+2,36,20,9,1,D025,Mahabubnagar
+1,8,21,2,1,D025,Rajsamand
+1,8,21,2,2,D025,Rajsamand
+1,24,21,2,1,D025,Surat
+1,24,21,2,2,D025,Surat
+1,29,22,2,1,D025,Kalaburagi
+1,29,22,2,2,D025,Kalaburagi
+2,8,22,9,1,D025,Rajsamand
+2,29,22,9,1,D025,Kalaburagi
+2,29,22,9,2,D025,Kalaburagi
+1,23,23,1,1,D025,Rajgarh
+1,23,23,2,1,D025,Rajgarh
+2,23,23,9,1,D025,Rajgarh
+1,9,25,2,1,D025,Unnao
+1,9,25,2,2,D025,Unnao
+2,9,25,9,1,D025,Unnao
+2,24,204,9,1,D025,Surat
+2,24,204,9,2,D025,Surat
+2,24,204,9,3,D025,Surat
+2,24,204,9,4,D025,Surat
+2,27,206,9,1,D025,Pune
+2,27,206,9,2,D025,Pune
+2,27,206,9,3,D025,Pune
+2,27,206,9,4,D025,Pune
+2,27,206,9,5,D025,Pune
+2,27,206,9,6,D025,Pune
+1,9,525,2,1,D025,Unnao
+1,27,17,2,1,D026,Ahmednagar
+1,27,17,2,2,D026,Ahmednagar
+1,27,17,2,3,D026,Ahmednagar
+2,27,17,9,1,D026,Ahmednagar
+2,27,17,9,2,D026,Ahmednagar
+1,21,20,1,1,D026,Kalahandi
+1,21,20,2,1,D026,Kalahandi
+1,33,20,2,1,D026,Thoothukudi
+2,21,20,9,1,D026,Kalahandi
+2,33,20,9,1,D026,Thoothukudi
+1,28,21,2,1,D026,Ntr
+2,28,21,9,1,D026,Ntr
+1,18,23,2,1,D026,Darrang
+1,18,23,2,2,D026,Darrang
+2,18,23,9,1,D026,Darrang
+1,23,24,1,1,D026,Vidisha
+1,23,24,2,1,D026,Vidisha
+2,23,24,9,1,D026,Vidisha
+1,9,26,2,1,D026,Lucknow
+2,28,202,9,1,D026,Ntr
+2,9,204,9,1,D026,Lucknow
+2,9,204,9,2,D026,Lucknow
+2,9,204,9,3,D026,Lucknow
+1,9,526,2,1,D026,Lucknow
+1,27,18,2,1,D027,Beed
+1,27,18,2,2,D027,Beed
+1,27,18,2,3,D027,Beed
+2,27,18,9,1,D027,Beed
+1,10,21,2,1,D027,Nalanda
+1,10,21,2,2,D027,Nalanda
+1,10,21,2,3,D027,Nalanda
+1,21,21,1,1,D027,Rayagada
+1,33,21,2,1,D027,Tirunelveli
+2,10,21,9,1,D027,Nalanda
+2,21,21,9,1,D027,Rayagada
+2,33,21,9,1,D027,Tirunelveli
+2,33,21,9,2,D027,Tirunelveli
+1,8,22,2,1,D027,Banswara
+1,8,22,2,2,D027,Banswara
+1,29,23,1,1,D027,Kolar
+1,29,23,2,1,D027,Kolar
+2,8,23,9,1,D027,Banswara
+2,29,23,9,1,D027,Kolar
+1,23,25,2,1,D027,Bhopal
+1,9,27,2,1,D027,Rae Bareli
+1,9,27,2,2,D027,Rae Bareli
+2,9,27,9,1,D027,Rae Bareli
+2,23,203,9,1,D027,Bhopal
+2,23,203,9,2,D027,Bhopal
+2,23,203,9,3,D027,Bhopal
+1,9,527,2,1,D027,Rae Bareli
+1,27,19,2,1,D028,Latur
+1,27,19,2,2,D028,Latur
+2,27,19,9,1,D028,Latur
+1,22,20,2,1,D028,Manendragarh-Chirmiri-Bharat
+2,22,20,9,1,D028,Manendragarh-Chirmiri-Bharat
+1,10,22,2,1,D028,Patna
+1,10,22,2,2,D028,Patna
+1,10,22,2,3,D028,Patna
+1,21,22,2,1,D028,Nabarangapur
+1,21,22,2,2,D028,Nabarangapur
+1,33,22,2,1,D028,Kanniyakumari
+2,10,22,9,1,D028,Patna
+2,21,22,9,1,D028,Nabarangapur
+2,33,22,9,1,D028,Kanniyakumari
+2,33,22,9,2,D028,Kanniyakumari
+1,8,23,1,1,D028,Chittorgarh
+1,8,23,2,1,D028,Chittorgarh
+1,18,24,2,1,D028,Hojai
+1,29,24,2,1,D028,Chikkaballapura
+2,8,24,9,1,D028,Chittorgarh
+2,18,24,9,1,D028,Hojai
+2,29,24,9,1,D028,Chikkaballapura
+1,23,26,2,1,D028,Sehore
+1,23,26,2,2,D028,Sehore
+2,23,26,9,1,D028,Sehore
+1,9,28,2,1,D028,Farrukhabad
+1,9,28,2,2,D028,Farrukhabad
+2,9,28,9,1,D028,Farrukhabad
+2,10,201,9,1,D028,Patna
+2,10,201,9,2,D028,Patna
+1,36,20,2,1,D029,Nalgonda
+1,36,20,2,2,D029,Nalgonda
+2,36,21,9,1,D029,Nalgonda
+1,10,23,2,1,D029,Bhojpur
+1,10,23,2,2,D029,Bhojpur
+1,10,23,2,3,D029,Bhojpur
+1,21,23,1,1,D029,Koraput
+1,21,23,2,1,D029,Koraput
+2,10,23,9,1,D029,Bhojpur
+2,21,23,9,1,D029,Koraput
+1,8,24,2,1,D029,Kota
+1,29,25,2,1,D029,Bengaluru (Rural)
+2,8,25,9,1,D029,Kota
+2,29,25,9,1,D029,Bengaluru (Rural)
+1,23,27,1,1,D029,Raisen
+1,23,27,2,1,D029,Raisen
+2,23,27,9,1,D029,Raisen
+1,9,29,2,1,D029,Kannauj
+2,9,29,9,1,D029,Kannauj
+2,9,29,9,2,D029,Kannauj
+2,8,202,9,1,D029,Kota
+1,9,529,2,1,D029,Kannauj
+1,27,20,2,1,D030,Solapur
+1,27,20,2,2,D030,Solapur
+1,27,20,2,3,D030,Solapur
+2,27,20,9,1,D030,Solapur
+2,27,20,9,2,D030,Solapur
+1,22,21,2,1,D030,Sakti
+1,36,21,2,1,D030,Suryapet
+2,22,21,9,1,D030,Sakti
+2,36,22,9,1,D030,Suryapet
+1,33,23,2,1,D030,Krishnagiri
+1,33,23,2,2,D030,Krishnagiri
+2,33,23,9,1,D030,Krishnagiri
+1,10,24,2,1,D030,Buxar
+1,10,24,2,2,D030,Buxar
+2,10,24,9,1,D030,Buxar
+1,8,25,2,1,D030,Baran
+1,8,25,2,2,D030,Baran
+2,8,26,9,1,D030,Baran
+1,23,28,2,1,D030,Betul
+1,23,28,2,2,D030,Betul
+2,23,28,9,1,D030,Betul
+1,9,30,2,1,D030,Etawah
+1,9,30,2,2,D030,Etawah
+2,9,30,9,1,D030,Etawah
+1,27,21,2,1,D031,Satara
+1,27,21,2,2,D031,Satara
+1,27,21,2,3,D031,Satara
+2,27,21,9,1,D031,Satara
+1,24,22,2,1,D031,Gir Somnath
+1,36,22,2,1,D031,Khammam
+1,36,22,2,2,D031,Khammam
+2,24,22,9,1,D031,Gir Somnath
+2,36,23,9,1,D031,Khammam
+1,33,24,2,1,D031,Coimbatore
+2,33,24,9,1,D031,Coimbatore
+2,33,24,9,2,D031,Coimbatore
+1,8,26,1,1,D031,Jhalawar
+1,8,26,2,1,D031,Jhalawar
+2,8,27,9,1,D031,Jhalawar
+2,33,203,9,1,D031,Coimbatore
+1,10,25,2,1,D032,Rohtas
+1,10,25,2,2,D032,Rohtas
+1,10,25,2,3,D032,Rohtas
+1,33,25,2,1,D032,Tiruppur
+2,10,25,9,1,D032,Rohtas
+2,33,25,9,1,D032,Tiruppur
+2,33,25,9,2,D032,Tiruppur
+1,8,27,2,1,D032,Udaipur
+1,8,27,2,2,D032,Udaipur
+1,8,27,2,3,D032,Udaipur
+2,8,28,9,1,D032,Udaipur
+1,23,29,2,1,D032,Narmadapuram
+2,23,29,9,1,D032,Narmadapuram
+1,24,23,2,1,D033,Morbi
+2,24,23,9,1,D033,Morbi
+1,10,26,2,1,D033,Aurangabad
+1,10,26,2,2,D033,Aurangabad
+1,10,26,2,3,D033,Aurangabad
+1,33,26,2,1,D033,Chengalpattu
+2,10,26,9,1,D033,Aurangabad
+2,33,26,9,1,D033,Chengalpattu
+2,33,26,9,2,D033,Chengalpattu
+1,23,30,2,1,D033,Katni
+1,23,30,2,2,D033,Katni
+2,23,30,9,1,D033,Katni
+1,9,31,2,1,D033,Kanpur Nagar
+1,9,31,2,2,D033,Kanpur Nagar
+2,9,205,9,1,D033,Kanpur Nagar
+2,9,205,9,2,D033,Kanpur Nagar
+2,9,205,9,3,D033,Kanpur Nagar
+1,27,22,2,1,D034,Kolhapur
+1,27,22,2,2,D034,Kolhapur
+1,27,22,2,3,D034,Kolhapur
+2,27,22,9,1,D034,Kolhapur
+2,27,22,9,2,D034,Kolhapur
+1,10,27,2,1,D034,Gaya
+1,10,27,2,2,D034,Gaya
+1,10,27,2,3,D034,Gaya
+1,10,27,2,4,D034,Gaya
+2,10,27,9,1,D034,Gaya
+1,23,31,1,1,D034,Jabalpur
+1,23,31,2,1,D034,Jabalpur
+1,9,32,2,1,D034,Jalaun
+1,9,32,2,2,D034,Jalaun
+2,9,32,9,1,D034,Jalaun
+2,23,204,9,1,D034,Jabalpur
+2,23,204,9,2,D034,Jabalpur
+1,27,23,2,1,D035,Sangli
+1,27,23,2,2,D035,Sangli
+1,27,23,2,3,D035,Sangli
+2,27,23,9,1,D035,Sangli
+1,33,27,2,1,D035,Ranipet
+2,33,27,9,1,D035,Ranipet
+1,8,28,2,1,D035,Neem ka thana
+1,8,28,2,2,D035,Neem ka thana
+1,10,28,2,1,D035,Nawada
+1,10,28,2,2,D035,Nawada
+1,10,28,2,3,D035,Nawada
+2,10,28,9,1,D035,Nawada
+2,8,29,9,1,D035,Neem ka thana
+1,23,32,2,1,D035,Narsinghpur
+1,23,32,2,2,D035,Narsinghpur
+2,23,32,9,1,D035,Narsinghpur
+1,9,33,2,1,D035,Jhansi
+2,9,33,9,1,D035,Jhansi
+2,9,33,9,2,D035,Jhansi
+1,9,533,2,1,D035,Jhansi
+1,27,24,2,1,D036,Palghar
+1,27,24,2,2,D036,Palghar
+2,27,24,9,1,D036,Palghar
+1,33,28,2,1,D036,Tirupathur
+2,33,28,9,1,D036,Tirupathur
+1,8,29,2,1,D036,Khairthal Tijara
+1,10,29,2,1,D036,Jamui
+1,10,29,2,2,D036,Jamui
+2,10,29,9,1,D036,Jamui
+2,8,30,9,1,D036,Khairthal Tijara
+2,27,207,9,1,D036,Palghar
+1,33,29,2,1,D037,Tenkasi
+2,33,29,9,1,D037,Tenkasi
+1,8,30,2,1,D037,Kotputli-Behror
+1,8,30,2,2,D037,Kotputli-Behror
+1,10,30,2,1,D037,Jehanabad
+1,10,30,2,2,D037,Jehanabad
+2,10,30,9,1,D037,Jehanabad
+2,8,31,9,1,D037,Kotputli-Behror
+1,23,33,2,1,D037,Mandla
+1,23,33,2,2,D037,Mandla
+2,23,33,9,1,D037,Mandla
+1,8,31,2,1,D038,Deeg
+1,8,31,2,2,D038,Deeg
+2,8,32,9,1,D038,Deeg
+1,23,34,2,1,D038,Chhindwara
+1,23,34,2,2,D038,Chhindwara
+2,23,34,9,1,D038,Chhindwara
+1,8,32,2,1,D039,Gangapur City 
+2,8,33,9,1,D039,Gangapur City 
+1,9,34,2,1,D039,Banda
+1,9,34,2,2,D039,Banda
+2,9,34,9,1,D039,Banda
+1,23,35,1,1,D039,Seoni
+1,23,35,2,1,D039,Seoni
+2,23,35,9,1,D039,Seoni
+1,8,33,2,1,D040,Jaipur(Rural)
+1,8,33,2,2,D040,Jaipur(Rural)
+1,8,33,2,3,D040,Jaipur(Rural)
+2,8,34,9,1,D040,Jaipur(Rural)
+1,23,36,2,1,D040,Balaghat
+1,23,36,2,2,D040,Balaghat
+2,23,36,9,1,D040,Balaghat
+1,9,35,2,1,D041,Fatehpur
+1,9,35,2,2,D041,Fatehpur
+1,9,35,2,3,D041,Fatehpur
+2,9,35,9,1,D041,Fatehpur
+1,23,37,1,1,D041,Guna
+1,23,37,2,1,D041,Guna
+2,23,37,9,1,D041,Guna
+1,8,34,2,1,D042,Didwana-Kuchaman
+1,8,34,2,2,D042,Didwana-Kuchaman
+2,8,35,9,1,D042,Didwana-Kuchaman
+1,9,36,2,1,D042,Pratapgarh
+1,9,36,2,2,D042,Pratapgarh
+1,9,36,2,3,D042,Pratapgarh
+2,9,36,9,1,D042,Pratapgarh
+1,23,38,2,1,D042,Ashoknagar
+2,23,38,9,1,D042,Ashoknagar
+1,8,35,2,1,D043,Jodhpur(Rural)
+1,8,35,2,2,D043,Jodhpur(Rural)
+1,8,35,2,3,D043,Jodhpur(Rural)
+2,8,36,9,1,D043,Jodhpur(Rural)
+1,23,39,2,1,D043,Shahdol
+1,23,39,2,2,D043,Shahdol
+2,23,39,9,1,D043,Shahdol
+1,9,37,2,1,D044,Prayagraj
+1,9,37,2,2,D044,Prayagraj
+1,9,37,2,3,D044,Prayagraj
+2,9,37,9,1,D044,Prayagraj
+1,23,40,2,1,D044,Anuppur
+2,23,40,9,1,D044,Anuppur
+2,9,206,9,1,D044,Prayagraj
+1,9,537,2,1,D044,Prayagraj
+1,9,38,2,1,D045,Bara Banki
+1,9,38,2,2,D045,Bara Banki
+2,9,38,9,1,D045,Bara Banki
+1,9,538,2,1,D045,Bara Banki
+1,8,36,2,1,D046,Beawar
+2,8,37,9,1,D046,Beawar
+1,9,39,2,1,D046,Ayodhya
+1,9,39,2,2,D046,Ayodhya
+1,9,39,2,3,D046,Ayodhya
+2,9,39,9,1,D046,Ayodhya
+1,23,41,2,1,D046,Singrauli
+1,23,41,2,2,D046,Singrauli
+2,23,41,9,1,D046,Singrauli
+1,9,40,2,1,D047,Ambedkar Nagar
+1,9,40,2,2,D047,Ambedkar Nagar
+1,9,40,2,3,D047,Ambedkar Nagar
+2,9,40,9,1,D047,Ambedkar Nagar
+1,9,41,2,1,D049,Bahraich
+1,9,41,2,2,D049,Bahraich
+1,9,41,2,3,D049,Bahraich
+2,9,41,9,1,D049,Bahraich
+1,23,42,2,1,D049,Khandwa (East Nimar)
+1,23,42,2,2,D049,Khandwa (East Nimar)
+2,23,42,9,1,D049,Khandwa (East Nimar)
+1,23,43,2,1,D050,Burhanpur
+2,23,43,9,1,D050,Burhanpur
+1,9,42,2,1,D052,Gonda
+1,9,42,2,2,D052,Gonda
+2,9,42,9,1,D052,Gonda
+1,9,542,2,1,D052,Gonda
+1,9,43,2,1,D053,Siddharthnagar
+1,9,43,2,2,D053,Siddharthnagar
+2,9,43,9,1,D053,Siddharthnagar
+1,9,543,2,1,D053,Siddharthnagar
+1,9,44,1,1,D054,Basti
+1,9,44,2,1,D054,Basti
+2,9,44,9,1,D054,Basti
+1,9,544,2,1,D054,Basti
+1,9,45,2,1,D056,Mahrajganj
+1,9,45,2,2,D056,Mahrajganj
+2,9,45,9,1,D056,Mahrajganj
+1,9,545,2,1,D056,Mahrajganj
+1,9,46,2,1,D057,Gorakhpur
+1,9,46,2,2,D057,Gorakhpur
+2,9,46,9,1,D057,Gorakhpur
+2,9,46,9,2,D057,Gorakhpur
+1,9,546,2,1,D057,Gorakhpur
+1,9,47,2,1,D058,Kushinagar
+1,9,47,2,2,D058,Kushinagar
+2,9,47,9,1,D058,Kushinagar
+1,9,547,2,1,D058,Kushinagar
+1,9,48,2,1,D059,Deoria
+1,9,48,2,2,D059,Deoria
+2,9,48,9,1,D059,Deoria
+1,9,548,2,1,D059,Deoria
+1,9,49,2,1,D060,Azamgarh
+1,9,49,2,2,D060,Azamgarh
+1,9,49,2,3,D060,Azamgarh
+2,9,49,9,1,D060,Azamgarh
+1,9,549,2,1,D060,Azamgarh
+1,9,50,2,1,D061,Mau
+2,9,50,9,1,D061,Mau
+1,9,550,2,1,D061,Mau
+1,9,51,2,1,D062,Ballia
+1,9,51,2,2,D062,Ballia
+2,9,51,9,1,D062,Ballia
+1,9,551,2,1,D062,Ballia
+1,9,52,2,1,D063,Jaunpur
+1,9,52,2,2,D063,Jaunpur
+1,9,52,2,3,D063,Jaunpur
+2,9,52,9,1,D063,Jaunpur
+1,9,552,2,1,D063,Jaunpur
+1,9,53,2,1,D064,Ghazipur
+1,9,53,2,2,D064,Ghazipur
+2,9,53,9,1,D064,Ghazipur
+1,9,553,2,1,D064,Ghazipur
+1,9,54,2,1,D065,Chandauli
+2,9,54,9,1,D065,Chandauli
+1,9,554,2,1,D065,Chandauli
+1,9,55,2,1,D066,Varanasi
+1,9,55,2,2,D066,Varanasi
+2,9,55,9,1,D066,Varanasi
+2,9,207,9,1,D066,Varanasi
+2,9,207,9,2,D066,Varanasi
+1,9,555,2,1,D066,Varanasi
+1,9,56,2,1,D068,Mirzapur
+1,9,56,2,2,D068,Mirzapur
+2,9,56,9,1,D068,Mirzapur
+1,9,556,2,1,D068,Mirzapur
+1,9,57,2,1,D069,Sonbhadra
+2,9,57,9,1,D069,Sonbhadra
+1,9,557,2,1,D069,Sonbhadra
+1,9,58,2,1,D070,Etah
+1,9,58,2,2,D070,Etah
+2,9,58,9,1,D070,Etah
+1,9,59,2,1,D071,Kasganj
+2,9,59,9,1,D071,Kasganj
+1,9,559,2,1,D071,Kasganj
+1,9,60,2,1,D072,Shamli
+1,9,60,2,2,D072,Shamli
+2,9,60,9,1,D072,Shamli
+1,9,61,2,1,D073,Hapur
+1,9,61,2,2,D073,Hapur
+2,9,61,9,1,D073,Hapur
+1,1,801,2,1,N012,Outer Hills
+2,1,801,9,1,N012,Outer Hills
+1,1,802,2,1,N013,Jhelam Valley
+2,1,802,9,1,N013,Jhelam Valley
+1,2,801,1,1,N021,Central
+2,2,801,9,1,N021,Central
+1,2,802,1,1,N022,Trans Himalayan & Southern
+2,2,802,9,1,N022,Trans Himalayan & Southern
+1,3,801,2,1,N031,Northern
+2,3,801,9,1,N031,Northern
+1,3,802,2,1,N032,Southern
+2,3,802,9,1,N032,Southern
+2,4,801,9,1,N041,Chandigarh
+2,4,801,9,2,N041,Chandigarh
+2,4,801,9,3,N041,Chandigarh
+2,4,801,9,4,N041,Chandigarh
+1,5,801,1,1,N051,Uttarakhand
+2,5,801,9,1,N051,Uttarakhand
+1,6,801,2,1,N061,Eastern
+2,6,802,9,1,N061,Eastern
+2,6,801,9,1,N062,Western
+1,6,802,2,1,N062,Western
+1,7,801,2,1,N071,Delhi
+1,7,801,2,2,N071,Delhi
+2,7,801,9,1,N071,Delhi
+1,8,801,2,1,N081,Western
+2,8,802,9,1,N081,Western
+2,8,801,9,1,N082,North-Eastern
+1,8,803,2,1,N082,North-Eastern
+2,8,803,9,1,N083,Southern
+1,8,804,2,1,N083,Southern
+2,8,804,9,1,N084,South Eastern
+1,8,805,2,1,N084,South Eastern
+1,8,802,1,1,N085,Northern
+2,8,805,9,1,N085,Northern
+1,9,802,2,1,N092,Central
+2,9,803,9,1,N092,Central
+1,9,562,2,1,N093,Eastern
+2,9,802,9,1,N093,Eastern
+2,9,802,9,2,N093,Eastern
+1,9,803,2,1,N093,Eastern
+1,9,804,2,1,N094,Southern
+2,9,804,9,1,N094,Southern
+1,9,801,2,1,N095,Southern Upper Ganga Plains
+2,9,801,9,1,N095,Southern Upper Ganga Plains
+1,10,801,2,1,N101,Northern
+2,10,801,9,1,N101,Northern
+1,10,802,2,1,N102,Central
+2,10,802,9,1,N102,Central
+1,11,801,2,1,N111,Sikkim
+1,11,801,2,2,N111,Sikkim
+2,11,801,9,1,N111,Sikkim
+2,11,801,9,2,N111,Sikkim
+1,12,561,1,1,N121,Arunachal Pradesh
+1,12,801,1,1,N121,Arunachal Pradesh
+1,12,801,1,2,N121,Arunachal Pradesh
+1,12,801,1,3,N121,Arunachal Pradesh
+1,12,801,2,1,N121,Arunachal Pradesh
+2,12,801,9,1,N121,Arunachal Pradesh
+2,12,801,9,2,N121,Arunachal Pradesh
+2,12,801,9,3,N121,Arunachal Pradesh
+2,12,801,9,4,N121,Arunachal Pradesh
+1,13,801,2,1,N131,Nagaland
+1,13,801,2,2,N131,Nagaland
+1,13,801,2,3,N131,Nagaland
+2,13,801,9,1,N131,Nagaland
+2,13,801,9,2,N131,Nagaland
+2,13,801,9,3,N131,Nagaland
+1,14,801,2,1,N141,Plains
+1,14,801,2,2,N141,Plains
+2,14,801,9,1,N141,Plains
+2,14,801,9,2,N141,Plains
+1,14,562,2,1,N142,Hills
+1,14,802,1,1,N142,Hills
+2,14,802,9,1,N142,Hills
+2,14,802,9,2,N142,Hills
+2,14,802,9,3,N142,Hills
+1,15,801,1,1,N151,Mizoram
+1,15,801,2,1,N151,Mizoram
+2,15,801,9,1,N151,Mizoram
+2,15,801,9,2,N151,Mizoram
+2,15,801,9,3,N151,Mizoram
+2,15,801,9,4,N151,Mizoram
+1,16,801,2,1,N161,Tripura
+1,16,801,2,2,N161,Tripura
+1,16,801,2,3,N161,Tripura
+1,16,801,2,4,N161,Tripura
+2,16,801,9,1,N161,Tripura
+2,16,801,9,2,N161,Tripura
+2,16,801,9,3,N161,Tripura
+1,17,801,1,1,N171,Meghalaya
+1,17,801,1,2,N171,Meghalaya
+1,17,801,2,1,N171,Meghalaya
+1,17,801,2,2,N171,Meghalaya
+2,17,801,9,1,N171,Meghalaya
+2,17,801,9,2,N171,Meghalaya
+1,18,801,1,1,N181,Plains Eastern
+2,18,802,9,1,N181,Plains Eastern
+2,18,801,9,1,N182,Plains Western
+1,18,802,2,1,N182,Plains Western
+1,18,803,1,1,N183,Cachar Plain
+2,18,804,9,1,N183,Cachar Plain
+2,18,803,9,1,N184,Central Brahamputra Plains
+1,18,804,2,1,N184,Central Brahamputra Plains
+1,19,801,2,1,N191,Himalayan
+2,19,803,9,1,N191,Himalayan
+1,19,802,2,1,N192,Eastern Plains
+2,19,802,9,1,N192,Eastern Plains
+2,19,801,9,1,N195,Western Plains
+1,19,803,1,1,N195,Western Plains
+1,20,801,2,1,N201,Ranchi Plateau
+2,20,801,9,1,N201,Ranchi Plateau
+1,20,802,1,1,N202,Hazaribagh Plateau
+2,20,802,9,1,N202,Hazaribagh Plateau
+1,21,801,1,1,N211,Coastal
+2,21,801,9,1,N211,Coastal
+1,21,802,1,1,N212,Southern
+2,21,802,9,1,N212,Southern
+1,21,803,1,1,N213,Northern
+2,21,803,9,1,N213,Northern
+1,22,801,2,1,N221,Northern Chhattisgarh
+2,22,803,9,1,N221,Northern Chhattisgarh
+2,22,801,9,1,N222,Mahanadi Basin
+2,22,801,9,2,N222,Mahanadi Basin
+1,22,802,2,1,N222,Mahanadi Basin
+1,22,802,2,2,N222,Mahanadi Basin
+2,22,802,9,1,N223,Southern Chhattisgarh
+1,22,803,1,1,N223,Southern Chhattisgarh
+1,23,801,2,1,N231,Vindhya
+2,23,801,9,1,N231,Vindhya
+1,23,802,2,1,N233,Malwa
+2,23,805,9,1,N233,Malwa
+2,23,802,9,1,N234,South
+1,23,803,2,1,N234,South
+2,23,803,9,1,N235,South Western
+1,23,804,2,1,N235,South Western
+2,23,804,9,1,N236,Northern
+1,23,805,2,1,N236,Northern
+1,24,561,2,1,N241,South Eastern
+1,24,801,2,1,N241,South Eastern
+2,24,802,9,1,N241,South Eastern
+2,24,802,9,2,N241,South Eastern
+1,24,802,2,1,N242,Plains Northern
+2,24,803,9,1,N242,Plains Northern
+2,24,801,9,1,N245,Saurashtra
+1,24,803,2,1,N245,Saurashtra
+1,25,801,2,1,N251,Daman & Diu
+1,25,801,2,2,N251,Daman & Diu
+2,25,801,9,1,N251,Daman & Diu
+2,25,801,9,2,N251,Daman & Diu
+1,27,801,2,1,N271,Coastal
+2,27,805,9,1,N271,Coastal
+2,27,801,9,1,N273,Inland Northern
+1,27,802,2,1,N273,Inland Northern
+2,27,802,9,1,N274,Inland Central
+1,27,803,2,1,N274,Inland Central
+2,27,803,9,1,N275,Inland Eastern
+1,27,804,2,1,N275,Inland Eastern
+2,27,804,9,1,N276,Eastern
+1,27,805,2,1,N276,Eastern
+1,28,801,1,1,N281,Coastal Northern
+2,28,802,9,1,N281,Coastal Northern
+2,28,801,9,1,N282,Coastal Southern
+1,28,802,2,1,N282,Coastal Southern
+1,29,801,2,1,N292,Inland Eastern
+2,29,802,9,1,N292,Inland Eastern
+2,29,801,9,1,N293,Inland Southern
+1,29,802,2,1,N293,Inland Southern
+1,29,803,2,1,N294,Inland Northern
+2,29,803,9,1,N294,Inland Northern
+1,31,801,2,1,N311,Lakshadweep
+2,31,801,9,1,N311,Lakshadweep
+1,32,801,2,1,N321,Northern
+2,32,801,9,1,N321,Northern
+1,32,802,2,1,N322,Southern
+2,32,802,9,1,N322,Southern
+1,33,801,2,1,N331,Coastal Northern
+2,33,803,9,1,N331,Coastal Northern
+1,33,562,2,1,N332,Coastal
+1,33,802,2,1,N332,Coastal
+2,33,802,9,1,N332,Coastal
+2,33,802,9,2,N332,Coastal
+2,33,801,9,1,N334,Inland
+1,33,803,2,1,N334,Inland
+1,34,801,2,1,N341,Puducherry
+2,34,801,9,1,N341,Puducherry
+2,34,801,9,2,N341,Puducherry
+2,34,801,9,3,N341,Puducherry
+1,35,801,1,1,N351,Andaman & Nicobar Islands
+1,35,801,2,1,N351,Andaman & Nicobar Islands
+2,35,801,9,1,N351,Andaman & Nicobar Islands
+2,35,801,9,2,N351,Andaman & Nicobar Islands
+1,36,801,2,1,N361,Inland North Western
+2,36,801,9,1,N361,Inland North Western
+1,36,802,2,1,N362,Inland North Eastern
+2,36,802,9,1,N362,Inland North Eastern
+1,37,801,2,1,N371,Ladakh
+1,37,801,2,2,N371,Ladakh
+2,37,801,9,1,N371,Ladakh
+2,37,801,9,2,N371,Ladakh
+1,99,999,1,1,N999,Uninhabited Strm

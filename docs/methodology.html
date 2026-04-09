@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Data Dictionary &amp; Methodology | PLFS Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#003d3c",
+                        "surface-dim": "#d7dadc",
+                        "surface-container-high": "#e5e9eb",
+                        "on-surface-variant": "#43474e",
+                        "on-primary-container": "#86a0cd",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#9fcaff",
+                        "inverse-primary": "#adc7f7",
+                        "secondary-fixed": "#d2e4ff",
+                        "primary-container": "#1a365d",
+                        "primary-fixed-dim": "#adc7f7",
+                        "on-secondary-fixed-variant": "#00497e",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#94f2f0",
+                        "outline-variant": "#c4c6cf",
+                        "surface-bright": "#f7fafc",
+                        "surface-container": "#ebeef0",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#00504e",
+                        "secondary-container": "#66affe",
+                        "on-primary-fixed": "#001b3c",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "primary": "#002045",
+                        "on-surface": "#181c1e",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#004172",
+                        "secondary": "#0061a5",
+                        "on-background": "#181c1e",
+                        "on-tertiary-container": "#4cadab",
+                        "tertiary-fixed-dim": "#77d6d3",
+                        "surface": "#f7fafc",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#002625",
+                        "surface-container-highest": "#e0e3e5",
+                        "outline": "#74777f",
+                        "on-tertiary-fixed": "#00201f",
+                        "on-secondary-fixed": "#001d37",
+                        "primary-fixed": "#d6e3ff",
+                        "background": "#f7fafc",
+                        "surface-tint": "#455f88",
+                        "surface-container-low": "#f1f4f6",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eef1f3",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2d3133"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .focus-ring:focus-visible {
+            outline: 2px solid #0061a5;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-40 flex justify-between items-center px-8 py-3 bg-[#f7fafc] dark:bg-[#181c1e] font-['Inter'] tracking-[-0.02em] antialiased border-b border-outline-variant/20">
+<div class="flex items-center gap-4">
+<span class="text-xl font-bold tracking-tight text-[#002045] dark:text-[#ffffff]">PLFS Analytics</span>
+</div>
+<nav aria-label="Main Navigation" class="hidden md:flex gap-8">
+<a class="text-[#181c1e]/60 dark:text-[#ffffff]/60 hover:text-[#0061a5] transition-colors focus-ring" href="index.html">Dashboard</a>
+<a class="text-[#181c1e]/60 dark:text-[#ffffff]/60 hover:text-[#0061a5] transition-colors focus-ring" href="demographics.html">Demographics</a>
+<a class="text-[#181c1e]/60 dark:text-[#ffffff]/60 hover:text-[#0061a5] transition-colors focus-ring" href="rural-urban.html">Rural vs Urban</a>
+<a aria-current="page" class="text-[#002045] dark:text-[#66affe] border-b-2 border-[#0061a5] font-semibold transition-colors focus-ring" href="methodology.html">Methodology</a>
+<a class="text-[#181c1e]/60 dark:text-[#ffffff]/60 hover:text-[#0061a5] transition-colors focus-ring" href="board-report.html">Board Report</a>
+</nav>
+<div class="flex items-center gap-4">
+<button aria-label="Help" class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary transition-colors focus-ring">help</button>
+<button aria-label="Settings" class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary transition-colors focus-ring">settings</button>
+<img alt="Executive User Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXTk0gMR0WvT5NbsydXBsr_zQM87SUBpjeaH2gKiAPXjonRs7QQLpQqrUHeihjOSyQ25OE-XO0RvlbZTgzHQMRv_YJOZ1YXmT10_OWXKCOFFxNf4FLA-JohFMQxOeES2Aird_Ig9-fBxFq1pugbe0PpDQRaNDthiviQpHkXmpT1zcNEIY-0_genyDghnzSfcSNNp7Fpnl3UUp3mLz6x9HUnzo2oxwB8yxp0fMbEo5VcKgvlE4gmmdEmIRxSsMxSmGMLNqnXZIb_U7U"/>
+</div>
+</header>
+<!-- SideNavBar (Shared Component) -->
+<nav aria-label="Sidebar Navigation" class="fixed left-0 top-0 h-full w-64 z-50 flex flex-col py-6 px-4 bg-[#002045] dark:bg-[#001025] font-['Inter'] text-sm font-medium shadow-2xl shadow-[#002045]/20">
+<div class="mb-10 px-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-white/10 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-white">analytics</span>
+</div>
+<div>
+<h1 class="text-white font-black tracking-tighter uppercase">PLFS Portal</h1>
+<p class="text-white/50 text-[10px] uppercase tracking-widest">Intelligence Report</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 flex-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="index.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="rural-urban.html">
+<span class="material-symbols-outlined">work</span>
+<span>Labor Metrics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="demographics.html">
+<span class="material-symbols-outlined">groups</span>
+<span>Demographics</span>
+</a>
+<a class="relative flex items-center gap-3 px-4 py-3 rounded-md bg-[#ffffff]/10 text-white before:content-[''] before:absolute before:left-0 before:h-6 before:w-1 before:bg-[#66affe] before:rounded-r-full duration-200 ease-in-out focus-ring" href="methodology.html">
+<span class="material-symbols-outlined">menu_book</span>
+<span>Data Dictionary</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-md text-white/70 hover:text-white hover:bg-white/5 duration-200 ease-in-out focus-ring" href="methodology.html">
+<span class="material-symbols-outlined">biotech</span>
+<span>Methodology</span>
+</a>
+</div>
+<button class="mt-4 mb-8 mx-2 py-2.5 px-4 bg-gradient-to-br from-[#0061a5] to-[#1a365d] text-white rounded text-xs font-bold uppercase tracking-wider shadow-lg focus-ring">
+        Export Dataset
+    </button>
+<div class="pt-6 border-t border-white/10 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-2 text-white/50 hover:text-white duration-200 focus-ring" href="#">
+<span class="material-symbols-outlined text-sm">contact_support</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-white/50 hover:text-white duration-200 focus-ring" href="#">
+<span class="material-symbols-outlined text-sm">history</span>
+<span>Release Notes</span>
+</a>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="ml-64 mt-16 p-8 min-h-screen flex flex-col gap-8">
+<!-- Header & Breadcrumbs & Actions -->
+<section class="flex flex-col gap-6">
+<div class="flex flex-col gap-2">
+<nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs font-medium text-outline uppercase tracking-widest">
+<span>Home</span>
+<span aria-hidden="true" class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-secondary font-bold">Data Dictionary &amp; Methodology</span>
+</nav>
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-3xl font-black tracking-tighter text-primary">Technical Documentation</h2>
+<div class="mt-2 flex items-center gap-3">
+<span class="px-2 py-1 bg-on-tertiary-container/10 text-on-tertiary-container text-[10px] font-bold rounded uppercase tracking-tighter flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Data quality checks passed
+                        </span>
+<div class="text-[10px] text-on-surface-variant/60 font-mono">v2.4.0-STABLE | Last Synced: 2024-05-21</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1.5 border border-outline-variant text-[10px] font-bold uppercase tracking-widest rounded bg-surface hover:bg-surface-container-low transition-colors flex items-center gap-2 focus-ring">
+<span class="material-symbols-outlined text-sm">csv</span> Export CSV
+                    </button>
+<button class="px-3 py-1.5 border border-outline-variant text-[10px] font-bold uppercase tracking-widest rounded bg-surface hover:bg-surface-container-low transition-colors flex items-center gap-2 focus-ring">
+<span class="material-symbols-outlined text-sm">image</span> Export PNG
+                    </button>
+<button class="px-3 py-1.5 border border-outline-variant text-[10px] font-bold uppercase tracking-widest rounded bg-surface hover:bg-surface-container-low transition-colors flex items-center gap-2 focus-ring">
+<span class="material-symbols-outlined text-sm">draw</span> Open in Figma
+                    </button>
+</div>
+</div>
+</div>
+<!-- Methodology Ribbon -->
+<div class="bg-surface-container-low border border-outline-variant/30 rounded-lg p-4 flex flex-wrap items-center justify-between gap-4 shadow-sm">
+<div class="flex flex-wrap items-center gap-2">
+<span class="text-[10px] font-black uppercase text-on-surface-variant/60 mr-2 tracking-widest">Controls:</span>
+<span class="px-2.5 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded-full border border-primary/20">UPS</span>
+<span class="px-2.5 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded-full border border-primary/20">Age 15+</span>
+<span class="px-2.5 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded-full border border-primary/20">Annual pooled</span>
+<span class="px-2.5 py-1 bg-primary/5 text-primary text-[10px] font-bold rounded-full border border-primary/20">Weighted (MLTS/400)</span>
+</div>
+<div class="text-[10px] font-mono text-on-surface-variant/60 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">source</span>
+                Source: data/processed/plfs_processed_data.parquet
+            </div>
+</div>
+</section>
+<!-- Metric Definitions & Methodology Summary -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Metric Definitions Table -->
+<section class="lg:col-span-2 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden border border-outline-variant/10">
+<div class="px-6 py-4 border-b border-outline-variant/10 bg-surface-container-low flex justify-between items-center">
+<h3 class="font-bold text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">database</span>
+                    Metric Definitions
+                </h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-high text-[10px] uppercase tracking-widest text-on-surface-variant font-bold">
+<th class="px-6 py-4">Metric</th>
+<th class="px-6 py-4">Formula</th>
+<th class="px-6 py-4">Description</th>
+<th class="px-6 py-4">Unit</th>
+</tr>
+</thead>
+<tbody class="text-sm divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-highest transition-colors">
+<td class="px-6 py-5 font-bold text-secondary">Unemployment Rate (UR)</td>
+<td class="px-6 py-5 font-mono text-xs bg-surface-container/30">unemployed / labour force * 100</td>
+<td class="px-6 py-5 text-on-surface-variant">The percentage of the labour force that is without work and actively seeking it. Example benchmark: 4.10%.</td>
+<td class="px-6 py-5 font-bold text-primary">%</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors">
+<td class="px-6 py-5 font-bold text-secondary">Labour Force Participation Rate (LFPR)</td>
+<td class="px-6 py-5 font-mono text-xs bg-surface-container/30">labour force / population (15+) * 100</td>
+<td class="px-6 py-5 text-on-surface-variant">The proportion of the population aged 15 and above that is either working or seeking work. Example benchmark: 40.20%.</td>
+<td class="px-6 py-5 font-bold text-primary">%</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors">
+<td class="px-6 py-5 font-bold text-secondary">Worker Population Ratio (WPR)</td>
+<td class="px-6 py-5 font-mono text-xs bg-surface-container/30">employed / population (15+) * 100</td>
+<td class="px-6 py-5 text-on-surface-variant">The percentage of the population aged 15 and above that is currently employed. Example benchmark: 38.50%.</td>
+<td class="px-6 py-5 font-bold text-primary">%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Weighting & Scope Card -->
+<section class="bg-primary text-white rounded-xl p-6 flex flex-col gap-6 shadow-xl shadow-primary/20">
+<h3 class="font-bold text-secondary-container flex items-center gap-2 uppercase tracking-widest text-xs">
+<span class="material-symbols-outlined text-sm">settings_input_component</span>
+                Weighting &amp; Scope
+            </h3>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] text-white/50 uppercase tracking-wider">Methodology</span>
+<p class="text-lg font-semibold tracking-tight">Annual pooled</p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] text-white/50 uppercase tracking-wider">Weight Formula</span>
+<p class="font-mono text-sm bg-white/5 p-2 rounded">WEIGHT from MLTS / 400</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col gap-1">
+<span class="text-[10px] text-white/50 uppercase tracking-wider">Pop. Filter</span>
+<p class="font-bold">AGE &gt;= 15</p>
+</div>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] text-white/50 uppercase tracking-wider">Definition</span>
+<p class="font-bold">UPS Focus</p>
+</div>
+</div>
+<div class="mt-4 p-3 bg-white/10 rounded-lg border border-white/10">
+<p class="text-[11px] leading-relaxed text-white/70 italic">"Usual Principal Status (UPS) reflects the major activity status of a person for a period of 365 days preceding the date of survey."</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Status Mapping & Lineage -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Status Code Mapping -->
+<section class="bg-surface-container-low rounded-xl p-8 border border-outline-variant/10">
+<h3 class="font-bold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">label</span>
+                Status Code Mapping (UPS Focus)
+            </h3>
+<div class="space-y-4">
+<div class="flex items-start gap-4">
+<div class="w-24 shrink-0 text-[10px] font-black uppercase text-secondary pt-1">Employed</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-lowest text-primary text-xs font-mono font-bold rounded shadow-sm border border-outline-variant/10">11</span>
+<span class="px-3 py-1 bg-surface-container-lowest text-primary text-xs font-mono font-bold rounded shadow-sm border border-outline-variant/10">12</span>
+<span class="px-3 py-1 bg-surface-container-lowest text-primary text-xs font-mono font-bold rounded shadow-sm border border-outline-variant/10">21</span>
+<span class="px-3 py-1 bg-surface-container-lowest text-primary text-xs font-mono font-bold rounded shadow-sm border border-outline-variant/10">31</span>
+<span class="px-3 py-1 bg-surface-container-lowest text-primary text-xs font-mono font-bold rounded shadow-sm border border-outline-variant/10">41</span>
+<span class="px-3 py-1 bg-surface-container-lowest text-primary text-xs font-mono font-bold rounded shadow-sm border border-outline-variant/10">42</span>
+<span class="px-3 py-1 bg-surface-container-lowest text-primary text-xs font-mono font-bold rounded shadow-sm border border-outline-variant/10">51</span>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-24 shrink-0 text-[10px] font-black uppercase text-error pt-1">Unemployed</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-error-container text-on-error-container text-xs font-mono font-bold rounded shadow-sm">81</span>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-24 shrink-0 text-[10px] font-black uppercase text-on-surface-variant/50 pt-1">Out of LF</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-mono font-bold rounded">91</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-mono font-bold rounded">92</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-mono font-bold rounded">93</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-mono font-bold rounded">94</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-mono font-bold rounded">95</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-mono font-bold rounded">97</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Data Lineage Panel -->
+<section class="bg-surface-container-lowest rounded-xl p-8 relative overflow-hidden border border-outline-variant/10">
+<div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+<span class="material-symbols-outlined text-[128px] text-secondary">account_tree</span>
+</div>
+<h3 class="font-bold text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">hub</span>
+                Data Lineage &amp; Traceability
+            </h3>
+<div class="relative pl-6 border-l-2 border-secondary-container/30 space-y-8">
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-secondary"></span>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-black uppercase text-secondary">Raw Data Ingestion</span>
+<p class="text-sm font-semibold">Source Microdata (PLFS 2017-24)</p>
+</div>
+</div>
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-secondary/50"></span>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-black uppercase text-on-surface-variant">Transformation Layer</span>
+<p class="text-xs font-mono bg-surface p-2 rounded">data/processed/plfs_processed_data.parquet</p>
+</div>
+</div>
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-secondary/30"></span>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-black uppercase text-on-surface-variant">Aggregated Analysis</span>
+<p class="text-xs font-mono bg-surface p-2 rounded">data/output/plfs_multiyear_initial_analysis.csv</p>
+</div>
+</div>
+<div class="relative">
+<span class="absolute -left-[31px] top-0 w-4 h-4 rounded-full bg-secondary-container"></span>
+<div class="flex flex-col gap-1">
+<span class="text-[10px] font-black uppercase text-on-surface-variant">Dashboard Bindings</span>
+<p class="text-xs font-mono bg-surface p-2 rounded">data/output/plfs_dashboard_bindings_2023_24.json</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Quality, Caveats & Reproduction -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Quality & Caveats -->
+<section class="md:col-span-2 bg-surface-container-high/40 rounded-xl p-8 border-l-4 border-secondary">
+<div class="flex items-start gap-6">
+<div class="flex-1 space-y-6">
+<div>
+<h4 class="text-xs font-black uppercase text-primary mb-3">Validation Checklist</h4>
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-y-3">
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Duplicate-household handling
+                            </li>
+<li class="flex items-center gap-3 text-sm">
+<span class="material-symbols-outlined text-on-tertiary-container text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Round-wise parser harmonization
+                            </li>
+<li class="flex items-center gap-3 text-sm md:col-span-2">
+<span class="material-symbols-outlined text-secondary text-sm">info</span>
+                                Segmented historical charts may require runtime-bound subgroup series
+                            </li>
+</ul>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/20">
+<h4 class="text-[10px] font-black uppercase text-primary mb-2">Governance Note</h4>
+<p class="text-xs leading-relaxed text-on-surface-variant">
+                            Benchmarks can differ if NSO published slice differs by definition (UPS/CWS, sector, sex, age). Citation of methodology chips (UPS, 15+, annual pooled) is required on all metric views to ensure editorial integrity.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Reproduction Callout -->
+<section class="bg-tertiary text-white rounded-xl p-8 flex flex-col justify-center gap-6 relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-br from-tertiary to-[#004d4b] opacity-100"></div>
+<div class="relative z-10">
+<h3 class="text-xl font-bold mb-4 tracking-tight">How to Reproduce</h3>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold">1</span>
+<p class="text-sm">Run ETL pipeline</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold">2</span>
+<p class="text-sm">Execute validation notebook</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold">3</span>
+<p class="text-sm">Refresh dashboard bindings</p>
+</div>
+</div>
+<button class="mt-8 w-full py-3 bg-tertiary-fixed text-on-tertiary-fixed font-black uppercase tracking-widest text-[10px] rounded hover:bg-tertiary-fixed-dim transition-colors shadow-lg focus-ring">
+                    Access Pipeline Logs
+                </button>
+</div>
+</section>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="w-full mt-auto py-12 flex flex-col items-center gap-6 px-8 bg-[#f1f4f6] dark:bg-[#111416] border-t border-[#c4c6cf]/20">
+<nav aria-label="Footer Navigation" class="flex flex-wrap justify-center gap-8 font-['Inter'] text-xs uppercase tracking-widest text-[#181c1e]/40 dark:text-[#ffffff]/40">
+<a class="hover:text-[#002045] dark:hover:text-[#ffffff] underline-offset-4 hover:underline transition-all focus-ring" href="#">Privacy Policy</a>
+<a class="hover:text-[#002045] dark:hover:text-[#ffffff] underline-offset-4 hover:underline transition-all focus-ring" href="#">Terms of Service</a>
+<a class="hover:text-[#002045] dark:hover:text-[#ffffff] underline-offset-4 hover:underline transition-all focus-ring" href="#">Citation Guide</a>
+<a class="hover:text-[#002045] dark:hover:text-[#ffffff] underline-offset-4 hover:underline transition-all font-bold text-[#0061a5] focus-ring" href="#">Technical Appendix</a>
+</nav>
+<p class="text-center font-['Inter'] text-[10px] uppercase tracking-[0.2em] text-[#181c1e]/60 dark:text-[#e2e2e6]/60">
+            © 2024 Periodic Labour Force Survey. Executive Data Journalism Division. <br/>
+<span class="mt-2 block opacity-50">Prepared from PLFS pipeline outputs; no dummy data used.</span>
+</p>
+</footer>
+</main>
+<script src="assets/js/plfs-dashboard.js" defer></script>
+</body></html>

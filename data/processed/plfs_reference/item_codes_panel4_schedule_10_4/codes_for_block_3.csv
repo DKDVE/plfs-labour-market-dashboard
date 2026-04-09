@@ -1,0 +1,23 @@
+Item no.,Item Description,Code Description,Code
+2, Household Type (Rural) , self-employed in agriculture ,1
+2, Household Type (Rural) , self-employed in non-agriculture ,2
+2, Household Type (Rural) , regular wage/salary earning ,3
+2, Household Type (Rural) , casual labour in agriculture ,4
+2, Household Type (Rural) , casual labour in non-agriculture ,5
+2, Household Type (Rural) , others ,9
+2, Household Type (Urban) , self-employed ,1
+2, Household Type (Urban) , regular wage/salary earning ,2
+2, Household Type (Urban) , casual labour ,3
+2, Household Type (Urban) , others ,9
+3, Religion , Hinduism ,1
+3, Religion , Islam ,2
+3, Religion , Christianity ,3
+3, Religion , Sikhism ,4
+3, Religion , Jainism ,5
+3, Religion , Buddhism ,6
+3, Religion , Zoroastrianism ,7
+3, Religion , others ,9
+4, Social Group , scheduled tribe ,1
+4, Social Group , scheduled caste ,2
+4, Social Group , other backward class ,3
+4, Social Group , others ,9
