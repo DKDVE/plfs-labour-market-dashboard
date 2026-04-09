@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PLFS Labour Market Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site">
+      <h1>PLFS Labour Market Dashboard</h1>
+      <p>National indicators from Periodic Labour Force Survey microdata (pipeline outputs)</p>
+    </header>
+    <div class="ribbon" id="meta-line">Loading metadata…</div>
+    <main>
+      <div id="error" class="error-banner" role="alert" hidden></div>
+
+      <section aria-label="Headline indicators">
+        <div class="grid-kpi">
+          <div class="card">
+            <h3>Unemployment rate</h3>
+            <div class="value" id="kpi-ur">—</div>
+          </div>
+          <div class="card">
+            <h3>LFPR</h3>
+            <div class="value" id="kpi-lfpr">—</div>
+          </div>
+          <div class="card">
+            <h3>WPR</h3>
+            <div class="value" id="kpi-wpr">—</div>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="trend-heading">
+        <h2 id="trend-heading">Multi-year trend (national)</h2>
+        <table id="trend-table">
+          <thead>
+            <tr>
+              <th scope="col">Round</th>
+              <th scope="col">UR</th>
+              <th scope="col">LFPR</th>
+              <th scope="col">WPR</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="demo-heading" style="margin-top: 1.5rem">
+        <h2 id="demo-heading">Latest round — demographics</h2>
+        <div class="grid-kpi">
+          <div class="card" id="demo-gender"></div>
+          <div class="card" id="demo-sector"></div>
+        </div>
+      </section>
+
+      <section aria-labelledby="age-heading" style="margin-top: 1.5rem">
+        <h2 id="age-heading">Latest round — unemployment by age band</h2>
+        <table id="age-table">
+          <thead>
+            <tr>
+              <th scope="col">Age group</th>
+              <th scope="col">UR</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <footer>
+      Methodology: UPS, age 15+, survey weights (MLTS). Source JSON is produced by the project pipeline;
+      refresh via GitHub Actions on the repository. Not an official NSO publication.
+    </footer>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>

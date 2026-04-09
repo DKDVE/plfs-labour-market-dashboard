@@ -1,0 +1,160 @@
+# PLFS Pipeline Configuration
+# ============================
+#
+# Downloaded ZIPs: data/raw/plfs_zips/
+# Extracted bundles: data/raw/plfs_extracted/<round_id>_<period>/
+#   (run: python extract_plfs_downloads.py)
+#
+# Active input: set paths.raw_data + files.household / files.person to one round below.
+# NSO microdata .txt files are tab-separated. Set files.delimiter to "\t".
+# Raw .txt rows have no header row matching pipeline column names; for a full run you need
+# either Nesstar CSV export with headers, or a layout→column-name step (see processed reference).
+
+# ============================================
+# Data Paths
+# ============================================
+paths:
+  # Folder for the round you are analysing (must match one row in plfs_extracted.rounds)
+  raw_data: "./data/raw/plfs_extracted/213_july2023_june2024"
+  processed_data: "./data/processed"
+  output: "./data/output"
+  logs: "./logs"
+  plfs_zips: "./data/raw/plfs_zips"
+  plfs_extracted: "./data/raw/plfs_extracted"
+
+# ============================================
+# Input Files (inside raw_data)
+# ============================================
+files:
+  # First visit (V1) household / person — standard choice for annual estimates
+  household: "hhv1.txt"
+  person: "perv1.txt"
+  delimiter: "\t"
+  # NSO field layouts (must match survey round; used for headerless .txt)
+  field_dictionary_household: "./data/processed/plfs_reference/layouts_july2023_june2024/field_dictionary_hhv1.csv"
+  field_dictionary_person: "./data/processed/plfs_reference/layouts_july2023_june2024/field_dictionary_perv1.csv"
+  multiplier: null
+
+# ============================================
+# Inventory: actual microdata filenames per extracted round
+# (switch paths.raw_data + files here when you change round)
+# ============================================
+plfs_extracted:
+  active_round_id: 213
+  active_period: "july2023_june2024"
+  rounds:
+    "204_july2017_june2018":
+      household_fv: "hhfv_2017-18.txt"
+      person_fv: "hh_per_fv_2017-18.txt"
+      household_rv: "hh_rv_2017-18.txt"
+      person_rv: "hh_per_rv_2017-18.txt"
+    "206_july2020_june2021":
+      household_v1: "hhv1.txt"
+      person_v1: "perv1.txt"
+      household_rv: "hhrv.txt"
+      person_rv: "perrv.txt"
+    "210_july2022_june2023":
+      household_v1: "hhv1.txt"
+      person_v1: "perv1.txt"
+      household_rv: "hhrv.txt"
+      person_rv: "perrv.txt"
+    "213_july2023_june2024":
+      household_v1: "hhv1.txt"
+      person_v1: "perv1.txt"
+      household_rv: "hhrv.txt"
+      person_rv: "perrv.txt"
+    "214_july2021_june2022":
+      household_v1: "hhv1.txt"
+      person_v1: "perv1.txt"
+      household_rv: "hhrv.txt"
+      person_rv: "perrv.txt"
+    "216_july2018_june2019":
+      household_v1: "HHV1_2018-19.txt"
+      person_v1: "PerV1_2018-19.txt"
+      household_rv: "HHRV-2018-19.txt"
+      person_rv: "PerRV_2018-19.txt"
+    "217_july2019_june2020":
+      household_fv: "HHFV_2019-20.txt"
+      person_fv: "PERFV_2019-20.txt"
+      household_rv: "HHRV_2019-20.txt"
+      person_rv: "PERRV_2019-20.txt"
+
+# ============================================
+# Analysis Parameters
+# ============================================
+analysis:
+  estimate_type: "annual"
+  # Labour-status definition for headline indicators:
+  # - "ups": principal activity status (`pas`)
+  # - "cws": current weekly status (`acws`)
+  status_measure: "ups"
+  headline_min_age: 15
+  quarters: [1, 2, 3, 4]
+  years: [2023, 2024]
+
+# ============================================
+# Validation Settings
+# ============================================
+validation:
+  # Benchmark value from the exact NSO table row you want to match.
+  nso_unemployment_rate: 6.7
+  tolerance: 0.5
+  # Optional filters for table alignment (null = national total)
+  # sector: 1 (rural), 2 (urban)
+  # sex: 1 (male), 2 (female)
+  sector: null
+  sex: null
+  strict_mode: false
+
+# ============================================
+# Processing Options
+# ============================================
+processing:
+  exclude_casualties: true
+  casualty_codes: [3, 7]
+  missing_multiplier_action: "error"
+  use_chunking: false
+  chunk_size: 100000
+
+# ============================================
+# Output Settings
+# ============================================
+output:
+  formats:
+    - "parquet"
+    - "csv"
+    - "json"
+  compression: "snappy"
+  generate_charts: true
+  chart_format: "png"
+  chart_dpi: 300
+
+# ============================================
+# Logging
+# ============================================
+logging:
+  level: "INFO"
+  file_logging: true
+  file_pattern: "plfs_pipeline_{timestamp}.log"
+  console_logging: true
+
+# ============================================
+# Web API (optional)
+# ============================================
+api:
+  enabled: false
+  host: "0.0.0.0"
+  port: 8000
+  docs_url: "/docs"
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8080"
+
+# ============================================
+# Advanced
+# ============================================
+advanced:
+  spatial_analysis: false
+  shapefile_path: null
+  time_series: false
+  causal_inference: false

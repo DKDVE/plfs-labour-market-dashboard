@@ -1,0 +1,140 @@
+:root {
+  --bg: #f7fafc;
+  --surface: #ffffff;
+  --ink: #181c1e;
+  --muted: #43474e;
+  --primary: #002045;
+  --accent: #0061a5;
+  --border: rgba(116, 119, 127, 0.25);
+  --radius: 12px;
+  --font: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+}
+
+header.site {
+  background: linear-gradient(135deg, var(--primary) 0%, #1a365d 100%);
+  color: #fff;
+  padding: 1.25rem 1.5rem;
+}
+
+header.site h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+header.site p {
+  margin: 0;
+  opacity: 0.92;
+  font-size: 0.9rem;
+}
+
+.ribbon {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0.65rem 1.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.grid-kpi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  box-shadow: 0 12px 32px -4px rgba(0, 32, 69, 0.08);
+}
+
+.card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.card .value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+section h2 {
+  font-size: 1.05rem;
+  margin: 0 0 0.75rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 32, 69, 0.06);
+}
+
+th,
+td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+}
+
+thead {
+  background: #e5e9eb;
+}
+
+tbody tr:nth-child(even) {
+  background: #f1f4f6;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem 2rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+.error-banner {
+  background: #ffdad6;
+  color: #93000a;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

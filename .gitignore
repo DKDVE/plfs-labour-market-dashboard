@@ -1,0 +1,49 @@
+# Secrets
+.env
+.env.*
+*.pem
+microdata_cookies.txt
+*_cookies.txt
+microdata_api_key.txt
+*_api_key.txt
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+logs/
+*.log
+data/output/*.log
+
+# Large / generated data (keep small JSON/CSV exports when needed locally)
+data/raw/
+data/output/*.parquet
+data/processed/*.parquet
+data/processed/plfs_processed_data.parquet
+
+# Bundled sample zips / IDE artifacts
+data/Periodic Labour Force Survey*/
+Periodic Labour Force Survey*/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Cursor / local
+.cursor/

@@ -1,0 +1,67 @@
+# Periodic refresh of static dashboard artifacts for GitHub Pages.
+# Requires PLFS microdata under data/raw/plfs_extracted/ (committed or restored in CI).
+#
+# Schedule: weekly (edit cron as needed). Manual: Actions → Refresh dashboard data → Run workflow.
+
+name: Refresh dashboard data
+
+on:
+  schedule:
+    # Every Monday 06:00 UTC
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+concurrency:
+  group: refresh-dashboard-data
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-ci.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements-ci.txt
+
+      - name: Build dashboard outputs
+        env:
+          MPLBACKEND: Agg
+        run: python scripts/build_dashboard_for_site.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for f in \
+            data/output/dashboard_data.json \
+            data/output/summary_statistics.json \
+            data/output/plfs_multiyear_trends.csv \
+            data/output/plfs_processed_full.parquet \
+            data/output/state_unemployment.csv \
+            data/output/age_group_unemployment.csv \
+            data/output/unemployment_dashboard.png \
+            data/output/unemployment_by_age.png \
+            data/output/unemployment_by_education.png
+          do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(data): refresh dashboard outputs for GitHub Pages"
+          git push
